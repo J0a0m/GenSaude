@@ -1,0 +1,897 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: #f7f7f7;
+
+    color: #06195d;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    height: 78px;
+
+    background-color: #ffffff;
+
+    border-bottom: 3px solid #eeeeee;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar {
+    width: 100%;
+    max-width: 1215px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #0748c8;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+.logo-img {
+    width: 39px;
+    height: 39px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+.logo-text {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+.logo-text strong {
+    font-weight: 700;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 83px;
+
+    margin-left: 45px;
+}
+
+
+.menu a {
+    color: #061858;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.menu a:hover {
+    color: #064dcc;
+}
+
+
+.menu a.active {
+    color: #064dcc;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BOTÃO ENTRAR HEADER
+========================================= */
+
+.header-login-btn {
+    height: 40px;
+
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background-color: #0b4cc7;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.header-login-btn:hover {
+    background-color: #073ba4;
+}
+
+
+.header-login-icon {
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.main-content {
+    width: 100%;
+
+    min-height: calc(100vh - 78px);
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.cadastro-wrapper {
+    width: 100%;
+    max-width: 1220px;
+
+    min-height: calc(100vh - 78px);
+
+    display: grid;
+
+    grid-template-columns:
+        540px
+        563px;
+
+    column-gap: 65px;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   IMAGEM ESQUERDA
+========================================= */
+
+.illustration-area {
+    width: 100%;
+    height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.hero-image {
+    width: 100%;
+    max-width: 560px;
+
+    height: auto;
+    max-height: 560px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =========================================
+   CARD DE CADASTRO
+========================================= */
+
+.cadastro-card {
+    width: 563px;
+
+    min-height: 670px;
+
+    padding:
+        30px
+        55px
+        22px;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 1px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================
+   CABEÇALHO DO CARD
+========================================= */
+
+.cadastro-header {
+    margin-bottom: 20px;
+}
+
+
+.cadastro-header h1 {
+    color: #071b64;
+
+    font-size: 37px;
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    margin-bottom: 2px;
+}
+
+
+.cadastro-header p {
+    color: #173c8a;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   LINHAS DO FORMULÁRIO
+========================================= */
+
+.form-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 16px;
+}
+
+
+.full {
+    width: 100%;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.input-group {
+    position: relative;
+
+    height: 42px;
+
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 5px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.input-group:focus-within {
+    border-color: #0753d6;
+
+    box-shadow:
+        0 0 0 2px rgba(7, 83, 214, 0.08);
+}
+
+
+.input-group input {
+    width: 100%;
+    height: 100%;
+
+    padding:
+        0
+        12px
+        0
+        52px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #071b64;
+
+    font-size: 16px;
+}
+
+
+.input-group input::placeholder {
+    color: #ababab;
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   ÍCONES DOS INPUTS
+========================================= */
+
+.input-icon {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translateY(-50%);
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SELECT ESTADO
+========================================= */
+
+.select-group {
+    position: relative;
+}
+
+
+.select-group select {
+    width: 100%;
+    height: 100%;
+
+    padding:
+        0
+        44px
+        0
+        56px;
+
+    border: none;
+
+    outline: none;
+
+    background-color: transparent;
+
+    color: #ababab;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+/* SETA DO SELECT FEITA COM CSS */
+
+.select-group::after {
+    content: "";
+
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+
+    transform:
+        translateY(-70%)
+        rotate(45deg);
+
+    pointer-events: none;
+}
+
+
+.select-group select:valid {
+    color: #071b64;
+}
+
+
+/* =========================================
+   SENHA
+========================================= */
+
+.password-group input {
+    padding-right: 42px;
+}
+
+
+.password-toggle {
+    position: absolute;
+
+    right: 5px;
+    top: 50%;
+
+    width: 35px;
+    height: 35px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+
+.password-icon {
+    width: 17px;
+    height: 17px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================
+   TERMOS
+========================================= */
+
+.terms-container {
+    width: 100%;
+
+    margin:
+        17px
+        0
+        30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.terms-container p {
+    color: #071b64;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+.terms-container a {
+    color: #0048d1;
+
+    text-decoration: none;
+}
+
+
+.terms-container a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.terms-label {
+    display: flex;
+
+    cursor: pointer;
+}
+
+
+.terms-label input {
+    display: none;
+}
+
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+
+    border: 1px solid #656565;
+
+    transition: 0.2s;
+}
+
+
+.terms-label input:checked + .custom-checkbox {
+    background-color: #0750cf;
+
+    border-color: #0750cf;
+}
+
+
+.terms-label input:checked + .custom-checkbox::after {
+    content: "";
+
+    width: 5px;
+    height: 10px;
+
+    margin-bottom: 2px;
+
+    border: solid #ffffff;
+
+    border-width:
+        0
+        2px
+        2px
+        0;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   BOTÃO CADASTRAR
+========================================= */
+
+.register-button {
+    width: 100%;
+    height: 60px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #0c4bc7;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.register-button:hover {
+    background-color: #073ca6;
+
+    transform: translateY(-1px);
+}
+
+
+.register-button:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login-text {
+    margin-top: 12px;
+
+    color: #071b64;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+.login-text a {
+    color: #0047ce;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MENSAGENS
+========================================= */
+
+.form-message {
+    min-height: 17px;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+.form-message.error {
+    color: #d11a2a;
+}
+
+
+.form-message.success {
+    color: #12803a;
+}
+
+
+/* =========================================
+   INPUT COM ERRO
+========================================= */
+
+.input-group.error {
+    border-color: #d11a2a;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1150px) {
+
+    .navbar {
+        padding:
+            0
+            30px;
+    }
+
+
+    .menu {
+        gap: 35px;
+
+        margin-left: 20px;
+    }
+
+
+    .cadastro-wrapper {
+        width: calc(100% - 50px);
+
+        grid-template-columns:
+            minmax(400px, 1fr)
+            530px;
+
+        column-gap: 30px;
+    }
+
+
+    .cadastro-card {
+        width: 100%;
+
+        padding:
+            30px
+            40px
+            22px;
+    }
+
+}
+
+
+@media (max-width: 930px) {
+
+    .menu {
+        display: none;
+    }
+
+
+    .cadastro-wrapper {
+        width: calc(100% - 40px);
+
+        display: flex;
+
+        flex-direction: column-reverse;
+
+        padding:
+            30px
+            0;
+    }
+
+
+    .cadastro-card {
+        max-width: 570px;
+    }
+
+
+    .illustration-area {
+        height: auto;
+
+        margin-top: 30px;
+    }
+
+
+    .hero-image {
+        max-width: 500px;
+        max-height: 450px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 70px;
+    }
+
+
+    .navbar {
+        padding:
+            0
+            18px;
+    }
+
+
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+
+    .header-login-btn {
+        height: 38px;
+
+        padding:
+            0
+            10px;
+
+        font-size: 14px;
+    }
+
+
+    .header-login-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .cadastro-wrapper {
+        width: calc(100% - 24px);
+
+        padding-top: 18px;
+    }
+
+
+    .cadastro-card {
+        padding:
+            30px
+            25px;
+    }
+
+
+    .cadastro-header h1 {
+        font-size: 31px;
+    }
+
+
+    .cadastro-header p {
+        font-size: 13px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .input-group {
+        margin-bottom: 17px;
+    }
+
+
+    .terms-container {
+        align-items: flex-start;
+
+        margin:
+            10px
+            0
+            25px;
+    }
+
+
+    .illustration-area {
+        display: none;
+    }
+
+}

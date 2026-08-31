@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Criar conta | GenSaúde SUS</title>
+
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         CABEÇALHO
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="navbar">
+
+            <!-- LOGO -->
+
+            <a href="../tela_login/login.html" class="logo">
+
+                <img
+                    src="../imagens/logo_gensaude_sus.png"
+                    alt="Logo GenSaúde"
+                    class="logo-img"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+                <span class="logo-text">
+                    <strong>GenSaúde</strong> SUS
+                </span>
+
+            </a>
+
+
+            <!-- MENU -->
+
+            <nav class="menu">
+
+                <a href="../tela_inicio/inicio.html">
+                    Início
+                </a>
+
+                <a href="#">
+                    Prevenção
+                </a>
+
+                <a href="#">
+                    UBS ou UPA?
+                </a>
+
+                <a href="#">
+                    Unidades
+                </a>
+
+                <a href="#">
+                    Educação
+                </a>
+
+            </nav>
+
+
+            <!-- BOTÃO ENTRAR -->
+
+            <a href="../tela_login/login.html" class="header-login-btn">
+
+                <img
+                    src="../imagens/icone_entrar.png"
+                    alt=""
+                    class="header-login-icon"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+                <span>Entrar</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL
+    ====================================== -->
+
+    <main class="main-content">
+
+        <div class="cadastro-wrapper">
+
+
+            <!-- =====================================
+                 ILUSTRAÇÃO ESQUERDA
+            ====================================== -->
+
+            <section class="illustration-area">
+
+                <img
+                    src="../imagens/ilustracao_cadastro.png"
+                    alt="Ilustração sobre saúde"
+                    class="hero-image"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+            </section>
+
+
+
+            <!-- =====================================
+                 CARD CADASTRO
+            ====================================== -->
+
+            <section class="cadastro-card">
+
+                <div class="cadastro-header">
+
+                    <h1>
+                        Criar sua conta
+                    </h1>
+
+                    <p>
+                        Preencha seus dados para começar
+                    </p>
+
+                </div>
+
+
+                <!-- FORMULÁRIO -->
+
+                <form id="cadastroForm">
+
+
+                    <!-- =================================
+                         NOME COMPLETO
+                    ================================== -->
+
+                    <div class="input-group full">
+
+                        <img
+                            src="../imagens/usuario.png"
+                            alt=""
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Nome Completo"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CPF + DATA
+                    ================================== -->
+
+                    <div class="form-row">
+
+                        <!-- CPF -->
+
+                        <div class="input-group">
+
+                            <img
+                                src="../imagens/cpf.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="text"
+                                id="cpf"
+                                name="cpf"
+                                placeholder="CPF"
+                                maxlength="14"
+                                inputmode="numeric"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DATA DE NASCIMENTO -->
+
+                        <div class="input-group">
+
+                            <img
+                                src="../imagens/calendario.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="text"
+                                id="dataNascimento"
+                                name="dataNascimento"
+                                placeholder="Data de nascimento"
+                                maxlength="10"
+                                inputmode="numeric"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         EMAIL + TELEFONE
+                    ================================== -->
+
+                    <div class="form-row">
+
+                        <!-- EMAIL -->
+
+                        <div class="input-group">
+
+                            <img
+                                src="../imagens/email.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="E-mail"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TELEFONE -->
+
+                        <div class="input-group">
+
+                            <img
+                                src="../imagens/telefone.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="text"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="Telefone ou celular"
+                                maxlength="15"
+                                inputmode="numeric"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CEP + CIDADE
+                    ================================== -->
+
+                    <div class="form-row">
+
+                        <!-- CEP -->
+
+                        <div class="input-group">
+
+                            <img
+                                src="../imagens/CEP.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="text"
+                                id="cep"
+                                name="cep"
+                                placeholder="CEP"
+                                maxlength="9"
+                                inputmode="numeric"
+                                autocomplete="postal-code"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- CIDADE -->
+
+                        <div class="input-group">
+
+                            <img
+                                src="../imagens/cidade.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="text"
+                                id="cidade"
+                                name="cidade"
+                                placeholder="Cidade"
+                                autocomplete="address-level2"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ESTADO
+                    ================================== -->
+
+                    <div class="input-group select-group full">
+
+                        <img
+                            src="../imagens/estado.png"
+                            alt=""
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+
+                        <select
+                            id="estado"
+                            name="estado"
+                            required
+                        >
+
+                            <option value="" selected disabled>
+                                Estado
+                            </option>
+
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         SENHAS
+                    ================================== -->
+
+                    <div class="form-row">
+
+                        <!-- SENHA -->
+
+                        <div class="input-group password-group">
+
+                            <img
+                                src="../imagens/senha.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Senha"
+                                autocomplete="new-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="toggleSenha"
+                                aria-label="Mostrar senha"
+                            >
+
+                                <img
+                                    src="../imagens/ver_senha.png"
+                                    alt=""
+                                    class="password-icon"
+                                    onerror="this.style.visibility='hidden'"
+                                >
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- CONFIRMAR SENHA -->
+
+                        <div class="input-group password-group">
+
+                            <img
+                                src="../imagens/senha.png"
+                                alt=""
+                                class="input-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                            <input
+                                type="password"
+                                id="confirmarSenha"
+                                name="confirmarSenha"
+                                placeholder="Confirmar senha"
+                                autocomplete="new-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="toggleConfirmarSenha"
+                                aria-label="Mostrar senha"
+                            >
+
+                                <img
+                                    src="../imagens/ver_senha.png"
+                                    alt=""
+                                    class="password-icon"
+                                    onerror="this.style.visibility='hidden'"
+                                >
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         TERMOS
+                    ================================== -->
+
+                    <div class="terms-container">
+
+                        <label class="terms-label">
+
+                            <input
+                                type="checkbox"
+                                id="termos"
+                                name="termos"
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                        </label>
+
+
+                        <p>
+                            Li e concordo com os
+                            <a href="#">
+                                Termos de Uso
+                            </a>
+
+                            e
+
+                            <a href="#">
+                                Política de Privacidade
+                            </a>
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         BOTÃO CADASTRAR
+                    ================================== -->
+
+                    <button
+                        type="submit"
+                        class="register-button"
+                    >
+                        Cadastrar
+                    </button>
+
+
+
+                    <!-- =================================
+                         LOGIN
+                    ================================== -->
+
+                    <p class="login-text">
+
+                        Já tem uma conta?
+
+                        <a href="../tela_login/login.html">
+                            Faça login
+                        </a>
+
+                    </p>
+
+
+                    <!-- MENSAGEM JS -->
+
+                    <p
+                        id="formMessage"
+                        class="form-message"
+                    ></p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="cadastro.js"></script>
+
+</body>
+
+</html>

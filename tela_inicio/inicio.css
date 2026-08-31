@@ -1,0 +1,872 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #06195d;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    height: 78px;
+
+    background-color: #ffffff;
+    border-bottom: 3px solid #eeeeee;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar {
+    width: 100%;
+    max-width: 1215px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #0748c8;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+.logo-img {
+    width: 39px;
+    height: 39px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+.logo-text {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+.logo-text strong {
+    font-weight: 700;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 83px;
+
+    margin-left: 45px;
+}
+
+
+.menu a {
+    color: #061858;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.menu a:hover {
+    color: #064dcc;
+}
+
+
+.menu a.active {
+    color: #064dcc;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BOTÃO ENTRAR
+========================================= */
+
+.header-login-btn {
+    height: 40px;
+
+    padding: 0 12px;
+
+    background-color: #0b4cc7;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.header-login-btn:hover {
+    background-color: #073ba4;
+}
+
+
+.header-login-icon {
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main-content {
+    width: 100%;
+    max-width: 1215px;
+
+    margin: 0 auto;
+
+    padding: 34px 0 28px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-section {
+    width: 100%;
+
+    display: grid;
+
+    /*
+        AUMENTEI O ESPAÇO DA IMAGEM
+    */
+    grid-template-columns: 1fr 620px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   TEXTO PRINCIPAL
+========================================= */
+
+.hero-text h1 {
+    color: #071b64;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    line-height: 1.18;
+
+    margin-bottom: 10px;
+}
+
+
+.hero-text p {
+    max-width: 575px;
+
+    color: #173c8a;
+
+    font-size: 18px;
+
+    line-height: 1.28;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BOTÕES PRINCIPAIS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-button,
+.secondary-button {
+    height: 64px;
+
+    border-radius: 12px;
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* BOTÃO AZUL */
+
+.primary-button {
+    min-width: 252px;
+
+    border: none;
+
+    background-color: #0c4bc7;
+
+    color: #ffffff;
+}
+
+
+.primary-button:hover {
+    background-color: #073ca6;
+
+    transform: translateY(-1px);
+}
+
+
+/* BOTÃO BRANCO */
+
+.secondary-button {
+    min-width: 258px;
+
+    background-color: transparent;
+
+    border: 2px solid #0c4bc7;
+
+    color: #0c4bc7;
+}
+
+
+.secondary-button:hover {
+    background-color: #0c4bc7;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ÍCONES DOS BOTÕES */
+
+.button-icon {
+    width: 26px;
+    height: 26px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   ÁREA DA ILUSTRAÇÃO PRINCIPAL
+========================================= */
+
+.hero-image-area {
+    width: 100%;
+    height: 370px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*
+        EVITA QUE A IMAGEM SEJA CORTADA
+        QUANDO FOR AUMENTADA
+    */
+    overflow: visible;
+}
+
+
+/* =========================================
+   ILUSTRAÇÃO PRINCIPAL
+========================================= */
+
+.hero-image {
+    width: 100%;
+
+    max-width: 680px;
+    max-height: 410px;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    /*
+        AUMENTA VISUALMENTE A ILUSTRAÇÃO
+    */
+    transform: scale(1.20);
+
+    transform-origin: center;
+}
+
+
+/* =========================================
+   TÍTULO - OS 3 PILARES
+========================================= */
+
+.pillars-section {
+    margin-top: 6px;
+}
+
+
+.pillars-title-area {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+
+.pillars-title-area h2 {
+    color: #071b64;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+
+.title-line {
+    width: 180px;
+    height: 4px;
+
+    background-color: #0c4bc7;
+
+    border-radius: 999px;
+
+    margin-top: 6px;
+}
+
+
+/* =========================================
+   GRID DOS CARDS
+========================================= */
+
+.pillars-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.pillar-card {
+    min-height: 205px;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 1px rgba(0, 0, 0, 0.20);
+
+    padding:
+        24px
+        20px
+        14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.pillar-card h3 {
+    color: #2c5aa2;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   CONTEÚDO DOS CARDS
+========================================= */
+
+.pillar-content {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.pillar-icon {
+    width: 74px;
+    height: 74px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+.pillar-content p {
+    color: #173c8a;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    text-align: justify;
+}
+
+
+/* =========================================
+   LINHAS DOS CARDS
+========================================= */
+
+.pillar-line {
+    width: 100%;
+    height: 4px;
+
+    border-radius: 999px;
+
+    margin-top: 22px;
+}
+
+
+.blue-line {
+    background-color: #0c4bc7;
+}
+
+
+.green-line {
+    background-color: #1db59e;
+}
+
+
+/* =========================================
+   AVISO INFERIOR
+========================================= */
+
+.disclaimer-section {
+    margin-top: 16px;
+}
+
+
+.disclaimer-box {
+    width: 100%;
+
+    min-height: 44px;
+
+    background-color: #dbe8fa;
+
+    border-radius: 10px;
+
+    padding: 10px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+}
+
+
+.disclaimer-left {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.disclaimer-icon {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+.disclaimer-left p {
+    color: #2d4f91;
+
+    font-size: 15px;
+
+    line-height: 1.3;
+}
+
+
+.disclaimer-decoration {
+    width: 120px;
+
+    max-height: 28px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE - NOTEBOOK
+========================================= */
+
+@media (max-width: 1250px) {
+
+    .navbar,
+    .main-content {
+        width: calc(100% - 50px);
+    }
+
+
+    .menu {
+        gap: 35px;
+
+        margin-left: 20px;
+    }
+
+
+    /*
+        A IMAGEM CONTINUA GRANDE,
+        MAS SE ADAPTA AO NOTEBOOK
+    */
+
+    .hero-section {
+        grid-template-columns:
+            1fr
+            520px;
+
+        gap: 20px;
+    }
+
+
+    .hero-image-area {
+        height: 350px;
+    }
+
+
+    .hero-image {
+        max-width: 600px;
+
+        max-height: 390px;
+
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE - TABLET
+========================================= */
+
+@media (max-width: 980px) {
+
+    .menu {
+        display: none;
+    }
+
+
+    .hero-section {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .hero-text {
+        order: 1;
+    }
+
+
+    .hero-image-area {
+        order: 2;
+
+        height: auto;
+
+        margin-top: 20px;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        max-width: 580px;
+
+        max-height: 380px;
+
+        /*
+            RETIRA O SCALE GRANDE
+            PARA NÃO ESTOURAR NO TABLET
+        */
+        transform: scale(1);
+    }
+
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .pillar-card {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE - CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        height: 70px;
+    }
+
+
+    .navbar {
+        width: calc(100% - 24px);
+    }
+
+
+    .main-content {
+        width: calc(100% - 24px);
+
+        padding-top: 22px;
+    }
+
+
+    /* LOGO */
+
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+
+    /* ENTRAR */
+
+    .header-login-btn {
+        height: 38px;
+
+        font-size: 14px;
+
+        padding: 0 10px;
+    }
+
+
+    .header-login-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    /* HERO */
+
+    .hero-text h1 {
+        font-size: 33px;
+    }
+
+
+    .hero-text p {
+        font-size: 17px;
+    }
+
+
+    /* BOTÕES */
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+
+        min-width: 0;
+
+        height: 58px;
+
+        font-size: 17px;
+    }
+
+
+    /* IMAGEM */
+
+    .hero-image-area {
+        width: 100%;
+
+        height: auto;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        max-width: 450px;
+
+        max-height: 320px;
+
+        transform: scale(1);
+    }
+
+
+    /* PILARES */
+
+    .pillars-title-area h2 {
+        font-size: 26px;
+    }
+
+
+    .pillar-card {
+        padding:
+            22px
+            18px
+            14px;
+    }
+
+
+    .pillar-card h3 {
+        font-size: 22px;
+    }
+
+
+    .pillar-content {
+        align-items: flex-start;
+    }
+
+
+    .pillar-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+
+    .pillar-content p {
+        font-size: 15px;
+    }
+
+
+    /* AVISO */
+
+    .disclaimer-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .disclaimer-decoration {
+        align-self: flex-end;
+
+        width: 100px;
+    }
+
+}

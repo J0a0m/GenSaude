@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar | GenSaúde SUS</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         CABEÇALHO
+    =========================== -->
+
+    <header class="header">
+
+        <div class="navbar">
+
+            <!-- LOGO -->
+
+            <a href="#" class="logo">
+
+                <img
+                    src="../imagens/logo_gensaude_sus.png"
+                    alt="Logo GenSaúde"
+                    class="logo-img"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+                <span class="logo-text">
+                    <strong>GenSaúde</strong> SUS
+                </span>
+
+            </a>
+
+
+            <!-- MENU -->
+
+            <nav class="menu">
+
+                <a href="../tela_inicio/inicio.html">
+                    Início
+                </a>
+
+                <a href="#">
+                    Prevenção
+                </a>
+
+                <a href="#">
+                    UBS ou UPA?
+                </a>
+
+                <a href="#">
+                    Unidades
+                </a>
+
+                <a href="#">
+                    Educação
+                </a>
+
+            </nav>
+
+
+            <!-- BOTÃO ENTRAR -->
+
+            <a href="#login" class="header-login-btn">
+
+                <img
+                    src="../imagens/icone_entrar.png"
+                    alt=""
+                    class="header-login-icon"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+                <span>Entrar</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================
+         CONTEÚDO
+    =========================== -->
+
+    <main class="main-content">
+
+        <div class="login-wrapper">
+
+
+            <!-- ==========================
+                 LOGIN
+            =========================== -->
+
+            <section class="login-card" id="login">
+
+                <div class="login-header">
+
+                    <h1>Entrar</h1>
+
+                    <p>
+                        Acesse sua conta para acompanhar sua saúde e prevenção.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL / CPF -->
+
+                    <div class="input-group">
+
+                        <img
+                            src="../imagens/email.png"
+                            alt=""
+                            class="input-email"
+                            onerror="this.style.visibility='hidden'"
+                        >
+
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="E-mail ou CPF"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SENHA -->
+
+                    <div class="input-group">
+
+                        <img
+                            src="../imagens/senha.png"
+                            alt=""
+                            class="input-password"
+                            onerror="this.style.visibility='hidden'"
+                        >
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Senha"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <!-- ÍCONE DO OLHO -->
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                        >
+
+                            <img
+                                src="../imagens/ver_senha.png"
+                                alt="Mostrar senha"
+                                class="password-icon"
+                                onerror="this.style.visibility='hidden'"
+                            >
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- OPÇÕES -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Lembrar de mim
+                            </span>
+
+                        </label>
+
+
+                        <a
+                            href="#"
+                            class="forgot-password"
+                        >
+                            Esqueci minha senha
+                        </a>
+
+                    </div>
+
+
+                    <!-- BOTÃO LOGIN -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Entrar
+                    </button>
+
+
+                    <!-- DIVISOR -->
+
+                    <div class="divider">
+
+                        <span></span>
+
+                        <p>ou</p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- CRIAR CONTA -->
+
+                    <button
+                        type="button"
+                        class="create-account-button"
+                        id="createAccount"
+                    >
+                        Criar conta
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ==========================
+                 IMAGEM PRINCIPAL
+            =========================== -->
+
+            <section class="illustration-area">
+
+                <img
+                    src="../imagens/ilustracao_login.png"
+                    alt="Saúde e prevenção"
+                    class="hero-image"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
