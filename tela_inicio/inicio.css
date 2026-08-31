@@ -17,6 +17,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f7f7f7;
     color: #06195d;
+
+    zoom: 1,15;
+    overflow: hidden;
 }
 
 
@@ -857,16 +860,48 @@ body {
     /* AVISO */
 
     .disclaimer-box {
-        flex-direction: column;
 
-        align-items: flex-start;
-    }
+    width: 100%;
+
+    min-height: 44px;
+
+    background-color: #dbe8fa;
+
+    border-radius: 10px;
+
+    padding: 10px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
 
 
     .disclaimer-decoration {
-        align-self: flex-end;
 
-        width: 100px;
-    }
+    position: absolute;
+
+    right: -20px;
+
+    bottom: -80px;
+
+    width: 320px;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    object-position: right bottom;
+
+    z-index: 1;
+
+}
 
 }

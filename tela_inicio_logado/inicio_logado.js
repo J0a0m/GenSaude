@@ -1,218 +1,408 @@
-// ==========================================
-// ELEMENTOS
-// ==========================================
+// =========================================
+// ELEMENTOS DA PÁGINA
+// =========================================
+
 
 const profileButton =
     document.getElementById("profileButton");
 
-const profileName =
-    document.getElementById("profileName");
 
-const firstName =
-    document.getElementById("firstName");
-
-const assessmentButton =
-    document.getElementById("assessmentButton");
-
-const historyCard =
-    document.getElementById("historyCard");
-
-const ubsCard =
-    document.getElementById("ubsCard");
-
-const unitsCard =
-    document.getElementById("unitsCard");
-
-const educationCard =
-    document.getElementById("educationCard");
-
-const lastAssessmentCard =
-    document.getElementById("lastAssessmentCard");
-
-const referenceUnitCard =
-    document.getElementById("referenceUnitCard");
-
-const nextActionCard =
-    document.getElementById("nextActionCard");
+const evaluationButton =
+    document.getElementById("evaluationButton");
 
 
-// ==========================================
+
+
+// =========================================
 // DADOS DO USUÁRIO
-// ==========================================
+// =========================================
+
 
 /*
-    FUTURAMENTE ESSES DADOS PODERÃO VIR
-    DO BANCO DE DADOS / API.
+    FUTURAMENTE ESSES DADOS VIRÃO
+    DO BANCO DE DADOS ATRAVÉS DA API.
 
-    POR ENQUANTO ESTÁ JOÃO SILVA
-    PARA FICAR IGUAL AO PROTÓTIPO.
+    Exemplo:
+
+    const usuario = await fetch(
+        "/api/usuario"
+    );
+
 */
+
 
 const usuario = {
 
-    nomeCompleto:
-        "João Silva"
+    nome:
+        "João Silva",
+
+    primeiroNome:
+        "João"
 
 };
 
 
-// ==========================================
-// CARREGAR NOME
-// ==========================================
-
-function carregarUsuario() {
-
-    const nomeCompleto =
-        usuario.nomeCompleto;
 
 
-    const primeiroNome =
-        nomeCompleto.split(" ")[0];
 
 
-    profileName.textContent =
-        nomeCompleto;
 
 
-    firstName.textContent =
-        primeiroNome;
+// =========================================
+// CARREGAR DADOS DO USUÁRIO
+// =========================================
+
+
+function carregarUsuario(){
+
+
+    const nomeUsuario =
+        document.querySelector(
+            ".profile-button span"
+        );
+
+
+    const saudacao =
+        document.querySelector(
+            ".welcome h1 span"
+        );
+
+
+
+    if(nomeUsuario){
+
+        nomeUsuario.textContent =
+            usuario.nome;
+
+    }
+
+
+
+    if(saudacao){
+
+        saudacao.textContent =
+            usuario.primeiroNome;
+
+    }
+
+
 
 }
 
 
+
+
+
+
+
+// Executa ao abrir a página
+
 carregarUsuario();
 
 
-// ==========================================
-// PERFIL
-// ==========================================
+
+
+
+
+
+
+
+// =========================================
+// BOTÃO PERFIL
+// =========================================
+
 
 profileButton.addEventListener(
     "click",
-    () => {
+    ()=>{
+
+
+        /*
+            Futuramente:
+            abrir página do perfil
+        */
+
 
         window.location.href =
-            "perfil.html";
+            "../perfil/perfil.html";
+
 
     }
 );
 
 
-// ==========================================
-// INICIAR AVALIAÇÃO
-// ==========================================
 
-assessmentButton.addEventListener(
+
+
+
+
+
+
+// =========================================
+// BOTÃO INICIAR AVALIAÇÃO
+// =========================================
+
+
+evaluationButton.addEventListener(
     "click",
-    () => {
+    ()=>{
+
+
+        /*
+            Futuramente:
+            página onde o usuário
+            responde o questionário
+            preventivo
+        */
+
 
         window.location.href =
-            "avaliacao.html";
+            "../avaliacao/avaliacao.html";
+
 
     }
 );
 
 
-// ==========================================
-// HISTÓRICO FAMILIAR
-// ==========================================
 
-historyCard.addEventListener(
-    "click",
-    () => {
 
-        window.location.href =
-            "historico-familiar.html";
+
+
+
+
+
+// =========================================
+// CARDS DE ACESSO RÁPIDO
+// =========================================
+
+
+
+const quickCards =
+    document.querySelectorAll(
+        ".quick-card"
+    );
+
+
+
+quickCards.forEach(
+    (card,index)=>{
+
+
+        card.addEventListener(
+            "click",
+            ()=>{
+
+
+                switch(index){
+
+
+
+                    // Histórico Familiar
+
+                    case 0:
+
+
+                        window.location.href =
+                            "../historico/historico.html";
+
+
+                    break;
+
+
+
+
+
+
+                    // UBS ou UPA
+
+                    case 1:
+
+
+                        window.location.href =
+                            "../ubs-upa/ubs-upa.html";
+
+
+                    break;
+
+
+
+
+
+
+                    // Unidades Próximas
+
+                    case 2:
+
+
+                        window.location.href =
+                            "../unidades/unidades.html";
+
+
+                    break;
+
+
+
+
+
+
+                    // Educação
+
+                    case 3:
+
+
+                        window.location.href =
+                            "../educacao/educacao.html";
+
+
+                    break;
+
+
+
+                }
+
+
+
+            }
+        );
+
 
     }
 );
 
 
-// ==========================================
-// UBS OU UPA
-// ==========================================
 
-ubsCard.addEventListener(
-    "click",
-    () => {
 
-        window.location.href =
-            "ubs-ou-upa.html";
+
+
+
+
+
+// =========================================
+// CARDS DE ACOMPANHAMENTO
+// =========================================
+
+
+const trackingCards =
+    document.querySelectorAll(
+        ".tracking-card"
+    );
+
+
+
+trackingCards.forEach(
+    (card,index)=>{
+
+
+        card.addEventListener(
+            "click",
+            ()=>{
+
+
+                switch(index){
+
+
+
+                    // Última avaliação
+
+                    case 0:
+
+
+                        window.location.href =
+                            "../avaliacao/resultado.html";
+
+
+                    break;
+
+
+
+
+
+
+                    // UBS referência
+
+                    case 1:
+
+
+                        window.location.href =
+                            "../unidades/detalhes.html";
+
+
+                    break;
+
+
+
+
+
+
+                    // Próxima ação
+
+                    case 2:
+
+
+                        window.location.href =
+                            "../acompanhamento/acompanhamento.html";
+
+
+                    break;
+
+
+
+                }
+
+
+
+            }
+        );
+
 
     }
 );
 
 
-// ==========================================
-// UNIDADES PRÓXIMAS
-// ==========================================
-
-unitsCard.addEventListener(
-    "click",
-    () => {
-
-        window.location.href =
-            "unidades.html";
-
-    }
-);
 
 
-// ==========================================
-// EDUCAÇÃO
-// ==========================================
-
-educationCard.addEventListener(
-    "click",
-    () => {
-
-        window.location.href =
-            "educacao.html";
-
-    }
-);
 
 
-// ==========================================
-// ÚLTIMA AVALIAÇÃO
-// ==========================================
-
-lastAssessmentCard.addEventListener(
-    "click",
-    () => {
-
-        window.location.href =
-            "resultado-avaliacao.html";
-
-    }
-);
 
 
-// ==========================================
-// UBS DE REFERÊNCIA
-// ==========================================
 
-referenceUnitCard.addEventListener(
-    "click",
-    () => {
-
-        window.location.href =
-            "ubs-referencia.html";
-
-    }
-);
+// =========================================
+// FUTURA INTEGRAÇÃO API
+// =========================================
 
 
-// ==========================================
-// PRÓXIMA AÇÃO
-// ==========================================
+/*
 
-nextActionCard.addEventListener(
-    "click",
-    () => {
+Exemplo futuro:
 
-        window.location.href =
-            "acompanhamento.html";
 
-    }
-);
+async function buscarUsuario(){
+
+
+    const resposta =
+        await fetch(
+            "http://localhost:3000/api/usuario"
+        );
+
+
+    const dados =
+        await resposta.json();
+
+
+
+    usuario.nome =
+        dados.nome;
+
+
+    carregarUsuario();
+
+
+}
+
+
+
+buscarUsuario();
+
+
+
+*/

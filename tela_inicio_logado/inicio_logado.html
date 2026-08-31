@@ -2,605 +2,743 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
+    <meta 
+        name="viewport" 
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Início | GenSaúde SUS</title>
+    <title>
+        Início | GenSaúde SUS
+    </title>
 
-    <link
-        rel="stylesheet"
-        href="inicio-logado.css"
+
+    <link 
+        rel="stylesheet" 
+        href="inicio_logado.css"
     >
+
 </head>
+
 
 <body>
 
-    <!-- =========================================
-         HEADER
-    ========================================== -->
 
-    <header class="header">
+<header class="header">
 
-        <div class="navbar">
+    <div class="navbar">
 
-            <!-- LOGO -->
 
-            <a
-                href="inicio-logado.html"
-                class="logo"
+        <!-- LOGO -->
+
+        <a href="../tela_login/login.html" class="logo">
+
+
+            <img 
+                src="../imagens/logo_gensaude_sus.png"
+                alt="Logo GenSaúde SUS"
+                class="logo-img"
             >
 
-                <img
-                    src="COLOQUE_O_LINK_DA_LOGO_AQUI"
-                    alt="Logo GenSaúde"
-                    class="logo-img"
-                    onerror="this.style.visibility='hidden'"
-                >
 
-                <span class="logo-text">
+            <span class="logo-text">
 
-                    <strong>
-                        GenSaúde
-                    </strong>
+                <strong>
+                    GenSaúde
+                </strong>
 
-                    SUS
+                SUS
 
-                </span>
+            </span>
 
+
+        </a>
+
+
+
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+
+            <a 
+                href="../tela_inicio_logado/inicio_logado.html" 
+                class="active"
+            >
+                Início
             </a>
 
 
-            <!-- MENU -->
-
-            <nav class="menu">
-
-                <a
-                    href="inicio-logado.html"
-                    class="active"
-                >
-                    Início
-                </a>
-
-                <a href="prevencao.html">
-                    Prevenção
-                </a>
-
-                <a href="ubs-ou-upa.html">
-                    UBS ou UPA?
-                </a>
-
-                <a href="unidades.html">
-                    Unidades
-                </a>
-
-                <a href="educacao.html">
-                    Educação
-                </a>
-
-            </nav>
+            <a href="#">
+                Prevenção
+            </a>
 
 
-            <!-- PERFIL -->
+            <a href="#">
+                UBS ou UPA?
+            </a>
 
-            <button
-                type="button"
-                class="profile-button"
-                id="profileButton"
+
+            <a href="#">
+                Unidades
+            </a>
+
+
+            <a href="#">
+                Educação
+            </a>
+
+
+
+        </nav>
+
+
+
+
+
+        <!-- PERFIL -->
+
+        <button 
+            class="profile-button"
+            id="profileButton"
+        >
+
+
+            <img 
+                src="../imagens/icone_entrar.png"
+                alt="Usuário"
+                class="profile-icon"
             >
 
-                <img
-                    src="COLOQUE_O_LINK_DO_ICONE_USUARIO_AQUI"
-                    alt=""
-                    class="profile-icon"
-                    onerror="this.style.visibility='hidden'"
-                >
 
-                <span id="profileName">
-                    João Silva
-                </span>
+            <span>
+                João Silva
+            </span>
 
-            </button>
 
-        </div>
+        </button>
 
-    </header>
 
 
+    </div>
 
-    <!-- =========================================
-         CONTEÚDO PRINCIPAL
-    ========================================== -->
 
-    <main class="main-content">
+</header>
 
 
-        <!-- =========================================
-             SAUDAÇÃO
-        ========================================== -->
 
-        <section class="welcome-section">
 
-            <h1>
-                Olá,
-                <span id="firstName">
-                    João
-                </span>
 
-                <span class="wave">
-                    👋
-                </span>
-            </h1>
+<main class="main-content">
 
-            <p>
-                Cuide hoje para prevenir problemas amanhã.
-            </p>
 
-        </section>
 
 
 
-        <!-- =========================================
-             AVALIAÇÃO PREVENTIVA
-        ========================================== -->
+<!-- SAUDAÇÃO -->
 
-        <section class="preventive-banner">
+<section class="welcome">
 
-            <div class="preventive-content">
 
-                <h2>
-                    Avaliação Preventiva
-                </h2>
+    <h1>
 
-                <p>
-                    Descubra seus fatores de risco
-                    <br>
-                    com base no histórico familiar.
-                </p>
+        Olá,
+        <span>
+            João
+        </span>
 
 
-                <button
-                    type="button"
-                    class="assessment-button"
-                    id="assessmentButton"
-                >
+        <span class="wave">
+            👋
+        </span>
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_AVALIACAO_AQUI"
-                        alt=""
-                        class="assessment-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                    <span>
-                        Iniciar avaliação
-                    </span>
+    </h1>
 
-                </button>
 
-            </div>
 
+    <p>
+        Cuide hoje para prevenir problemas amanhã.
+    </p>
 
-            <!-- ILUSTRAÇÃO -->
 
-            <div class="preventive-image-area">
 
-                <img
-                    src="COLOQUE_O_LINK_DA_ILUSTRACAO_PRINCIPAL_AQUI"
-                    alt="Avaliação preventiva"
-                    class="preventive-image"
-                    onerror="this.style.visibility='hidden'"
-                >
+</section>
 
-            </div>
 
-        </section>
 
 
 
-        <!-- =========================================
-             ACESSO RÁPIDO
-        ========================================== -->
 
-        <section class="quick-access-section">
 
-            <h2 class="section-title">
-                Acesso rápido
-            </h2>
+<!-- AVALIAÇÃO PREVENTIVA -->
 
 
-            <div class="quick-access-grid">
+<section class="evaluation-banner">
 
 
-                <!-- =================================
-                     HISTÓRICO
-                ================================== -->
 
-                <button
-                    type="button"
-                    class="quick-card"
-                    id="historyCard"
-                >
+    <div class="evaluation-text">
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_HISTORICO_AQUI"
-                        alt=""
-                        class="quick-card-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
+        <h2>
+            Avaliação Preventiva
+        </h2>
 
-                    <div class="quick-card-content">
 
-                        <h3>
-                            Meu Histórico
-                            <br>
-                            Familiar
-                        </h3>
 
-                        <p>
-                            Veja e atualize seu
-                            <br>
-                            histórico familiar.
-                        </p>
+        <p>
 
-                    </div>
+            Descubra seus fatores de risco
+            <br>
+            com base no histórico familiar.
 
+        </p>
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_HISTORICO_AQUI"
-                        alt=""
-                        class="arrow-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                </button>
 
+        <button 
+            class="primary-button"
+            id="evaluationButton"
+        >
 
 
-                <!-- =================================
-                     UBS OU UPA
-                ================================== -->
+            <img 
+                src="../imagens/planilha.png"
+                alt=""
+                class="button-icon"
+            >
 
-                <button
-                    type="button"
-                    class="quick-card"
-                    id="ubsCard"
-                >
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_UBS_UPA_AQUI"
-                        alt=""
-                        class="quick-card-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
+            Iniciar avaliação
 
 
-                    <div class="quick-card-content">
+        </button>
 
-                        <h3>
-                            UBS ou UPA?
-                        </h3>
 
-                        <p>
-                            Saiba onde
-                            <br>
-                            procurar conforme
-                            <br>
-                            seu caso.
-                        </p>
 
-                    </div>
+    </div>
 
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_UBS_AQUI"
-                        alt=""
-                        class="arrow-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                </button>
 
 
+    <div class="evaluation-image">
 
-                <!-- =================================
-                     UNIDADES
-                ================================== -->
 
-                <button
-                    type="button"
-                    class="quick-card"
-                    id="unitsCard"
-                >
+        <img 
+            src="../imagens/ilustracao_inicio_logado.png"
+            alt="Avaliação preventiva"
+            class="main-image"
+        >
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_UNIDADES_AQUI"
-                        alt=""
-                        class="quick-card-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
+    </div>
 
-                    <div class="quick-card-content">
 
-                        <h3>
-                            Unidades
-                            <br>
-                            Próximas
-                        </h3>
 
-                        <p>
-                            Encontre unidades
-                            <br>
-                            perto de você.
-                        </p>
 
-                    </div>
+</section>
 
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_UNIDADES_AQUI"
-                        alt=""
-                        class="arrow-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                </button>
 
 
 
-                <!-- =================================
-                     EDUCAÇÃO
-                ================================== -->
 
-                <button
-                    type="button"
-                    class="quick-card"
-                    id="educationCard"
-                >
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_EDUCACAO_AQUI"
-                        alt=""
-                        class="quick-card-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
+<!-- ACESSO RÁPIDO -->
 
-                    <div class="quick-card-content">
 
-                        <h3>
-                            Educação em
-                            <br>
-                            Saúde
-                        </h3>
+<section class="quick-section">
 
-                        <p>
-                            Conteúdo para
-                            <br>
-                            cuidar melhor da
-                            <br>
-                            saúde.
-                        </p>
 
-                    </div>
+<h2>
+    Acesso rápido
+</h2>
 
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_EDUCACAO_AQUI"
-                        alt=""
-                        class="arrow-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                </button>
+<div class="quick-grid">
 
-            </div>
 
-        </section>
 
 
 
-        <!-- =========================================
-             ACOMPANHAMENTO
-        ========================================== -->
+<!-- HISTÓRICO -->
 
-        <section class="tracking-section">
 
-            <h2 class="section-title">
-                Seu acompanhamento
-            </h2>
+<button class="quick-card">
 
 
-            <div class="tracking-grid">
+    <img 
+        src="../imagens/historico_familiar.png"
+        alt=""
+        class="card-icon"
+    >
 
 
-                <!-- =================================
-                     ÚLTIMA AVALIAÇÃO
-                ================================== -->
+    <div>
 
-                <button
-                    type="button"
-                    class="tracking-card"
-                    id="lastAssessmentCard"
-                >
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_ATENCAO_AQUI"
-                        alt=""
-                        class="tracking-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
+        <h3>
+            Meu Histórico
+            <br>
+            Familiar
+        </h3>
 
 
-                    <div class="tracking-content">
 
-                        <span class="tracking-label">
-                            Última avaliação
-                        </span>
+        <p>
+            Veja e atualize seu
+            <br>
+            histórico familiar.
+        </p>
 
-                        <strong class="tracking-danger">
-                            Atenção Recomendada
-                        </strong>
 
-                        <span class="tracking-detail">
-                            Realizada em 15/04/2026
-                        </span>
 
-                    </div>
+    </div>
 
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_AVALIACAO_AQUI"
-                        alt=""
-                        class="tracking-arrow"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                </button>
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
 
 
+</button>
 
-                <!-- =================================
-                     UBS DE REFERÊNCIA
-                ================================== -->
 
-                <button
-                    type="button"
-                    class="tracking-card"
-                    id="referenceUnitCard"
-                >
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_UBS_REFERENCIA_AQUI"
-                        alt=""
-                        class="tracking-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
 
-                    <div class="tracking-content">
 
-                        <span class="tracking-label">
-                            UBS de referência
-                        </span>
 
-                        <strong class="tracking-primary">
-                            UBS Jardim das Flores
-                        </strong>
+<!-- UBS OU UPA -->
 
-                        <span class="tracking-detail">
-                            Rua das Flores, 320 - Jardim das Flores
-                        </span>
 
-                    </div>
+<button class="quick-card">
 
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_UBS_REFERENCIA_AQUI"
-                        alt=""
-                        class="tracking-arrow"
-                        onerror="this.style.visibility='hidden'"
-                    >
+    <img 
+        src="../imagens/ubs_ou_upa.png"
+        alt=""
+        class="card-icon"
+    >
 
-                </button>
 
+    <div>
 
 
-                <!-- =================================
-                     PRÓXIMA AÇÃO
-                ================================== -->
+        <h3>
+            UBS ou UPA?
+        </h3>
 
-                <button
-                    type="button"
-                    class="tracking-card"
-                    id="nextActionCard"
-                >
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_ACOMPANHAMENTO_AQUI"
-                        alt=""
-                        class="tracking-image"
-                        onerror="this.style.visibility='hidden'"
-                    >
+        <p>
+            Saiba onde
+            <br>
+            procurar conforme
+            <br>
+            seu caso.
+        </p>
 
 
-                    <div class="tracking-content">
+    </div>
 
-                        <span class="tracking-label">
-                            Próxima ação
-                        </span>
 
-                        <strong class="tracking-success">
-                            Acompanhamento
-                        </strong>
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
 
-                        <span class="tracking-detail">
-                            Recomendado em 15/07/2026
-                        </span>
 
-                    </div>
 
+</button>
 
-                    <img
-                        src="COLOQUE_O_LINK_DA_SETA_ACOMPANHAMENTO_AQUI"
-                        alt=""
-                        class="tracking-arrow"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                </button>
 
-            </div>
 
-        </section>
 
 
 
-        <!-- =========================================
-             AVISO
-        ========================================== -->
 
-        <section class="disclaimer-section">
+<!-- UNIDADES -->
 
-            <div class="disclaimer-box">
 
-                <div class="disclaimer-left">
+<button class="quick-card">
 
-                    <img
-                        src="COLOQUE_O_LINK_DO_ICONE_AVISO_AQUI"
-                        alt=""
-                        class="disclaimer-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
 
-                    <p>
-                        O GenSaúde SUS orienta, mas não substitui avaliação profissional.
-                    </p>
+    <img 
+        src="../imagens/unidades.png"
+        alt=""
+        class="card-icon"
+    >
 
-                </div>
 
+    <div>
 
-                <img
-                    src="COLOQUE_O_LINK_DO_ELEMENTO_DECORATIVO_AQUI"
-                    alt=""
-                    class="disclaimer-decoration"
-                    onerror="this.style.visibility='hidden'"
-                >
 
-            </div>
+        <h3>
+            Unidades
+            <br>
+            Próximas
+        </h3>
 
-        </section>
 
-    </main>
 
+        <p>
+            Encontre unidades
+            <br>
+            perto de você.
+        </p>
 
-    <script src="inicio-logado.js"></script>
+
+
+    </div>
+
+
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
+
+
+</button>
+
+
+
+
+
+
+
+
+<!-- EDUCAÇÃO -->
+
+
+<button class="quick-card">
+
+
+    <img 
+        src="../imagens/educacao_em_saude.png"
+        alt=""
+        class="card-icon"
+    >
+
+
+
+    <div>
+
+
+        <h3>
+            Educação em
+            <br>
+            Saúde
+        </h3>
+
+
+        <p>
+            Conteúdo para
+            <br>
+            cuidar melhor da
+            <br>
+            saúde.
+        </p>
+
+
+    </div>
+
+
+
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ACOMPANHAMENTO -->
+
+
+<section class="tracking-section">
+
+
+<h2>
+    Seu acompanhamento
+</h2>
+
+
+
+
+<div class="tracking-grid">
+
+
+
+
+
+
+<!-- ATENÇÃO -->
+
+<div class="tracking-card">
+
+
+    <img 
+        src="../imagens/atencao_recomendada.png"
+        alt=""
+        class="tracking-icon"
+    >
+
+
+    <div>
+
+
+        <span>
+            Última avaliação
+        </span>
+
+
+        <h3 class="danger">
+
+            Atenção Recomendada
+
+        </h3>
+
+
+        <p>
+            Realizada em 15/04/2026
+        </p>
+
+
+
+    </div>
+
+
+
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- UBS -->
+
+<div class="tracking-card">
+
+
+    <img 
+        src="../imagens/ubs.png"
+        alt=""
+        class="tracking-icon"
+    >
+
+
+
+    <div>
+
+
+        <span>
+            UBS de referência
+        </span>
+
+
+
+        <h3 class="blue">
+
+            UBS Jardim das Flores
+
+        </h3>
+
+
+        <p>
+            Rua das Flores, 320 -
+            Jardim das Flores
+        </p>
+
+
+
+    </div>
+
+
+
+
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ACOMPANHAMENTO -->
+
+
+<div class="tracking-card">
+
+
+    <img 
+        src="../imagens/calendario_inicio.png"
+        alt=""
+        class="tracking-icon"
+    >
+
+
+
+    <div>
+
+
+        <span>
+            Próxima ação
+        </span>
+
+
+
+        <h3 class="green">
+
+            Acompanhamento
+
+        </h3>
+
+
+
+        <p>
+            Recomendado em 15/07/2026
+        </p>
+
+
+
+    </div>
+
+
+
+    <img 
+        src="../imagens/seta.png"
+        alt=""
+        class="arrow"
+    >
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- AVISO -->
+
+<section class="warning">
+
+
+<div>
+
+
+<img 
+    src="../imagens/disclaimer.png"
+    alt=""
+    class="warning-icon"
+>
+
+
+<p>
+
+O GenSaúde SUS orienta, mas não substitui avaliação profissional.
+
+</p>
+
+
+</div>
+
+
+
+
+<img 
+    src="../imagens/efeito_disclaimer.png"
+    alt=""
+    class="warning-decoration"
+>
+
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+
+
+<script src="inicio-logado.js"></script>
+
 
 </body>
+
 
 </html>

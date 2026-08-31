@@ -20,6 +20,10 @@ body {
     background-color: #f7f7f7;
 
     color: #06195d;
+
+    zoom: 1,15;
+
+    overflow: hidden;
 }
 
 
