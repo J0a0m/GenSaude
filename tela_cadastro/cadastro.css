@@ -25,6 +25,10 @@ body {
     background-color: #f7f7f7;
 
     color: #06195d;
+
+    zoom: 1.1;
+
+    overflow: hidden;
 }
 
 
@@ -208,6 +212,8 @@ body {
         563px;
 
     column-gap: 65px;
+
+    margin-top: -100px;
 
     align-items: center;
 

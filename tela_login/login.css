@@ -20,6 +20,10 @@ body {
     background-color: #f7f7f7;
 
     color: #06195d;
+
+    zoom: 1.1;
+
+    overflow: hidden;
 }
 
 
@@ -140,7 +144,7 @@ body {
 .header-login-btn {
     height: 40px;
 
-    padding: 0 12px;
+    padding: 0 24px;
 
     background-color: #0b4cc7;
 
@@ -198,7 +202,7 @@ body {
     width: 100%;
     max-width: 1155px;
 
-    margin-top: 32px;
+    margin-top: -80px;
 
     display: grid;
 
