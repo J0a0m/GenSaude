@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta | GenSaúde SUS</title>
+
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="../inicio/inicio.html" class="logo">
+                <img
+                    src="../../assets/imagens/logo.png"
+                    alt="Logo GenSaúde SUS"
+                    class="logo-img"
+                >
+                <span class="logo-text">Gen<strong>Saúde</strong> SUS</span>
+            </a>
+
+            <div class="menu">
+                <a href="../inicio/inicio.html" class="active">Início</a>
+                <a href="../avaliacao/avaliacao.html">Prevenção</a>
+                <a href="../ubs-upa/ubs-upa.html">UBS ou UPA?</a>
+                <a href="../unidades/unidades.html">Unidades</a>
+                <a href="../educacao/educacao.html">Educação</a>
+            </div>
+
+            <a href="../login/login.html" class="login-button">
+                <img
+                    src="../../assets/icones/user.png"
+                    alt="Usuário"
+                    class="header-user-icon"
+                >
+                Entrar
+            </a>
+        </nav>
+    </header>
+
+    <main class="cadastro-page">
+
+        <section class="cadastro-illustration">
+            <img
+                src="../../assets/imagens/cadastro-ilustracao.png"
+                alt="Ilustração de cadastro"
+                onerror="this.style.visibility='hidden'"
+            >
+        </section>
+
+        <section class="cadastro-card card">
+
+            <h1 class="cadastro-title">Criar sua conta</h1>
+
+            <p class="cadastro-description">
+                Preencha seus dados para começar
+            </p>
+
+            <form id="form-cadastro">
+
+                <div class="cadastro-grid">
+
+                    <div class="input-wrapper full-width">
+                        <img
+                            src="../../assets/icones/user2.png"
+                            alt="Nome"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="text"
+                            id="nome"
+                            class="input-control"
+                            placeholder="Nome Completo"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/cpf.png"
+                            alt="CPF"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="text"
+                            id="cpf"
+                            class="input-control"
+                            placeholder="CPF"
+                            maxlength="14"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/calendario.png"
+                            alt="Data de nascimento"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="date"
+                            id="dataNascimento"
+                            class="input-control date-input"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/email.png"
+                            alt="E-mail"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="email"
+                            id="email"
+                            class="input-control"
+                            placeholder="E-mail"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/telefone.png"
+                            alt="Telefone ou celular"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="text"
+                            id="telefone"
+                            class="input-control"
+                            placeholder="Telefone ou celular"
+                            maxlength="15"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/cep.png"
+                            alt="CEP"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="text"
+                            id="cep"
+                            class="input-control"
+                            placeholder="CEP"
+                            maxlength="9"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/cidade.png"
+                            alt="Cidade"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="text"
+                            id="cidade"
+                            class="input-control"
+                            placeholder="Cidade"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-wrapper full-width select-wrapper">
+                        <img
+                            src="../../assets/icones/estado.png"
+                            alt="Estado"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <select id="estado" class="input-control select-control" required>
+                            <option value="">Estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+
+                        <span class="select-arrow">⌄</span>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/password.png"
+                            alt="Senha"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="password"
+                            id="senha"
+                            class="input-control"
+                            placeholder="Senha"
+                            required
+                        >
+                        <img
+                            id="olhoSenha"
+                            src="../../assets/icones/olho-fechado.png"
+                            alt="Mostrar senha"
+                            class="input-action"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <img
+                            src="../../assets/icones/password.png"
+                            alt="Confirmar senha"
+                            class="input-icon"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            class="input-control"
+                            placeholder="Confirmar senha"
+                            required
+                        >
+                        <img
+                            id="olhoConfirmarSenha"
+                            src="../../assets/icones/olho-fechado.png"
+                            alt="Mostrar senha"
+                            class="input-action"
+                            onerror="this.style.visibility='hidden'"
+                        >
+                    </div>
+
+                </div>
+
+                <label class="terms-line">
+                    <input type="checkbox" id="aceiteTermos">
+                    <span>
+                        Li e concordo com os
+                        <a href="#">Termos de Uso</a>
+                        e
+                        <a href="#">Política de Privacidade</a>
+                    </span>
+                </label>
+
+                <button type="submit" class="btn-primary cadastro-submit">
+                    Cadastrar
+                </button>
+
+            </form>
+
+            <p class="cadastro-login-link">
+                Já tem uma conta?
+                <a href="../login/login.html">Faça login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../../js/global.js"></script>
+    <script src="cadastro.js"></script>
+
+</body>
+</html>

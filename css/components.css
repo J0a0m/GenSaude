@@ -1,0 +1,265 @@
+/* =========================================
+   COMPONENTES GENSAÚDE SUS
+========================================= */
+
+
+
+/* =========================================
+   CARD
+========================================= */
+
+
+.card{
+
+    background:white;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,0.12);
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+
+.input-wrapper{
+
+
+    width:100%;
+
+
+    height:42px;
+
+
+    border:1px solid #c8c8c8;
+
+
+    border-radius:6px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    padding:0 12px;
+
+
+    gap:10px;
+
+
+}
+
+
+
+
+
+.input-icon{
+
+
+    width:20px;
+
+
+    height:20px;
+
+
+    object-fit:contain;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+.input-control{
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    border:none;
+
+
+    outline:none;
+
+
+    font-size:15px;
+
+
+    color:#071b64;
+
+
+    background:transparent;
+
+
+}
+
+
+
+
+.input-control::placeholder{
+
+
+    color:#999;
+
+
+}
+
+
+
+
+
+
+
+.input-action{
+
+
+    width:22px;
+
+
+    height:22px;
+
+
+    object-fit:contain;
+
+
+    cursor:pointer;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+
+.btn-primary{
+
+
+    width:100%;
+
+
+    height:48px;
+
+
+    background:#0752d5;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    border-radius:8px;
+
+
+    font-weight:bold;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+.btn-primary:hover{
+
+
+    background:#043ca4;
+
+
+}
+
+
+
+
+
+
+.btn-secondary{
+
+
+    width:100%;
+
+
+    height:48px;
+
+
+    background:white;
+
+
+    color:#0752d5;
+
+
+    border:2px solid #0752d5;
+
+
+    border-radius:8px;
+
+
+    font-weight:bold;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+
+.checkbox-line{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:6px;
+
+
+    font-size:14px;
+
+
+    color:#071b64;
+
+
+}

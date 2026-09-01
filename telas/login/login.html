@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar | GenSaúde SUS</title>
+
+
+    <!-- CSS GLOBAL -->
+
+    <link rel="stylesheet" href="../../css/global.css">
+
+
+    <!-- HEADER -->
+
+    <link rel="stylesheet" href="../../css/header.css">
+
+
+    <!-- COMPONENTES -->
+
+    <link rel="stylesheet" href="../../css/components.css">
+
+
+    <!-- LOGIN -->
+
+    <link rel="stylesheet" href="login.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<header class="header">
+
+
+    <nav class="navbar">
+
+
+        <a href="../inicio/inicio.html" class="logo">
+
+
+            <img 
+            src="../../assets/imagens/logo.png"
+            alt="Logo GenSaúde SUS"
+            class="logo-img">
+
+
+            <span class="logo-text">
+
+                Gen<strong>Saúde</strong> SUS
+
+            </span>
+
+
+        </a>
+
+
+
+
+
+        <div class="menu">
+
+
+            <a href="../inicio/inicio.html">
+                Início
+            </a>
+
+
+
+            <a href="../avaliacao/avaliacao.html">
+                Prevenção
+            </a>
+
+
+
+            <a href="../ubs-upa/ubs-upa.html">
+                UBS ou UPA?
+            </a>
+
+
+
+            <a href="../unidades/unidades.html">
+                Unidades
+            </a>
+
+
+
+            <a href="../educacao/educacao.html">
+                Educação
+            </a>
+
+
+        </div>
+
+
+
+
+
+
+        <a href="login.html" class="login-button">
+
+
+            <img 
+            src="../../assets/icones/user.png"
+            alt="Usuário"
+            class="header-user-icon">
+
+
+            Entrar
+
+
+        </a>
+
+
+
+
+    </nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+<main class="login-page">
+
+
+
+
+
+
+<section class="login-card card">
+
+
+
+
+
+
+<h1 class="login-title">
+
+    Entrar
+
+</h1>
+
+
+
+
+
+
+<p class="login-description">
+
+    Acesse sua conta para acompanhar sua saúde e prevenção.
+
+</p>
+
+
+
+
+
+
+
+
+<form id="form-login">
+
+
+
+
+
+
+<div class="login-fields">
+
+
+
+
+
+
+<div class="input-wrapper">
+
+
+<img 
+src="../../assets/icones/email.png"
+alt="E-mail"
+class="input-icon">
+
+
+
+<input 
+id="email"
+type="text"
+class="input-control"
+placeholder="E-mail ou CPF"
+required>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="input-wrapper">
+
+
+
+<img 
+src="../../assets/icones/password.png"
+alt="Senha"
+class="input-icon">
+
+
+
+
+
+
+<input 
+id="senha"
+type="password"
+class="input-control"
+placeholder="Senha"
+required>
+
+
+
+
+
+<img
+
+id="olho"
+
+src="../../assets/icones/olho-fechado.png"
+
+alt="Mostrar senha"
+
+class="input-action"
+
+>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="login-options">
+
+
+
+<label class="checkbox-line">
+
+
+<input type="checkbox">
+
+
+<span>
+
+Lembrar de mim
+
+</span>
+
+
+</label>
+
+
+
+
+
+
+
+<a href="#" class="forgot-password">
+
+Esqueci minha senha
+
+</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<button 
+type="submit"
+class="btn-primary">
+
+
+Entrar
+
+
+</button>
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+<div class="login-divider">
+
+
+<span></span>
+
+
+<p>
+
+ou
+
+</p>
+
+
+<span></span>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<button 
+
+class="btn-secondary"
+
+onclick="irPara('../cadastro/cadastro.html')">
+
+
+Criar conta
+
+
+</button>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="login-illustration">
+
+
+
+<img
+
+src="../../assets/imagens/login-ilustracao.png"
+
+alt="Ilustração de login"
+
+>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<script src="../../js/global.js"></script>
+
+<script src="login.js"></script>
+
+
+</body>
+
+
+</html>
