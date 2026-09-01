@@ -268,3 +268,32 @@
     }
 
 }
+
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-button {
+    height: 40px;
+    padding: 0 14px;
+
+    border: 1px solid #d9dfe9;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #061858;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #f4f7fb;
+}

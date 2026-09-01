@@ -1,6 +1,11 @@
-// ================================
+// ==========================================
+// LOGIN.JS - GENSAÚDE
+// ==========================================
+
+
+// ==========================================
 // ELEMENTOS
-// ================================
+// ==========================================
 
 const loginForm =
     document.getElementById("loginForm");
@@ -24,234 +29,292 @@ const forgotPassword =
     document.querySelector(".forgot-password");
 
 
-// ================================
+// ==========================================
 // MOSTRAR / ESCONDER SENHA
-// ================================
+// ==========================================
 
-passwordToggle.addEventListener("click", () => {
+if (passwordToggle && passwordInput) {
 
-    if (passwordInput.type === "password") {
+    passwordToggle.addEventListener(
+        "click",
+        () => {
 
-        passwordInput.type = "text";
+            if (
+                passwordInput.type ===
+                "password"
+            ) {
 
-    } else {
+                passwordInput.type =
+                    "text";
 
-        passwordInput.type = "password";
+            } else {
 
-    }
+                passwordInput.type =
+                    "password";
 
-});
+            }
+
+        }
+    );
+
+}
 
 
-// ================================
+// ==========================================
 // LOGIN
-// ================================
+// ==========================================
 
-loginForm.addEventListener("submit", (event) => {
+if (loginForm) {
 
-    event.preventDefault();
+    loginForm.addEventListener(
+        "submit",
+        (event) => {
 
-
-    const usuario =
-        emailInput.value.trim();
-
-    const senha =
-        passwordInput.value.trim();
+            event.preventDefault();
 
 
-    removerMensagem();
+            const usuario =
+                emailInput.value.trim();
+
+            const senha =
+                passwordInput.value;
 
 
-    // EMAIL / CPF VAZIO
-
-    if (usuario === "") {
-
-        mostrarMensagem(
-            "Digite seu e-mail ou CPF.",
-            "error"
-        );
-
-        emailInput.focus();
-
-        return;
-    }
+            removerMensagem();
 
 
-    // SENHA VAZIA
+            // ==================================
+            // EMAIL / CPF VAZIO
+            // ==================================
 
-    if (senha === "") {
+            if (usuario === "") {
 
-        mostrarMensagem(
-            "Digite sua senha.",
-            "error"
-        );
+                mostrarMensagem(
+                    "Digite seu e-mail ou CPF.",
+                    "error"
+                );
 
-        passwordInput.focus();
+                emailInput.focus();
 
-        return;
-    }
-
-
-    // SENHA CURTA
-
-    if (senha.length < 6) {
-
-        mostrarMensagem(
-            "A senha deve possuir pelo menos 6 caracteres.",
-            "error"
-        );
-
-        passwordInput.focus();
-
-        return;
-    }
+                return;
+            }
 
 
-    // ================================
-    // LEMBRAR USUÁRIO
-    // ================================
+            // ==================================
+            // SENHA VAZIA
+            // ==================================
 
-    if (rememberCheckbox.checked) {
+            if (senha.trim() === "") {
 
-        localStorage.setItem(
-            "gensaude_usuario",
-            usuario
-        );
+                mostrarMensagem(
+                    "Digite sua senha.",
+                    "error"
+                );
 
-    } else {
+                passwordInput.focus();
 
-        localStorage.removeItem(
-            "gensaude_usuario"
-        );
-
-    }
+                return;
+            }
 
 
-    // ================================
-    // FUTURAMENTE:
-    // CONECTAR COM O BACK-END
-    // ================================
+            // ==================================
+            // SENHA CURTA
+            // ==================================
 
-    /*
-    fetch("http://localhost:3000/api/login", {
+            if (senha.length < 6) {
 
-        method: "POST",
+                mostrarMensagem(
+                    "A senha deve possuir pelo menos 6 caracteres.",
+                    "error"
+                );
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+                passwordInput.focus();
 
-        body: JSON.stringify({
+                return;
+            }
 
-            usuario: usuario,
-            senha: senha
 
-        })
+            // ==================================
+            // VERIFICAR AUTH.JS
+            // ==================================
 
-    })
+            if (
+                typeof fazerLogin !==
+                "function"
+            ) {
 
-    .then(response => response.json())
+                console.error(
+                    "auth.js não foi carregado corretamente."
+                );
 
-    .then(data => {
+                mostrarMensagem(
+                    "Erro interno no sistema de login.",
+                    "error"
+                );
 
-        if (data.sucesso) {
+                return;
+            }
 
-            window.location.href =
-                "inicio.html";
 
-        } else {
+            // ==================================
+            // REALIZAR LOGIN LOCAL
+            // ==================================
+
+            const resultado =
+                fazerLogin(
+                    usuario,
+                    senha,
+                    rememberCheckbox.checked
+                );
+
+
+            // ==================================
+            // LOGIN INVÁLIDO
+            // ==================================
+
+            if (!resultado.sucesso) {
+
+                mostrarMensagem(
+                    resultado.mensagem,
+                    "error"
+                );
+
+                return;
+            }
+
+
+            // ==================================
+            // LOGIN REALIZADO
+            // ==================================
 
             mostrarMensagem(
-                data.mensagem,
-                "error"
+                "Login realizado com sucesso!",
+                "success"
+            );
+
+
+            // ==================================
+            // REDIRECIONAR
+            // ==================================
+
+            setTimeout(
+                () => {
+
+                    window.location.href =
+                        "../tela_inicio_logado/inicio_logado.html";
+
+                },
+                600
             );
 
         }
-
-    })
-
-    .catch(error => {
-
-        console.error(error);
-
-        mostrarMensagem(
-            "Erro ao conectar com o servidor.",
-            "error"
-        );
-
-    });
-    */
-
-
-    mostrarMensagem(
-        "Dados preenchidos corretamente.",
-        "success"
     );
 
-});
+}
 
 
-// ================================
-// CARREGAR USUÁRIO SALVO
-// ================================
+// ==========================================
+// CARREGAR PÁGINA
+// ==========================================
 
 window.addEventListener(
     "DOMContentLoaded",
     () => {
 
+
+        // ======================================
+        // USUÁRIO JÁ LOGADO
+        // ======================================
+
+        if (
+            typeof estaLogado ===
+            "function"
+        ) {
+
+            if (estaLogado()) {
+
+                window.location.href =
+                    "../tela_inicio_logado/inicio_logado.html";
+
+                return;
+            }
+
+        }
+
+
+        // ======================================
+        // CARREGAR USUÁRIO LEMBRADO
+        // ======================================
+
         const usuarioSalvo =
             localStorage.getItem(
-                "gensaude_usuario"
+                "gensaude_usuario_lembrado"
             );
 
 
-        if (usuarioSalvo) {
+        if (
+            usuarioSalvo &&
+            emailInput &&
+            rememberCheckbox
+        ) {
 
             emailInput.value =
                 usuarioSalvo;
 
             rememberCheckbox.checked =
                 true;
+
         }
 
     }
 );
 
 
-// ================================
+// ==========================================
 // CRIAR CONTA
-// ================================
+// ==========================================
 
-createAccountButton.addEventListener(
-    "click",
-    () => {
-        window.location.href = "../tela_cadastro/cadastro.html";
-    }
-);
+if (createAccountButton) {
+
+    createAccountButton.addEventListener(
+        "click",
+        () => {
+
+            window.location.href =
+                "../tela_cadastro/cadastro.html";
+
+        }
+    );
+
+}
 
 
-// ================================
+// ==========================================
 // ESQUECI A SENHA
-// ================================
+// ==========================================
 
-forgotPassword.addEventListener(
-    "click",
-    (event) => {
+if (forgotPassword) {
 
-        event.preventDefault();
+    forgotPassword.addEventListener(
+        "click",
+        (event) => {
 
-
-        alert(
-            "A recuperação de senha será implementada posteriormente."
-        );
-
-    }
-);
+            event.preventDefault();
 
 
-// ================================
+            alert(
+                "A recuperação de senha será implementada posteriormente."
+            );
+
+        }
+    );
+
+}
+
+
+// ==========================================
 // MOSTRAR MENSAGEM
-// ================================
+// ==========================================
 
 function mostrarMensagem(
     texto,
@@ -282,9 +345,9 @@ function mostrarMensagem(
 }
 
 
-// ================================
+// ==========================================
 // REMOVER MENSAGEM
-// ================================
+// ==========================================
 
 function removerMensagem() {
 

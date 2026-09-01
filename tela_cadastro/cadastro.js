@@ -651,10 +651,35 @@ cadastroForm.addEventListener(
 
         // TEMPORÁRIO
 
-        mostrarMensagem(
-            "Dados preenchidos corretamente.",
-            "success"
-        );
+        const resultado =
+    cadastrarUsuario(
+        dadosCadastro
+    );
+
+
+if (!resultado.sucesso) {
+
+    mostrarMensagem(
+        resultado.mensagem,
+        "error"
+    );
+
+    return;
+}
+
+
+mostrarMensagem(
+    "Conta criada com sucesso!",
+    "success"
+);
+
+
+setTimeout(() => {
+
+    window.location.href =
+        "../tela_login/login.html";
+
+}, 1000);
 
     }
 );
