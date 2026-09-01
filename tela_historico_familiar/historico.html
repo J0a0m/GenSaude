@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Histórico Familiar | GenSaúde SUS
+    </title>
+
+
+    <!-- =========================================
+         CSS DA TELA
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="historico.css"
+    >
+
+
+    <!-- =========================================
+         COMPONENTES GLOBAIS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../componentes/disclaimer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <div
+        id="global-header"
+        data-active="prevencao"
+    ></div>
+
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================================
+             CARD PRINCIPAL
+        ========================================== -->
+
+        <section class="assessment-card">
+
+
+            <!-- =====================================
+                 CABEÇALHO
+            ====================================== -->
+
+            <div class="assessment-header">
+
+
+                <!-- TÍTULO -->
+
+                <div class="assessment-title">
+
+                    <h1>
+                        Avaliação preventiva
+                    </h1>
+
+                    <p>
+                        Etapa 2 de 5 - Histórico familiar
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROGRESSO
+                ================================== -->
+
+                <div
+                    class="progress-container"
+                    aria-label="Progresso da avaliação"
+                >
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div
+                        class="progress-step completed"
+                        data-step="1"
+                    >
+
+                        <div class="step-circle">
+                            ✓
+                        </div>
+
+                        <span>
+                            Dados pessoais
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line completed-line"></div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div
+                        class="progress-step active"
+                        data-step="2"
+                    >
+
+                        <div class="step-circle">
+                            2
+                        </div>
+
+                        <span>
+                            Histórico familiar
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="3"
+                    >
+
+                        <div class="step-circle">
+                            3
+                        </div>
+
+                        <span>
+                            Estilo de vida
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 4 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="4"
+                    >
+
+                        <div class="step-circle">
+                            4
+                        </div>
+
+                        <span>
+                            Sintomas e condições
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 5 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="5"
+                    >
+
+                        <div class="step-circle">
+                            5
+                        </div>
+
+                        <span>
+                            Resumo
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ORIENTAÇÃO
+            ====================================== -->
+
+            <div class="history-introduction">
+
+                <p>
+                    Informe o histórico de saúde da sua família.
+                    Caso não tenha certeza sobre alguma informação,
+                    selecione <strong>“Não sei”</strong>.
+                </p>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 FORMULÁRIO
+            ====================================== -->
+
+            <form
+                id="familyHistoryForm"
+                novalidate
+            >
+
+
+                <!-- =====================================
+                     GRID PRINCIPAL
+                ====================================== -->
+
+                <div class="history-layout">
+
+
+                    <!-- =================================
+                         COLUNA ESQUERDA
+                         HISTÓRICO FAMILIAR
+                    ================================== -->
+
+                    <section class="family-history-panel">
+
+
+                        <!-- CABEÇALHO -->
+
+                        <div class="panel-header">
+
+                            <div class="panel-header-icon">
+
+                                <img
+                                    src="../imagens/historico_familiar.png"
+                                    alt=""
+                                    onerror="this.style.visibility='hidden'"
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <h2>
+                                    Histórico de saúde da família
+                                </h2>
+
+                                <p>
+                                    Informe condições presentes
+                                    entre seus familiares.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             MÃE
+                        ================================== -->
+
+                        <section class="relative-group">
+
+
+                            <div class="relative-header">
+
+                                <div class="relative-icon">
+
+                                    <img
+                                        src="../imagens/mae.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h3>
+                                        Mãe
+                                    </h3>
+
+                                    <p>
+                                        Histórico materno
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DIABETES -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Diabetes
+                                    </strong>
+
+                                    <span>
+                                        Tipo 1 ou tipo 2
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_diabetes"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_diabetes"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_diabetes"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- HIPERTENSÃO -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Hipertensão
+                                    </strong>
+
+                                    <span>
+                                        Pressão arterial elevada
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_hipertensao"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_hipertensao"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_hipertensao"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DOENÇA CARDÍACA -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Doença cardíaca
+                                    </strong>
+
+                                    <span>
+                                        Infarto ou outras doenças do coração
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_cardiaca"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_cardiaca"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="mae_cardiaca"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             PAI
+                        ================================== -->
+
+                        <section class="relative-group">
+
+
+                            <div class="relative-header">
+
+                                <div class="relative-icon">
+
+                                    <img
+                                        src="../imagens/pai.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h3>
+                                        Pai
+                                    </h3>
+
+                                    <p>
+                                        Histórico paterno
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DIABETES -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Diabetes
+                                    </strong>
+
+                                    <span>
+                                        Tipo 1 ou tipo 2
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_diabetes"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_diabetes"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_diabetes"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- HIPERTENSÃO -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Hipertensão
+                                    </strong>
+
+                                    <span>
+                                        Pressão arterial elevada
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_hipertensao"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_hipertensao"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_hipertensao"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DOENÇA CARDÍACA -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Doença cardíaca
+                                    </strong>
+
+                                    <span>
+                                        Infarto ou outras doenças do coração
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_cardiaca"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_cardiaca"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="pai_cardiaca"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             AVÓS
+                        ================================== -->
+
+                        <section class="relative-group">
+
+
+                            <div class="relative-header">
+
+                                <div class="relative-icon">
+
+                                    <img
+                                        src="../imagens/avos.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h3>
+                                        Avós
+                                    </h3>
+
+                                    <p>
+                                        Paternos e maternos
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DIABETES -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Diabetes
+                                    </strong>
+
+                                    <span>
+                                        Tipo 1 ou tipo 2
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_diabetes"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_diabetes"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_diabetes"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- HIPERTENSÃO -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Hipertensão
+                                    </strong>
+
+                                    <span>
+                                        Pressão arterial elevada
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_hipertensao"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_hipertensao"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_hipertensao"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DOENÇA CARDÍACA -->
+
+                            <div class="condition-row">
+
+                                <div class="condition-info">
+
+                                    <strong>
+                                        Doença cardíaca
+                                    </strong>
+
+                                    <span>
+                                        Infarto ou outras doenças do coração
+                                    </span>
+
+                                </div>
+
+
+                                <div class="answer-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_cardiaca"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_cardiaca"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="avos_cardiaca"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+
+                    </section>
+
+
+
+                    <!-- =================================
+                         COLUNA DIREITA
+                         PERGUNTAS COMPLEMENTARES
+                    ================================== -->
+
+                    <aside class="complementary-panel">
+
+
+                        <!-- CABEÇALHO -->
+
+                        <div class="panel-header">
+
+                            <div class="panel-header-icon">
+
+                                <img
+                                    src="../imagens/perguntas.png"
+                                    alt=""
+                                    onerror="this.style.visibility='hidden'"
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <h2>
+                                    Perguntas complementares
+                                </h2>
+
+                                <p>
+                                    Algumas informações adicionais
+                                    sobre o histórico da família.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CÂNCER
+                        ================================== -->
+
+                        <div class="complementary-question">
+
+                            <div class="question-number">
+                                1
+                            </div>
+
+
+                            <div class="question-content">
+
+                                <h3>
+                                    Alguém na família já teve câncer?
+                                </h3>
+
+                                <p>
+                                    Considere pais, avós ou irmãos.
+                                </p>
+
+
+                                <div class="answer-options complementary-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_cancer"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_cancer"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_cancer"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             AVC
+                        ================================== -->
+
+                        <div class="complementary-question">
+
+                            <div class="question-number">
+                                2
+                            </div>
+
+
+                            <div class="question-content">
+
+                                <h3>
+                                    Alguém na família já teve AVC?
+                                </h3>
+
+                                <p>
+                                    Acidente vascular cerebral.
+                                </p>
+
+
+                                <div class="answer-options complementary-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_avc"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_avc"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_avc"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             DOENÇA RENAL
+                        ================================== -->
+
+                        <div class="complementary-question">
+
+                            <div class="question-number">
+                                3
+                            </div>
+
+
+                            <div class="question-content">
+
+                                <h3>
+                                    Há histórico familiar de doença renal?
+                                </h3>
+
+                                <p>
+                                    Considere doenças crônicas dos rins.
+                                </p>
+
+
+                                <div class="answer-options complementary-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_doenca_renal"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_doenca_renal"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_doenca_renal"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             DOENÇA HEREDITÁRIA
+                        ================================== -->
+
+                        <div class="complementary-question">
+
+                            <div class="question-number">
+                                4
+                            </div>
+
+
+                            <div class="question-content">
+
+                                <h3>
+                                    Existe alguma doença hereditária conhecida na família?
+                                </h3>
+
+                                <p>
+                                    Condições transmitidas geneticamente.
+                                </p>
+
+
+                                <div class="answer-options complementary-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_hereditaria"
+                                            value="sim"
+                                        >
+
+                                        <span>
+                                            Sim
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_hereditaria"
+                                            value="nao"
+                                        >
+
+                                        <span>
+                                            Não
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="familia_hereditaria"
+                                            value="nao_sei"
+                                        >
+
+                                        <span>
+                                            Não sei
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </aside>
+
+
+                </div>
+
+
+
+                <!-- =====================================
+                     MENSAGEM
+                ====================================== -->
+
+                <p
+                    id="formMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></p>
+
+
+            </form>
+
+
+
+            <!-- =====================================
+                 NAVEGAÇÃO
+            ====================================== -->
+
+            <div class="assessment-navigation">
+
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backButton"
+                >
+
+                    <span class="button-arrow">
+                        ←
+                    </span>
+
+                    <span>
+                        Voltar
+                    </span>
+
+                </button>
+
+
+
+                <div class="security-message">
+
+                    <span class="security-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Suas informações são protegidas
+                        e utilizadas apenas para orientação preventiva.
+                    </span>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="continue-button"
+                    id="continueButton"
+                >
+
+                    <span>
+                        Continuar
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 DISCLAIMER
+            ====================================== -->
+
+            <section class="disclaimer-section">
+
+                <div id="global-disclaimer"></div>
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="../componentes/auth.js"
+    ></script>
+
+
+    <script
+        src="../componentes/header.js"
+    ></script>
+
+
+    <script
+        src="historico.js"
+    ></script>
+
+
+    <script
+        src="../componentes/disclaimer.js"
+    ></script>
+
+
+</body>
+
+</html>
