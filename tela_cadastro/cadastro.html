@@ -12,6 +12,7 @@
     <title>Criar conta | GenSaúde SUS</title>
 
     <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="../componentes/header.css">
 </head>
 
 <body>
@@ -20,74 +21,10 @@
          CABEÇALHO
     ====================================== -->
 
-    <header class="header">
-
-        <div class="navbar">
-
-            <!-- LOGO -->
-
-            <a href="../tela_login/login.html" class="logo">
-
-                <img
-                    src="../imagens/logo_gensaude_sus.png"
-                    alt="Logo GenSaúde"
-                    class="logo-img"
-                    onerror="this.style.visibility='hidden'"
-                >
-
-                <span class="logo-text">
-                    <strong>GenSaúde</strong> SUS
-                </span>
-
-            </a>
-
-
-            <!-- MENU -->
-
-            <nav class="menu">
-
-                <a href="../tela_inicio/inicio.html">
-                    Início
-                </a>
-
-                <a href="#">
-                    Prevenção
-                </a>
-
-                <a href="#">
-                    UBS ou UPA?
-                </a>
-
-                <a href="#">
-                    Unidades
-                </a>
-
-                <a href="#">
-                    Educação
-                </a>
-
-            </nav>
-
-
-            <!-- BOTÃO ENTRAR -->
-
-            <a href="../tela_login/login.html" class="header-login-btn">
-
-                <img
-                    src="../imagens/icone_entrar.png"
-                    alt=""
-                    class="header-login-icon"
-                    onerror="this.style.visibility='hidden'"
-                >
-
-                <span>Entrar</span>
-
-            </a>
-
-        </div>
-
-    </header>
-
+    <div
+    id="global-header"
+    data-logged="false"
+    ></div>
 
 
     <!-- =====================================
@@ -564,7 +501,7 @@
 
 
     <script src="cadastro.js"></script>
-
+    <script src="../componentes/header.js"></script>
 </body>
 
 </html>

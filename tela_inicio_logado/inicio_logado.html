@@ -15,6 +15,7 @@
         rel="stylesheet"
         href="inicio_logado.css"
     >
+    <link rel="stylesheet" href="../componentes/header.css">
 </head>
 
 <body>
@@ -23,91 +24,12 @@
          HEADER
     ========================================== -->
 
-    <header class="header">
-
-        <div class="navbar">
-
-            <!-- LOGO -->
-
-            <a
-                href="../tela_inicio_logado/inicio_logado.html"
-                class="logo"
-            >
-
-                <img
-                    src="../imagens/logo_gensaude_sus.png"
-                    alt="Logo GenSaúde"
-                    class="logo-img"
-                    onerror="this.style.visibility='hidden'"
-                >
-
-                <span class="logo-text">
-
-                    <strong>
-                        GenSaúde
-                    </strong>
-
-                    SUS
-
-                </span>
-
-            </a>
-
-
-            <!-- MENU -->
-
-            <nav class="menu">
-
-                <a
-                    href="../tela_inicio_logado/inicio_logado.html"
-                    class="active"
-                >
-                    Início
-                </a>
-
-                <a href="prevencao.html">
-                    Prevenção
-                </a>
-
-                <a href="ubs-ou-upa.html">
-                    UBS ou UPA?
-                </a>
-
-                <a href="unidades.html">
-                    Unidades
-                </a>
-
-                <a href="educacao.html">
-                    Educação
-                </a>
-
-            </nav>
-
-
-            <!-- PERFIL -->
-
-            <button
-                type="button"
-                class="profile-button"
-                id="profileButton"
-            >
-
-                <img
-                    src="../imagens/icone_entrar.png"
-                    alt=""
-                    class="profile-icon"
-                    onerror="this.style.visibility='hidden'"
-                >
-
-                <span id="profileName">
-                    João Silva
-                </span>
-
-            </button>
-
-        </div>
-
-    </header>
+    <div
+    id="global-header"
+    data-active="inicio"
+    data-logged="true"
+    data-name="João Silva"
+    ></div>
 
 
 
@@ -600,7 +522,7 @@
 
 
     <script src="inicio-logado.js"></script>
-
+    <script src="../componentes/header.js"></script>
 </body>
 
 </html>
