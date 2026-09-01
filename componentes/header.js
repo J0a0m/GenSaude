@@ -23,9 +23,12 @@ if (headerContainer) {
     let sessao = null;
 
 
-    if (typeof getSessao === "function") {
+    if (
+        typeof getSessao === "function"
+    ) {
 
-        sessao = getSessao();
+        sessao =
+            getSessao();
 
     }
 
@@ -47,7 +50,9 @@ if (headerContainer) {
     function resumirNome(nome) {
 
         if (!nome) {
+
             return "";
+
         }
 
 
@@ -57,32 +62,32 @@ if (headerContainer) {
                 .split(/\s+/);
 
 
-        // Exemplo:
-        // "Vitor" continua "Vitor"
+        // Apenas um nome
 
         if (partes.length === 1) {
 
-            if (partes[0].length > 14) {
+            if (
+                partes[0].length > 14
+            ) {
 
                 return (
-                    partes[0].substring(0, 12) +
+                    partes[0]
+                        .substring(
+                            0,
+                            12
+                        ) +
                     "..."
                 );
 
             }
 
+
             return partes[0];
+
         }
 
 
-        const primeiroNome =
-            partes[0];
-
-        const ultimoNome =
-            partes[partes.length - 1];
-
-
-        // Nome pequeno pode aparecer completo
+        // Nome curto
 
         if (nome.length <= 18) {
 
@@ -93,13 +98,23 @@ if (headerContainer) {
 
         // Exemplo:
         // Vitor Oliveira Rangel
-        // vira:
         // Vitor R.
+
+        const primeiroNome =
+            partes[0];
+
+        const ultimoNome =
+            partes[
+                partes.length - 1
+            ];
+
 
         return (
             primeiroNome +
             " " +
-            ultimoNome.charAt(0).toUpperCase() +
+            ultimoNome
+                .charAt(0)
+                .toUpperCase() +
             "."
         );
 
@@ -107,20 +122,26 @@ if (headerContainer) {
 
 
     const displayName =
-        resumirNome(userName);
+        resumirNome(
+            userName
+        );
 
 
     // ======================================
-    // EVITAR HTML INSERIDO NO NOME
+    // PROTEGER TEXTO INSERIDO NO HTML
     // ======================================
 
     function escaparHTML(texto) {
 
         const elemento =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         elemento.textContent =
             texto;
+
 
         return elemento.innerHTML;
 
@@ -128,10 +149,15 @@ if (headerContainer) {
 
 
     const nomeSeguro =
-        escaparHTML(displayName);
+        escaparHTML(
+            displayName
+        );
+
 
     const nomeCompletoSeguro =
-        escaparHTML(userName);
+        escaparHTML(
+            userName
+        );
 
 
     // ======================================
@@ -145,18 +171,36 @@ if (headerContainer) {
 
 
     // ======================================
-    // ÁREA DIREITA
+    // FUNÇÃO DE LINK ATIVO
     // ======================================
 
-    const rightArea =
+    function classeAtiva(
+        pagina
+    ) {
+
+        return (
+            activePage === pagina
+                ? "active"
+                : ""
+        );
+
+    }
+
+
+    // ======================================
+    // ÁREA DESKTOP
+    // ======================================
+
+    const desktopAccountArea =
         logged
+
             ? `
-                <div class="profile-area">
+                <div class="profile-area desktop-account-area">
 
                     <button
                         type="button"
                         class="profile-button"
-                        id="profileButton"
+                        data-profile
                         title="${nomeCompletoSeguro}"
                     >
 
@@ -176,30 +220,108 @@ if (headerContainer) {
                     <button
                         type="button"
                         class="logout-button"
-                        id="logoutButton"
+                        data-logout
                     >
                         Sair
                     </button>
 
                 </div>
             `
-            : `
-                <a
-                    href="../tela_login/login.html"
-                    class="header-login-btn"
-                >
 
-                    <img
-                        src="../imagens/icone_entrar.png"
-                        alt=""
-                        class="header-login-icon"
+            : `
+                <div class="desktop-account-area">
+
+                    <a
+                        href="../tela_login/login.html"
+                        class="header-login-btn"
                     >
 
-                    <span>
-                        Entrar
-                    </span>
+                        <img
+                            src="../imagens/icone_entrar.png"
+                            alt=""
+                            class="header-login-icon"
+                        >
 
-                </a>
+                        <span>
+                            Entrar
+                        </span>
+
+                    </a>
+
+                </div>
+            `;
+
+
+    // ======================================
+    // ÁREA MOBILE
+    // ======================================
+
+    const mobileAccountArea =
+        logged
+
+            ? `
+                <div class="mobile-account-area">
+
+                    <button
+                        type="button"
+                        class="mobile-profile-button"
+                        data-profile
+                        title="${nomeCompletoSeguro}"
+                    >
+
+                        <img
+                            src="../imagens/icone_entrar.png"
+                            alt=""
+                            class="mobile-profile-icon"
+                        >
+
+                        <div class="mobile-profile-text">
+
+                            <span class="mobile-profile-label">
+                                Conta
+                            </span>
+
+                            <strong>
+                                ${nomeSeguro}
+                            </strong>
+
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="mobile-logout-button"
+                        data-logout
+                    >
+                        Sair
+                    </button>
+
+                </div>
+            `
+
+            : `
+                <div class="mobile-account-area">
+
+                    <a
+                        href="../tela_login/login.html"
+                        class="mobile-login-button"
+                    >
+
+                        <img
+                            src="../imagens/icone_entrar.png"
+                            alt=""
+                            class="mobile-login-icon"
+                        >
+
+                        <span>
+                            Entrar
+                        </span>
+
+                    </a>
+
+                </div>
             `;
 
 
@@ -214,11 +336,14 @@ if (headerContainer) {
             <div class="navbar">
 
 
-                <!-- LOGO -->
+                <!-- =================================
+                     LOGO
+                ================================== -->
 
                 <a
                     href="${homeLink}"
                     class="logo"
+                    aria-label="Ir para o início"
                 >
 
                     <img
@@ -240,17 +365,19 @@ if (headerContainer) {
                 </a>
 
 
-                <!-- MENU -->
 
-                <nav class="menu">
+                <!-- =================================
+                     MENU DESKTOP
+                ================================== -->
+
+                <nav
+                    class="menu desktop-menu"
+                    aria-label="Menu principal"
+                >
 
                     <a
                         href="${homeLink}"
-                        class="${
-                            activePage === "inicio"
-                                ? "active"
-                                : ""
-                        }"
+                        class="${classeAtiva("inicio")}"
                     >
                         Início
                     </a>
@@ -258,11 +385,7 @@ if (headerContainer) {
 
                     <a
                         href="../tela_prevencao/prevencao.html"
-                        class="${
-                            activePage === "prevencao"
-                                ? "active"
-                                : ""
-                        }"
+                        class="${classeAtiva("prevencao")}"
                     >
                         Prevenção
                     </a>
@@ -270,11 +393,7 @@ if (headerContainer) {
 
                     <a
                         href="../tela_ubs_upa/ubs_upa.html"
-                        class="${
-                            activePage === "ubs-upa"
-                                ? "active"
-                                : ""
-                        }"
+                        class="${classeAtiva("ubs-upa")}"
                     >
                         UBS ou UPA?
                     </a>
@@ -282,11 +401,7 @@ if (headerContainer) {
 
                     <a
                         href="../tela_unidades/unidades.html"
-                        class="${
-                            activePage === "unidades"
-                                ? "active"
-                                : ""
-                        }"
+                        class="${classeAtiva("unidades")}"
                     >
                         Unidades
                     </a>
@@ -294,11 +409,7 @@ if (headerContainer) {
 
                     <a
                         href="../tela_educacao/educacao.html"
-                        class="${
-                            activePage === "educacao"
-                                ? "active"
-                                : ""
-                        }"
+                        class="${classeAtiva("educacao")}"
                     >
                         Educação
                     </a>
@@ -306,10 +417,99 @@ if (headerContainer) {
                 </nav>
 
 
-                <!-- LOGIN / PERFIL -->
 
-                ${rightArea}
+                <!-- =================================
+                     CONTA DESKTOP
+                ================================== -->
 
+                ${desktopAccountArea}
+
+
+
+                <!-- =================================
+                     BOTÃO MENU MOBILE
+                ================================== -->
+
+                <button
+                    type="button"
+                    class="mobile-menu-toggle"
+                    id="mobileMenuToggle"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 MENU MOBILE
+            ====================================== -->
+
+            <div
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-hidden="true"
+            >
+
+                <nav
+                    class="mobile-navigation"
+                    aria-label="Menu mobile"
+                >
+
+                    <a
+                        href="${homeLink}"
+                        class="${classeAtiva("inicio")}"
+                    >
+                        Início
+                    </a>
+
+
+                    <a
+                        href="../tela_prevencao/prevencao.html"
+                        class="${classeAtiva("prevencao")}"
+                    >
+                        Prevenção
+                    </a>
+
+
+                    <a
+                        href="../tela_ubs_upa/ubs_upa.html"
+                        class="${classeAtiva("ubs-upa")}"
+                    >
+                        UBS ou UPA?
+                    </a>
+
+
+                    <a
+                        href="../tela_unidades/unidades.html"
+                        class="${classeAtiva("unidades")}"
+                    >
+                        Unidades
+                    </a>
+
+
+                    <a
+                        href="../tela_educacao/educacao.html"
+                        class="${classeAtiva("educacao")}"
+                    >
+                        Educação
+                    </a>
+
+                </nav>
+
+
+                <!-- CONTA MOBILE -->
+
+                ${mobileAccountArea}
 
             </div>
 
@@ -319,77 +519,351 @@ if (headerContainer) {
 
 
     // ======================================
-    // LOGOUT
+    // ELEMENTOS DO MENU MOBILE
     // ======================================
 
-    const logoutButton =
+    const mobileMenuToggle =
         document.getElementById(
-            "logoutButton"
+            "mobileMenuToggle"
         );
 
 
-    if (logoutButton) {
+    const mobileMenu =
+        document.getElementById(
+            "mobileMenu"
+        );
 
-        logoutButton.addEventListener(
+
+    // ======================================
+    // ABRIR MENU MOBILE
+    // ======================================
+
+    function abrirMenuMobile() {
+
+        if (
+            !mobileMenu ||
+            !mobileMenuToggle
+        ) {
+
+            return;
+
+        }
+
+
+        mobileMenu.classList.add(
+            "open"
+        );
+
+
+        mobileMenuToggle.classList.add(
+            "active"
+        );
+
+
+        mobileMenuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+
+        mobileMenuToggle.setAttribute(
+            "aria-label",
+            "Fechar menu"
+        );
+
+
+        mobileMenu.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    }
+
+
+    // ======================================
+    // FECHAR MENU MOBILE
+    // ======================================
+
+    function fecharMenuMobile() {
+
+        if (
+            !mobileMenu ||
+            !mobileMenuToggle
+        ) {
+
+            return;
+
+        }
+
+
+        mobileMenu.classList.remove(
+            "open"
+        );
+
+
+        mobileMenuToggle.classList.remove(
+            "active"
+        );
+
+
+        mobileMenuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+
+        mobileMenuToggle.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
+
+
+        mobileMenu.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    // ======================================
+    // ALTERNAR MENU
+    // ======================================
+
+    function alternarMenuMobile() {
+
+        if (!mobileMenu) {
+
+            return;
+
+        }
+
+
+        const estaAberto =
+            mobileMenu.classList.contains(
+                "open"
+            );
+
+
+        if (estaAberto) {
+
+            fecharMenuMobile();
+
+        } else {
+
+            abrirMenuMobile();
+
+        }
+
+    }
+
+
+    // ======================================
+    // CLIQUE NO HAMBÚRGUER
+    // ======================================
+
+    if (mobileMenuToggle) {
+
+        mobileMenuToggle.addEventListener(
             "click",
-            () => {
+            (event) => {
 
-                if (
-                    typeof fazerLogout ===
-                    "function"
-                ) {
+                event.stopPropagation();
 
-                    fazerLogout();
-
-                } else {
-
-                    localStorage.removeItem(
-                        "gensaude_sessao"
-                    );
-
-                }
-
-
-                window.location.href =
-                    "../tela_inicio/inicio.html";
+                alternarMenuMobile();
 
             }
         );
 
     }
+
+
+    // ======================================
+    // FECHAR AO CLICAR EM UM LINK MOBILE
+    // ======================================
+
+    const mobileLinks =
+        document.querySelectorAll(
+            ".mobile-navigation a"
+        );
+
+
+    mobileLinks.forEach(
+        (link) => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    fecharMenuMobile();
+
+                }
+            );
+
+        }
+    );
+
+
+    // ======================================
+    // FECHAR COM ESC
+    // ======================================
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                fecharMenuMobile();
+
+            }
+
+        }
+    );
+
+
+    // ======================================
+    // FECHAR AO CLICAR FORA
+    // ======================================
+
+    document.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                !mobileMenu ||
+                !mobileMenuToggle
+            ) {
+
+                return;
+
+            }
+
+
+            const clicouNoMenu =
+                mobileMenu.contains(
+                    event.target
+                );
+
+
+            const clicouNoBotao =
+                mobileMenuToggle.contains(
+                    event.target
+                );
+
+
+            if (
+                !clicouNoMenu &&
+                !clicouNoBotao
+            ) {
+
+                fecharMenuMobile();
+
+            }
+
+        }
+    );
+
+
+    // ======================================
+    // FECHAR AO VOLTAR PARA DESKTOP
+    // ======================================
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                window.innerWidth > 900
+            ) {
+
+                fecharMenuMobile();
+
+            }
+
+        }
+    );
+
+
+    // ======================================
+    // LOGOUT
+    // ======================================
+
+    const logoutButtons =
+        document.querySelectorAll(
+            "[data-logout]"
+        );
+
+
+    logoutButtons.forEach(
+        (logoutButton) => {
+
+            logoutButton.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        typeof fazerLogout ===
+                        "function"
+                    ) {
+
+                        fazerLogout();
+
+                    } else {
+
+                        localStorage.removeItem(
+                            "gensaude_sessao"
+                        );
+
+                    }
+
+
+                    window.location.href =
+                        "../tela_inicio/inicio.html";
+
+                }
+            );
+
+        }
+    );
 
 
     // ======================================
     // PERFIL
     // ======================================
 
-    const profileButton =
-        document.getElementById(
-            "profileButton"
+    const profileButtons =
+        document.querySelectorAll(
+            "[data-profile]"
         );
 
 
-    if (profileButton) {
+    profileButtons.forEach(
+        (profileButton) => {
 
-        profileButton.addEventListener(
-            "click",
-            () => {
+            profileButton.addEventListener(
+                "click",
+                () => {
 
-                /*
-                FUTURAMENTE:
+                    /*
+                    FUTURAMENTE:
 
-                window.location.href =
-                    "../tela_perfil/perfil.html";
-                */
+                    window.location.href =
+                        "../tela_perfil/perfil.html";
+                    */
 
-                console.log(
-                    "Usuário:",
-                    sessao
-                );
 
-            }
-        );
+                    console.log(
+                        "Usuário:",
+                        sessao
+                    );
 
-    }
+                }
+            );
+
+        }
+    );
 
 }

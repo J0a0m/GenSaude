@@ -1,20 +1,31 @@
 /* =========================================
+   TELA DE CADASTRO - GENSAÚDE
+========================================= */
+
+
+/* =========================================
    CONFIGURAÇÕES GERAIS
 ========================================= */
 
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
 }
 
 
 html {
+    width: 100%;
+
     scroll-behavior: smooth;
+
+    overflow-x: hidden;
 }
 
 
 body {
+    width: 100%;
     min-height: 100vh;
 
     font-family:
@@ -26,10 +37,19 @@ body {
 
     color: #06195d;
 
-    zoom: 1.1;
-
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
+
+button,
+input,
+select {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
 
 /* =========================================
    CONTEÚDO PRINCIPAL
@@ -38,48 +58,57 @@ body {
 .main-content {
     width: 100%;
 
-    min-height: calc(100vh - 78px);
+    min-height:
+        calc(
+            100vh - 78px
+        );
 
     display: flex;
+    align-items: center;
     justify-content: center;
+
+    padding:
+        28px
+        24px;
 }
 
+
+/* =========================================
+   WRAPPER
+========================================= */
 
 .cadastro-wrapper {
     width: 100%;
     max-width: 1220px;
 
-    min-height: calc(100vh - 78px);
-
     display: grid;
 
     grid-template-columns:
-        540px
-        563px;
-
-    column-gap: 65px;
-
-    margin-top: -100px;
+        minmax(420px, 540px)
+        minmax(500px, 563px);
 
     align-items: center;
-
     justify-content: center;
+
+    column-gap: 65px;
 }
 
 
 /* =========================================
-   IMAGEM ESQUERDA
+   ILUSTRAÇÃO
 ========================================= */
 
 .illustration-area {
     width: 100%;
+    min-width: 0;
+
     height: 600px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 
@@ -90,20 +119,20 @@ body {
     height: auto;
     max-height: 560px;
 
-    object-fit: contain;
-
-    object-position: center;
-
     display: block;
+
+    object-fit: contain;
+    object-position: center;
 }
 
 
 /* =========================================
-   CARD DE CADASTRO
+   CARD
 ========================================= */
 
 .cadastro-card {
-    width: 563px;
+    width: 100%;
+    max-width: 563px;
 
     min-height: 670px;
 
@@ -117,12 +146,13 @@ body {
     border-radius: 10px;
 
     box-shadow:
-        0 2px 1px rgba(0, 0, 0, 0.20);
+        0 2px 4px
+        rgba(0, 0, 0, 0.16);
 }
 
 
 /* =========================================
-   CABEÇALHO DO CARD
+   CABEÇALHO
 ========================================= */
 
 .cadastro-header {
@@ -131,14 +161,14 @@ body {
 
 
 .cadastro-header h1 {
+    margin-bottom: 4px;
+
     color: #071b64;
 
     font-size: 37px;
     font-weight: 700;
 
     line-height: 1.05;
-
-    margin-bottom: 2px;
 }
 
 
@@ -146,6 +176,8 @@ body {
     color: #173c8a;
 
     font-size: 14px;
+
+    line-height: 1.35;
 }
 
 
@@ -159,8 +191,8 @@ body {
     display: grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 16px;
 }
@@ -178,6 +210,9 @@ body {
 .input-group {
     position: relative;
 
+    width: 100%;
+    min-width: 0;
+
     height: 42px;
 
     margin-bottom: 24px;
@@ -187,13 +222,16 @@ body {
 
     background-color: #ffffff;
 
-    border: 1px solid #bcbcbc;
+    border:
+        1px solid
+        #bcbcbc;
 
     border-radius: 5px;
 
     transition:
         border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
 }
 
 
@@ -201,12 +239,14 @@ body {
     border-color: #0753d6;
 
     box-shadow:
-        0 0 0 2px rgba(7, 83, 214, 0.08);
+        0 0 0 2px
+        rgba(7, 83, 214, 0.08);
 }
 
 
 .input-group input {
     width: 100%;
+    min-width: 0;
     height: 100%;
 
     padding:
@@ -219,7 +259,7 @@ body {
 
     outline: none;
 
-    background: transparent;
+    background-color: transparent;
 
     color: #071b64;
 
@@ -235,7 +275,49 @@ body {
 
 
 /* =========================================
-   ÍCONES DOS INPUTS
+   DATA DE NASCIMENTO
+========================================= */
+
+.input-group
+input[type="date"] {
+    color: #071b64;
+
+    cursor: pointer;
+}
+
+
+.input-group
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   CAMPOS DESABILITADOS
+
+   Usados enquanto o CEP está sendo buscado.
+========================================= */
+
+.input-group input:disabled,
+.select-group select:disabled {
+    cursor: wait;
+
+    color: #66728d;
+
+    background-color: #f7f9fc;
+}
+
+
+.input-group:has(input:disabled),
+.input-group:has(select:disabled) {
+    background-color: #f7f9fc;
+}
+
+
+/* =========================================
+   ÍCONES
 ========================================= */
 
 .input-icon {
@@ -247,15 +329,17 @@ body {
     width: 20px;
     height: 20px;
 
-    transform: translateY(-50%);
-
-    object-fit: contain;
-
-    object-position: center;
-
     display: block;
 
+    object-fit: contain;
+    object-position: center;
+
+    transform:
+        translateY(-50%);
+
     pointer-events: none;
+
+    z-index: 2;
 }
 
 
@@ -270,6 +354,7 @@ body {
 
 .select-group select {
     width: 100%;
+    min-width: 0;
     height: 100%;
 
     padding:
@@ -291,12 +376,20 @@ body {
     cursor: pointer;
 
     appearance: none;
+
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
 
-/* SETA DO SELECT FEITA COM CSS */
+.select-group select:valid {
+    color: #071b64;
+}
+
+
+/* =========================================
+   SETA DO SELECT
+========================================= */
 
 .select-group::after {
     content: "";
@@ -309,8 +402,13 @@ body {
     width: 7px;
     height: 7px;
 
-    border-right: 1px solid #999999;
-    border-bottom: 1px solid #999999;
+    border-right:
+        1px solid
+        #999999;
+
+    border-bottom:
+        1px solid
+        #999999;
 
     transform:
         translateY(-70%)
@@ -320,30 +418,25 @@ body {
 }
 
 
-.select-group select:valid {
-    color: #071b64;
-}
-
-
 /* =========================================
    SENHA
 ========================================= */
 
 .password-group input {
-    padding-right: 42px;
+    padding-right: 43px;
 }
 
 
 .password-toggle {
     position: absolute;
 
-    right: 5px;
+    right: 4px;
     top: 50%;
 
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
 
-    transform: translateY(-50%);
+    padding: 0;
 
     display: flex;
     align-items: center;
@@ -353,7 +446,20 @@ body {
 
     background-color: transparent;
 
+    border-radius: 6px;
+
     cursor: pointer;
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.password-toggle:hover {
+    background-color: #f1f5fb;
 }
 
 
@@ -361,9 +467,9 @@ body {
     width: 17px;
     height: 17px;
 
-    object-fit: contain;
-
     display: block;
+
+    object-fit: contain;
 }
 
 
@@ -387,11 +493,15 @@ body {
 
 
 .terms-container p {
+    min-width: 0;
+
     color: #071b64;
 
     font-size: 13px;
 
     line-height: 1.4;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -415,11 +525,17 @@ body {
     display: flex;
 
     cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 
 .terms-label input {
-    display: none;
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
 }
 
 
@@ -427,28 +543,38 @@ body {
     width: 20px;
     height: 20px;
 
-    flex-shrink: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     background-color: #ffffff;
 
-    border: 1px solid #656565;
+    border:
+        1px solid
+        #656565;
 
-    transition: 0.2s;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
-.terms-label input:checked + .custom-checkbox {
+.terms-label
+input:checked
++
+.custom-checkbox {
     background-color: #0750cf;
 
     border-color: #0750cf;
 }
 
 
-.terms-label input:checked + .custom-checkbox::after {
+.terms-label
+input:checked
++
+.custom-checkbox::after {
     content: "";
 
     width: 5px;
@@ -456,7 +582,9 @@ body {
 
     margin-bottom: 2px;
 
-    border: solid #ffffff;
+    border:
+        solid
+        #ffffff;
 
     border-width:
         0
@@ -464,7 +592,8 @@ body {
         2px
         0;
 
-    transform: rotate(45deg);
+    transform:
+        rotate(45deg);
 }
 
 
@@ -474,7 +603,11 @@ body {
 
 .register-button {
     width: 100%;
-    height: 60px;
+    min-height: 58px;
+
+    padding:
+        0
+        20px;
 
     border: none;
 
@@ -491,19 +624,38 @@ body {
 
     transition:
         background-color 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
 }
 
 
 .register-button:hover {
     background-color: #073ca6;
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 4px 10px
+        rgba(12, 75, 199, 0.15);
 }
 
 
 .register-button:active {
-    transform: scale(0.99);
+    transform:
+        scale(0.99);
+}
+
+
+.register-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
 }
 
 
@@ -517,6 +669,8 @@ body {
     color: #071b64;
 
     font-size: 13px;
+
+    line-height: 1.4;
 
     text-align: center;
 }
@@ -548,6 +702,8 @@ body {
     font-size: 13px;
     font-weight: 600;
 
+    line-height: 1.35;
+
     text-align: center;
 }
 
@@ -572,33 +728,132 @@ body {
 
 
 /* =========================================
-   RESPONSIVIDADE
+   NOTEBOOK
 ========================================= */
 
 @media (max-width: 1150px) {
 
-    .navbar {
+    .main-content {
         padding:
-            0
-            30px;
-    }
-
-
-    .menu {
-        gap: 35px;
-
-        margin-left: 20px;
+            28px
+            25px;
     }
 
 
     .cadastro-wrapper {
-        width: calc(100% - 50px);
-
         grid-template-columns:
-            minmax(400px, 1fr)
-            530px;
+            minmax(350px, 1fr)
+            minmax(480px, 530px);
 
         column-gap: 30px;
+    }
+
+
+    .cadastro-card {
+        padding:
+            30px
+            40px
+            22px;
+    }
+
+
+    .illustration-area {
+        height: 540px;
+    }
+
+
+    .hero-image {
+        max-width: 500px;
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 930px) {
+
+    .main-content {
+        min-height:
+            calc(
+                100vh - 70px
+            );
+
+        align-items: flex-start;
+
+        padding:
+            30px
+            20px
+            36px;
+    }
+
+
+    .cadastro-wrapper {
+        max-width: 620px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 28px;
+    }
+
+
+    .cadastro-card {
+        width: 100%;
+        max-width: 570px;
+
+        min-height: 0;
+
+        margin: 0 auto;
+
+        padding:
+            32px
+            42px
+            26px;
+    }
+
+
+    .illustration-area {
+        width: 100%;
+        max-width: 540px;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+
+    .hero-image {
+        max-width: 470px;
+
+        max-height: 420px;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR GRANDE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .main-content {
+        width: 100%;
+
+        padding:
+            20px
+            14px
+            28px;
+    }
+
+
+    .cadastro-wrapper {
+        width: 100%;
+
+        gap: 0;
     }
 
 
@@ -606,119 +861,36 @@ body {
         width: 100%;
 
         padding:
-            30px
-            40px
-            22px;
-    }
+            28px
+            24px
+            26px;
 
-}
-
-
-@media (max-width: 930px) {
-
-    .menu {
-        display: none;
+        border-radius: 10px;
     }
 
 
-    .cadastro-wrapper {
-        width: calc(100% - 40px);
-
-        display: flex;
-
-        flex-direction: column-reverse;
-
-        padding:
-            30px
-            0;
-    }
-
-
-    .cadastro-card {
-        max-width: 570px;
-    }
-
-
-    .illustration-area {
-        height: auto;
-
-        margin-top: 30px;
-    }
-
-
-    .hero-image {
-        max-width: 500px;
-        max-height: 450px;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .header {
-        height: 70px;
-    }
-
-
-    .navbar {
-        padding:
-            0
-            18px;
-    }
-
-
-    .logo-img {
-        width: 32px;
-        height: 32px;
-    }
-
-
-    .logo-text {
-        font-size: 20px;
-    }
-
-
-    .header-login-btn {
-        height: 38px;
-
-        padding:
-            0
-            10px;
-
-        font-size: 14px;
-    }
-
-
-    .header-login-icon {
-        width: 18px;
-        height: 18px;
-    }
-
-
-    .cadastro-wrapper {
-        width: calc(100% - 24px);
-
-        padding-top: 18px;
-    }
-
-
-    .cadastro-card {
-        padding:
-            30px
-            25px;
+    .cadastro-header {
+        margin-bottom: 22px;
     }
 
 
     .cadastro-header h1 {
         font-size: 31px;
+
+        margin-bottom: 5px;
     }
 
 
     .cadastro-header p {
         font-size: 13px;
+
+        line-height: 1.4;
     }
 
+
+    /* =====================================
+       UMA COLUNA NO CELULAR
+    ====================================== */
 
     .form-row {
         grid-template-columns: 1fr;
@@ -728,7 +900,44 @@ body {
 
 
     .input-group {
+        height: 45px;
+
         margin-bottom: 17px;
+    }
+
+
+    .input-group input {
+        padding:
+            0
+            11px
+            0
+            49px;
+
+        font-size: 15px;
+    }
+
+
+    .input-icon {
+        left: 15px;
+
+        width: 19px;
+        height: 19px;
+    }
+
+
+    .select-group select {
+        padding:
+            0
+            42px
+            0
+            49px;
+
+        font-size: 15px;
+    }
+
+
+    .password-group input {
+        padding-right: 43px;
     }
 
 
@@ -738,12 +947,215 @@ body {
         margin:
             10px
             0
+            24px;
+
+        gap: 8px;
+    }
+
+
+    .terms-container p {
+        font-size: 12.5px;
+    }
+
+
+    .custom-checkbox {
+        width: 19px;
+        height: 19px;
+    }
+
+
+    .register-button {
+        min-height: 54px;
+
+        font-size: 16px;
+    }
+
+
+    .login-text {
+        font-size: 12.5px;
+    }
+
+
+    .form-message {
+        font-size: 12.5px;
+    }
+
+
+    /* Imagem removida no celular */
+
+    .illustration-area {
+        display: none;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 430px) {
+
+    .main-content {
+        padding:
+            17px
+            12px
             25px;
     }
 
 
-    .illustration-area {
-        display: none;
+    .cadastro-card {
+        padding:
+            25px
+            20px
+            23px;
+    }
+
+
+    .cadastro-header h1 {
+        font-size: 29px;
+    }
+
+
+    .cadastro-header p {
+        font-size: 12.5px;
+    }
+
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+
+    .input-group input,
+    .select-group select {
+        font-size: 14px;
+    }
+
+
+    .terms-container p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUENO
+========================================= */
+
+@media (max-width: 380px) {
+
+    .main-content {
+        padding:
+            15px
+            10px
+            22px;
+    }
+
+
+    .cadastro-card {
+        padding:
+            23px
+            16px
+            21px;
+    }
+
+
+    .cadastro-header h1 {
+        font-size: 27px;
+    }
+
+
+    .cadastro-header p {
+        font-size: 12px;
+    }
+
+
+    .input-group {
+        height: 43px;
+    }
+
+
+    .input-group input {
+        padding-left: 46px;
+
+        font-size: 13.5px;
+    }
+
+
+    .input-icon {
+        left: 14px;
+
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .select-group select {
+        padding-left: 46px;
+
+        font-size: 13.5px;
+    }
+
+
+    .terms-container {
+        gap: 7px;
+    }
+
+
+    .terms-container p {
+        font-size: 11.5px;
+    }
+
+
+    .register-button {
+        min-height: 51px;
+
+        font-size: 15px;
+    }
+
+
+    .login-text,
+    .form-message {
+        font-size: 11.5px;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR MUITO PEQUENO
+========================================= */
+
+@media (max-width: 320px) {
+
+    .cadastro-card {
+        padding:
+            21px
+            13px
+            19px;
+    }
+
+
+    .cadastro-header h1 {
+        font-size: 25px;
+    }
+
+
+    .input-group input,
+    .select-group select {
+        font-size: 13px;
+    }
+
+
+    .terms-container p {
+        font-size: 11px;
+    }
+
+
+    .register-button {
+        font-size: 14px;
     }
 
 }

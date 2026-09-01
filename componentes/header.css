@@ -5,23 +5,36 @@
 #global-header {
     position: relative;
     z-index: 1000;
+
+    width: 100%;
 }
 
+
+/* =========================================
+   HEADER
+========================================= */
+
 .header {
+    position: relative;
+    z-index: 1000;
+
     width: 100%;
     height: 78px;
 
     background-color: #ffffff;
+
     border-bottom: 3px solid #eeeeee;
 
-    display: flex;
-    align-items: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    position: relative;
-    z-index: 1000;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 }
+
+
+/* =========================================
+   NAVBAR
+========================================= */
 
 .navbar {
     width: 100%;
@@ -33,6 +46,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 22px;
 }
 
 
@@ -46,6 +61,8 @@
 
     gap: 9px;
 
+    flex-shrink: 0;
+
     color: #0748c8;
 
     text-decoration: none;
@@ -53,21 +70,28 @@
     white-space: nowrap;
 }
 
+
 .logo-img {
     width: 39px;
     height: 39px;
 
-    object-fit: contain;
-
     display: block;
+
+    object-fit: contain;
 
     flex-shrink: 0;
 }
 
+
 .logo-text {
+    color: #0748c8;
+
     font-size: 25px;
     font-weight: 400;
+
+    line-height: 1;
 }
+
 
 .logo-text strong {
     font-weight: 700;
@@ -75,35 +99,61 @@
 
 
 /* =========================================
-   MENU
+   MENU DESKTOP
 ========================================= */
 
-.menu {
+.desktop-menu {
+    flex: 1;
+
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    gap: 83px;
-
-    margin-left: 45px;
+    gap: 62px;
 }
 
-.menu a {
+
+.menu a,
+.desktop-menu a {
+    position: relative;
+
     color: #061858;
 
     font-size: 16px;
+    font-weight: 400;
 
     text-decoration: none;
 
-    transition: color 0.2s ease;
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease;
 }
 
-.menu a:hover {
+
+.menu a:hover,
+.desktop-menu a:hover {
     color: #064dcc;
 }
 
-.menu a.active {
+
+.menu a.active,
+.desktop-menu a.active {
     color: #064dcc;
+
     font-weight: 700;
+}
+
+
+/* =========================================
+   ÁREA DA CONTA DESKTOP
+========================================= */
+
+.desktop-account-area {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
 }
 
 
@@ -114,17 +164,17 @@
 .header-login-btn {
     height: 40px;
 
-    padding: 0 12px;
-
-    background-color: #0b4cc7;
-
-    border-radius: 10px;
+    padding: 0 13px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     gap: 7px;
+
+    background-color: #0b4cc7;
+
+    border-radius: 10px;
 
     color: #ffffff;
 
@@ -133,36 +183,53 @@
 
     text-decoration: none;
 
-    transition: background-color 0.2s ease;
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
+
 
 .header-login-btn:hover {
     background-color: #073ba4;
 }
 
+
+.header-login-btn:active {
+    transform: scale(0.98);
+}
+
+
 .header-login-icon {
     width: 20px;
     height: 20px;
 
+    display: block;
+
     object-fit: contain;
 
-    display: block;
+    flex-shrink: 0;
 }
 
 
 /* =========================================
-   PERFIL - USUÁRIO LOGADO
+   PERFIL DESKTOP
 ========================================= */
 
 .profile-area {
     display: flex;
     align-items: center;
+
     gap: 8px;
+
+    flex-shrink: 0;
 }
 
 
 .profile-button {
     height: 40px;
+    max-width: 155px;
 
     padding: 0 12px;
 
@@ -179,14 +246,17 @@
 
     color: #ffffff;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 16px;
     font-weight: 700;
 
     cursor: pointer;
 
-    max-width: 155px;
+    overflow: hidden;
 
     transition:
         background-color 0.2s ease,
@@ -208,9 +278,9 @@
     width: 20px;
     height: 20px;
 
-    object-fit: contain;
-
     display: block;
+
+    object-fit: contain;
 
     flex-shrink: 0;
 }
@@ -230,7 +300,7 @@
 
 
 /* =========================================
-   BOTÃO SAIR
+   BOTÃO SAIR DESKTOP
 ========================================= */
 
 .logout-button {
@@ -242,10 +312,406 @@
     align-items: center;
     justify-content: center;
 
+    background-color: #d93025;
+
     border: 2px solid #d93025;
     border-radius: 9px;
 
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.logout-button:hover {
+    background-color: #b3261e;
+
+    border-color: #b3261e;
+}
+
+
+.logout-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   MENU HAMBÚRGUER
+
+   ESCONDIDO NO DESKTOP
+========================================= */
+
+.mobile-menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background-color: transparent;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.mobile-menu-toggle:hover {
+    background-color: #f1f5fb;
+}
+
+
+.hamburger-line {
+    width: 23px;
+    height: 2.5px;
+
+    display: block;
+
+    background-color: #061858;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================
+   ANIMAÇÃO ☰ → X
+========================================= */
+
+.mobile-menu-toggle.active
+.hamburger-line:nth-child(1) {
+    transform:
+        translateY(7.5px)
+        rotate(45deg);
+}
+
+
+.mobile-menu-toggle.active
+.hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+
+.mobile-menu-toggle.active
+.hamburger-line:nth-child(3) {
+    transform:
+        translateY(-7.5px)
+        rotate(-45deg);
+}
+
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+.mobile-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    padding:
+        0
+        18px;
+
+    background-color: #ffffff;
+
+    border-bottom:
+        1px solid #e1e6ee;
+
+    box-shadow:
+        0 10px 22px
+        rgba(0, 0, 0, 0.09);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/* =========================================
+   MENU MOBILE ABERTO
+========================================= */
+
+.mobile-menu.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   NAVEGAÇÃO MOBILE
+========================================= */
+
+.mobile-navigation {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding:
+        10px
+        0;
+}
+
+
+.mobile-navigation a {
+    width: 100%;
+    min-height: 48px;
+
+    padding:
+        0
+        12px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 8px;
+
+    color: #061858;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.mobile-navigation a:hover {
+    background-color: #f2f6fc;
+
+    color: #064dcc;
+}
+
+
+.mobile-navigation a.active {
+    background-color: #edf4ff;
+
+    color: #064dcc;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CONTA MOBILE
+========================================= */
+
+.mobile-account-area {
+    width: 100%;
+
+    padding:
+        12px
+        0
+        18px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    border-top:
+        1px solid #e4e8ef;
+}
+
+
+/* =========================================
+   LOGIN MOBILE
+========================================= */
+
+.mobile-login-button {
+    width: 100%;
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background-color: #0b4cc7;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.mobile-login-button:hover {
+    background-color: #073ba4;
+}
+
+
+.mobile-login-icon {
+    width: 19px;
+    height: 19px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   PERFIL MOBILE
+========================================= */
+
+.mobile-profile-button {
+    width: 100%;
+    min-height: 55px;
+
+    padding:
+        7px
+        12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: #edf4ff;
+
+    border: 1px solid #d6e4fb;
+    border-radius: 9px;
+
+    color: #061858;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.mobile-profile-button:hover {
+    background-color: #e3efff;
+}
+
+
+.mobile-profile-icon {
+    width: 29px;
+    height: 29px;
+
+    display: block;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.mobile-profile-text {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.mobile-profile-label {
+    color: #60749f;
+
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+.mobile-profile-text strong {
+    max-width: 220px;
+
+    color: #064dcc;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   SAIR MOBILE
+========================================= */
+
+.mobile-logout-button {
+    width: 100%;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: #d93025;
+
+    border: 2px solid #d93025;
+    border-radius: 9px;
 
     color: #ffffff;
 
@@ -261,48 +727,127 @@
 
     transition:
         background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        border-color 0.2s ease;
 }
 
 
-.logout-button:hover {
+.mobile-logout-button:hover {
     background-color: #b3261e;
+
     border-color: #b3261e;
 }
 
 
-.logout-button:active {
-    transform: scale(0.97);
+/* =========================================
+   NOTEBOOK
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        padding:
+            0
+            25px;
+    }
+
+
+    .desktop-menu {
+        gap: 38px;
+    }
+
 }
 
 
 /* =========================================
-   RESPONSIVIDADE
+   NOTEBOOK MENOR
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
 
-    .navbar {
-        padding: 0 25px;
+    .desktop-menu {
+        gap: 24px;
     }
 
-    .menu {
-        gap: 35px;
-        margin-left: 20px;
+
+    .desktop-menu a {
+        font-size: 14px;
+    }
+
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+
+    .profile-button {
+        max-width: 130px;
+
+        padding:
+            0
+            9px;
+
+        font-size: 14px;
+    }
+
+
+    .profile-name {
+        max-width: 82px;
+    }
+
+
+    .logout-button {
+        padding:
+            0
+            11px;
+
+        font-size: 14px;
     }
 
 }
 
-@media (max-width: 850px) {
 
-    .menu {
-        gap: 18px;
+/* =========================================
+   TABLET E CELULAR
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    .header {
+        height: 70px;
     }
 
-    .menu a {
-        font-size: 14px;
+
+    .navbar {
+        padding:
+            0
+            20px;
     }
+
+
+    /* ESCONDER DESKTOP */
+
+    .desktop-menu,
+    .desktop-account-area {
+        display: none;
+    }
+
+
+    /* MOSTRAR HAMBÚRGUER */
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+
+    /* LOGO */
+
+    .logo-img {
+        width: 34px;
+        height: 34px;
+    }
+
 
     .logo-text {
         font-size: 21px;
@@ -310,69 +855,102 @@
 
 }
 
-@media (max-width: 700px) {
 
-    .header {
-        height: 70px;
-    }
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
 
     .navbar {
-        padding: 0 18px;
+        padding:
+            0
+            16px;
     }
 
-    .menu {
-        display: none;
+
+    .logo {
+        gap: 7px;
     }
+
 
     .logo-img {
         width: 32px;
         height: 32px;
     }
 
+
     .logo-text {
         font-size: 20px;
     }
 
-    .header-login-btn,
-    .profile-button {
+
+    .mobile-menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .mobile-menu {
+        padding:
+            0
+            14px;
+    }
+
+
+    .mobile-navigation a {
+        min-height: 46px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUENO
+========================================= */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding:
+            0
+            12px;
+    }
+
+
+    .logo-img {
+        width: 29px;
+        height: 29px;
+    }
+
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+
+    .mobile-menu-toggle {
+        width: 38px;
         height: 38px;
-        padding: 0 10px;
-        font-size: 14px;
     }
 
-    .header-login-icon,
-    .profile-icon {
-        width: 18px;
-        height: 18px;
+
+    .hamburger-line {
+        width: 21px;
     }
 
-}
 
-.profile-area {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+    .mobile-menu {
+        padding:
+            0
+            10px;
+    }
 
-.logout-button {
-    height: 40px;
-    padding: 0 14px;
 
-    border: 1px solid #d9dfe9;
-    border-radius: 9px;
+    .mobile-profile-text strong {
+        max-width: 190px;
+    }
 
-    background: #ffffff;
-
-    color: #061858;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.logout-button:hover {
-    background: #f4f7fb;
 }
