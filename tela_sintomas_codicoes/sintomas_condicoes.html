@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Sintomas e Condições | GenSaúde SUS
+    </title>
+
+
+    <!-- =========================================
+         CSS DA TELA
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="sintomas_condicoes.css"
+    >
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <div
+        id="global-header"
+        data-active="prevencao"
+    ></div>
+
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================================
+             CARD PRINCIPAL
+        ========================================== -->
+
+        <section class="assessment-card">
+
+
+            <!-- =====================================
+                 CABEÇALHO
+            ====================================== -->
+
+            <div class="assessment-header">
+
+
+                <!-- TÍTULO -->
+
+                <div class="assessment-title">
+
+                    <h1>
+                        Avaliação preventiva
+                    </h1>
+
+                    <p>
+                        Etapa 4 de 5 - Sintomas e condições
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROGRESSO
+                ================================== -->
+
+                <div
+                    class="progress-container"
+                    aria-label="Progresso da avaliação"
+                >
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div
+                        class="progress-step completed"
+                        data-step="1"
+                    >
+
+                        <div class="step-circle">
+                            ✓
+                        </div>
+
+                        <span>
+                            Dados pessoais
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line completed-line"></div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div
+                        class="progress-step completed"
+                        data-step="2"
+                    >
+
+                        <div class="step-circle">
+                            ✓
+                        </div>
+
+                        <span>
+                            Histórico familiar
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line completed-line"></div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div
+                        class="progress-step completed"
+                        data-step="3"
+                    >
+
+                        <div class="step-circle">
+                            ✓
+                        </div>
+
+                        <span>
+                            Estilo de vida
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line completed-line"></div>
+
+
+                    <!-- ETAPA 4 -->
+
+                    <div
+                        class="progress-step active"
+                        data-step="4"
+                    >
+
+                        <div class="step-circle">
+                            4
+                        </div>
+
+                        <span>
+                            Sintomas e condições
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 5 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="5"
+                    >
+
+                        <div class="step-circle">
+                            5
+                        </div>
+
+                        <span>
+                            Resumo
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 CORPO
+            ====================================== -->
+
+            <div class="assessment-body">
+
+
+                <!-- =================================
+                     FORMULÁRIO
+                ================================== -->
+
+                <section class="form-area">
+
+
+                    <!-- ORIENTAÇÃO -->
+
+                    <p class="assessment-description">
+
+                        Informe os sintomas que você está sentindo
+                        e condições de saúde já diagnosticadas para
+                        receber orientações mais adequadas.
+
+                    </p>
+
+
+
+                    <!-- =================================
+                         FORM
+                    ================================== -->
+
+                    <form
+                        id="symptomsForm"
+                        novalidate
+                    >
+
+
+                        <!-- =================================
+                             CONDIÇÕES DIAGNOSTICADAS
+                        ================================== -->
+
+                        <section class="question-section">
+
+
+                            <h2>
+                                Condições já diagnosticadas
+                            </h2>
+
+
+                            <div class="checkbox-grid conditions-grid">
+
+
+                                <!-- DIABETES -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="condicoesDiagnosticadas"
+                                        value="diabetes"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Diabetes
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- HIPERTENSÃO -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="condicoesDiagnosticadas"
+                                        value="hipertensao"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Hipertensão
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- COLESTEROL -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="condicoesDiagnosticadas"
+                                        value="colesterol_alto"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Colesterol alto
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- ASMA -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="condicoesDiagnosticadas"
+                                        value="asma"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Asma
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- OBESIDADE -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="condicoesDiagnosticadas"
+                                        value="obesidade"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Obesidade
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- NENHUMA -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        id="noConditions"
+                                        name="condicoesDiagnosticadas"
+                                        value="nenhuma"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Nenhuma
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             SINTOMAS RECENTES
+                        ================================== -->
+
+                        <section class="question-section symptoms-section">
+
+
+                            <h2>
+                                Sintomas recentes
+                            </h2>
+
+
+                            <div class="checkbox-grid symptoms-grid">
+
+
+                                <!-- DOR DE CABEÇA -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="sintomasRecentes"
+                                        value="dor_cabeca"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Dor de cabeça
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- CANSAÇO -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="sintomasRecentes"
+                                        value="cansaco"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Cansaço
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- FALTA DE AR -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="sintomasRecentes"
+                                        value="falta_ar"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Falta de ar
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- TONTURA -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="sintomasRecentes"
+                                        value="tontura"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Tontura
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- DOR NO PEITO -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="sintomasRecentes"
+                                        value="dor_peito"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Dor no peito
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- FEBRE -->
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="sintomasRecentes"
+                                        value="febre"
+                                    >
+
+                                    <span class="checkbox-card">
+
+                                        <span class="custom-checkbox"></span>
+
+                                        <span class="checkbox-label">
+                                            Febre
+                                        </span>
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             DETALHES ADICIONAIS
+                        ================================== -->
+
+                        <section class="question-section details-section">
+
+
+                            <h2>
+                                Detalhes adicionais
+                            </h2>
+
+
+                            <div class="textarea-wrapper">
+
+                                <textarea
+                                    id="detalhesAdicionais"
+                                    name="detalhesAdicionais"
+                                    maxlength="500"
+                                    placeholder="Descreva outros sintomas, condições ou informações que considere relevantes."
+                                ></textarea>
+
+
+                                <span
+                                    id="characterCounter"
+                                    class="character-counter"
+                                >
+                                    0/500
+                                </span>
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             MENSAGEM
+                        ================================== -->
+
+                        <p
+                            id="formMessage"
+                            class="form-message"
+                            aria-live="polite"
+                        ></p>
+
+
+                    </form>
+
+
+                </section>
+
+
+
+                <!-- =================================
+                     ILUSTRAÇÃO
+                ================================== -->
+
+                <section class="illustration-area">
+
+                    <img
+                        src="../imagens/sintomas_condicoes.png"
+                        alt="Ilustração relacionada à avaliação de sintomas e condições"
+                        class="symptoms-image"
+                        onerror="this.style.visibility='hidden'"
+                    >
+
+                </section>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 NAVEGAÇÃO
+            ====================================== -->
+
+            <div class="assessment-navigation">
+
+
+                <!-- VOLTAR -->
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backButton"
+                >
+
+                    <span class="button-arrow">
+                        ←
+                    </span>
+
+                    <span>
+                        Voltar
+                    </span>
+
+                </button>
+
+
+
+                <!-- SEGURANÇA -->
+
+                <div class="security-message">
+
+                    <span class="security-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Suas informações estão seguras e protegidas.
+                    </span>
+
+                </div>
+
+
+
+                <!-- CONTINUAR -->
+
+                <button
+                    type="button"
+                    class="continue-button"
+                    id="continueButton"
+                >
+
+                    <span>
+                        Continuar
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="../componentes/auth.js"
+    ></script>
+
+
+    <script
+        src="../componentes/header.js"
+    ></script>
+
+
+    <script
+        src="sintomas_condicoes.js"
+    ></script>
+
+
+</body>
+
+</html>

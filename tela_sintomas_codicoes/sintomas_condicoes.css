@@ -1,0 +1,1550 @@
+/* =========================================================
+   GENSAÚDE SUS
+   AVALIAÇÃO PREVENTIVA
+   ETAPA 4 - SINTOMAS E CONDIÇÕES
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+
+    overflow-x: hidden;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: #f7f7f7;
+    color: #071b64;
+
+    overflow-x: hidden;
+}
+
+
+button,
+input,
+textarea {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+.main-content {
+    width: calc(100% - 36px);
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding:
+        10px
+        0
+        12px;
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+
+.assessment-card {
+    width: 100%;
+
+    padding:
+        13px
+        18px
+        11px;
+
+    background-color: #ffffff;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.assessment-header {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(330px, 0.8fr)
+        minmax(650px, 1.7fr);
+
+    align-items: center;
+
+    gap: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.assessment-title h1 {
+    margin-bottom: 3px;
+
+    color: #071b64;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.assessment-title p {
+    color: #214b96;
+
+    font-size: 14px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   PROGRESSO
+========================================================= */
+
+.progress-container {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.progress-step {
+    min-width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+.step-circle {
+    position: relative;
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+
+    border:
+        2px solid
+        #0752d5;
+
+    border-radius: 50%;
+
+    color: #0752d5;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.progress-step > span {
+    max-width: 115px;
+
+    color: #949494;
+
+    font-size: 9.5px;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   ETAPAS CONCLUÍDAS
+========================================================= */
+
+.progress-step.completed
+.step-circle {
+    background-color: #0752d5;
+
+    border-color: #0752d5;
+
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.progress-step.completed > span {
+    color: #949494;
+}
+
+
+/* =========================================================
+   ETAPA ATIVA
+========================================================= */
+
+.progress-step.active
+.step-circle {
+    background-color: #ffffff;
+
+    border:
+        3px solid
+        #0752d5;
+
+    color: #0752d5;
+
+    font-weight: 700;
+}
+
+
+.progress-step.active > span {
+    color: #0752d5;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LINHAS DO PROGRESSO
+========================================================= */
+
+.progress-line {
+    height: 2px;
+
+    min-width: 35px;
+
+    flex: 1;
+
+    margin-top: 20px;
+
+    background-color: #aac5ee;
+}
+
+
+.completed-line {
+    background-color: #0752d5;
+}
+
+
+/* =========================================================
+   CORPO
+========================================================= */
+
+.assessment-body {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(600px, 1fr)
+        minmax(480px, 0.95fr);
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.form-area {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TEXTO DE ORIENTAÇÃO
+========================================================= */
+
+.assessment-description {
+    max-width: 650px;
+
+    margin-bottom: 18px;
+
+    color: #31569b;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#symptomsForm {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.question-section {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+.question-section h2 {
+    margin-bottom: 10px;
+
+    color: #214b96;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   GRID DOS CHECKBOXES
+========================================================= */
+
+.checkbox-grid {
+    width: 100%;
+
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.conditions-grid {
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+}
+
+
+.symptoms-grid {
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.checkbox-option {
+    width: 100%;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+.checkbox-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD DO CHECKBOX
+========================================================= */
+
+.checkbox-card {
+    width: 100%;
+    min-height: 42px;
+
+    padding:
+        0
+        9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    background-color: #ffffff;
+
+    border:
+        1px solid
+        #b9c6d8;
+
+    border-radius: 5px;
+
+    color: #252f43;
+
+    font-size: 12px;
+
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+}
+
+
+/* =========================================================
+   CHECKBOX VISUAL
+========================================================= */
+
+.custom-checkbox {
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background-color: #ffffff;
+
+    border:
+        1.5px solid
+        #0752d5;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.checkbox-option:hover
+.checkbox-card {
+    background-color: #f5f9ff;
+
+    border-color: #75a2e5;
+}
+
+
+/* =========================================================
+   CHECKBOX MARCADO
+========================================================= */
+
+.checkbox-option
+input:checked
++
+.checkbox-card {
+    background-color: #f3f8ff;
+
+    border-color: #0752d5;
+
+    color: #0752d5;
+
+    font-weight: 600;
+}
+
+
+.checkbox-option
+input:checked
++
+.checkbox-card
+.custom-checkbox {
+    background-color: #0752d5;
+
+    border-color: #0752d5;
+}
+
+
+/* =========================================================
+   CHECK VISUAL
+========================================================= */
+
+.checkbox-option
+input:checked
++
+.checkbox-card
+.custom-checkbox::after {
+    content: "";
+
+    width: 6px;
+    height: 11px;
+
+    margin-top: -2px;
+
+    border-right:
+        2px solid
+        #ffffff;
+
+    border-bottom:
+        2px solid
+        #ffffff;
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* =========================================================
+   FOCO
+========================================================= */
+
+.checkbox-option
+input:focus-visible
++
+.checkbox-card {
+    outline:
+        3px solid
+        rgba(7, 82, 213, 0.17);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.checkbox-label {
+    min-width: 0;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   DETALHES ADICIONAIS
+========================================================= */
+
+.details-section {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.textarea-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.textarea-wrapper textarea {
+    width: 100%;
+    height: 135px;
+
+    padding:
+        11px
+        65px
+        25px
+        11px;
+
+    display: block;
+
+    resize: none;
+
+    background-color: #ffffff;
+
+    border:
+        1px solid
+        #b9c6d8;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    color: #252f43;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+.textarea-wrapper textarea::placeholder {
+    color: #9c9c9c;
+}
+
+
+.textarea-wrapper textarea:focus {
+    border-color: #0752d5;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(7, 82, 213, 0.08);
+}
+
+
+/* =========================================================
+   CONTADOR
+========================================================= */
+
+.character-counter {
+    position: absolute;
+
+    right: 10px;
+    bottom: 7px;
+
+    color: #888888;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+.form-message {
+    min-height: 15px;
+
+    margin-top: 4px;
+
+    color: #d11a2a;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+.form-message.error {
+    color: #d11a2a;
+}
+
+
+.form-message.success {
+    color: #16833d;
+}
+
+
+/* =========================================================
+   ILUSTRAÇÃO
+========================================================= */
+
+.illustration-area {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.symptoms-image {
+    width: 100%;
+    max-width: 630px;
+
+    height: auto;
+    max-height: 480px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+.assessment-navigation {
+    width: 100%;
+
+    margin-top: 10px;
+
+    min-height: 52px;
+
+    padding:
+        4px
+        7px;
+
+    display: grid;
+
+    grid-template-columns:
+        155px
+        minmax(280px, 1fr)
+        155px;
+
+    align-items: center;
+
+    gap: 16px;
+
+    background-color: #f2f7fd;
+
+    border:
+        1px solid
+        #e0eaf6;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.back-button,
+.continue-button {
+    width: 155px;
+    min-height: 42px;
+
+    padding:
+        0
+        11px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   VOLTAR
+========================================================= */
+
+.back-button {
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    background-color: #ffffff;
+
+    border:
+        2px solid
+        #0752d5;
+
+    color: #0752d5;
+}
+
+
+.back-button:hover {
+    background-color: #0752d5;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTINUAR
+========================================================= */
+
+.continue-button {
+    justify-content: center;
+
+    gap: 8px;
+
+    background-color: #0752d5;
+
+    border:
+        2px solid
+        #0752d5;
+
+    color: #ffffff;
+}
+
+
+.continue-button:hover {
+    background-color: #0643b3;
+
+    border-color: #0643b3;
+}
+
+
+.back-button:active,
+.continue-button:active {
+    transform:
+        scale(0.98);
+}
+
+
+.continue-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+.button-arrow {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SEGURANÇA
+========================================================= */
+
+.security-message {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #31569b;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+
+.security-icon {
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background-color: #e8f7ed;
+
+    border:
+        1px solid
+        #a7dfb9;
+
+    border-radius: 50%;
+
+    color: #219653;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ERRO DE VALIDAÇÃO
+========================================================= */
+
+.question-section.question-error {
+    padding:
+        8px;
+
+    background-color: #fff5f5;
+
+    border-radius: 7px;
+
+    box-shadow:
+        inset 4px 0 0
+        #d11a2a;
+}
+
+
+/* =========================================================
+   NOTEBOOK GRANDE
+========================================================= */
+
+@media (max-width: 1350px) {
+
+    .main-content {
+        width:
+            calc(
+                100% - 40px
+            );
+    }
+
+
+    .assessment-header {
+        grid-template-columns:
+            minmax(300px, 0.75fr)
+            minmax(600px, 1.6fr);
+
+        gap: 24px;
+    }
+
+
+    .assessment-title h1 {
+        font-size: 35px;
+    }
+
+
+    .progress-step {
+        min-width: 90px;
+    }
+
+
+    .assessment-body {
+        grid-template-columns:
+            minmax(550px, 1fr)
+            minmax(400px, 0.9fr);
+
+        gap: 25px;
+    }
+
+
+    .symptoms-image {
+        max-width: 550px;
+    }
+
+}
+
+
+/* =========================================================
+   NOTEBOOK
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+
+    .assessment-header {
+        grid-template-columns:
+            minmax(280px, 0.75fr)
+            minmax(530px, 1.5fr);
+
+        gap: 18px;
+    }
+
+
+    .assessment-title h1 {
+        font-size: 33px;
+    }
+
+
+    .progress-step {
+        min-width: 82px;
+    }
+
+
+    .progress-step > span {
+        font-size: 8.7px;
+    }
+
+
+    .assessment-body {
+        grid-template-columns:
+            minmax(500px, 1fr)
+            minmax(340px, 0.8fr);
+
+        gap: 18px;
+    }
+
+
+    .conditions-grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .checkbox-card {
+        font-size: 11px;
+    }
+
+
+    .symptoms-image {
+        max-width: 470px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+
+    .main-content {
+        width:
+            calc(
+                100% - 30px
+            );
+
+        height: auto;
+    }
+
+
+    .assessment-card {
+        height: auto;
+
+        padding:
+            14px
+            14px
+            12px;
+    }
+
+
+    /* HEADER */
+
+    .assessment-header {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .assessment-title h1 {
+        font-size: 31px;
+    }
+
+
+    /* PROGRESSO */
+
+    .progress-container {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+    }
+
+
+    .progress-step {
+        min-width: 90px;
+    }
+
+
+    .progress-line {
+        min-width: 35px;
+
+        flex:
+            0
+            0
+            35px;
+    }
+
+
+    /* CORPO */
+
+    .assessment-body {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .form-area {
+        width: 100%;
+        max-width: 720px;
+
+        margin: 0 auto;
+    }
+
+
+    .illustration-area {
+        min-height: 0;
+
+        height: auto;
+    }
+
+
+    .symptoms-image {
+        max-width: 440px;
+        max-height: 340px;
+    }
+
+
+    /* CHECKBOXES */
+
+    .conditions-grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .symptoms-grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    /* NAVEGAÇÃO */
+
+    .assessment-navigation {
+        grid-template-columns:
+            160px
+            1fr
+            160px;
+    }
+
+
+    .back-button,
+    .continue-button {
+        width: 160px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .main-content {
+        width:
+            calc(
+                100% - 20px
+            );
+
+        padding:
+            8px
+            0
+            16px;
+    }
+
+
+    .assessment-card {
+        padding:
+            11px
+            10px;
+    }
+
+
+    /* TÍTULO */
+
+    .assessment-title h1 {
+        font-size: 27px;
+    }
+
+
+    .assessment-title p {
+        font-size: 12px;
+    }
+
+
+    /* PROGRESSO */
+
+    .progress-step {
+        min-width: 80px;
+    }
+
+
+    .step-circle {
+        width: 37px;
+        height: 37px;
+
+        font-size: 13px;
+    }
+
+
+    .progress-line {
+        min-width: 25px;
+
+        flex-basis: 25px;
+
+        margin-top: 18px;
+    }
+
+
+    .progress-step > span {
+        font-size: 8.5px;
+    }
+
+
+    /* DESCRIÇÃO */
+
+    .assessment-description {
+        margin-bottom: 15px;
+
+        font-size: 12px;
+    }
+
+
+    /* SEÇÕES */
+
+    .question-section {
+        margin-bottom: 17px;
+    }
+
+
+    .question-section h2 {
+        font-size: 14px;
+    }
+
+
+    /* CHECKBOX */
+
+    .conditions-grid,
+    .symptoms-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 8px;
+    }
+
+
+    .checkbox-card {
+        min-height: 44px;
+
+        font-size: 11px;
+    }
+
+
+    .custom-checkbox {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    /* TEXTAREA */
+
+    .textarea-wrapper textarea {
+        height: 110px;
+
+        font-size: 11px;
+    }
+
+
+    /* IMAGEM */
+
+    .symptoms-image {
+        width: 90%;
+
+        max-width: 340px;
+        max-height: 270px;
+    }
+
+
+    /* NAVEGAÇÃO */
+
+    .assessment-navigation {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+
+    .back-button,
+    .continue-button {
+        width:
+            calc(
+                50% - 4px
+            );
+
+        min-height: 44px;
+    }
+
+
+    .security-message {
+        width: 100%;
+
+        order: 3;
+
+        font-size: 10.5px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .assessment-title h1 {
+        font-size: 23px;
+    }
+
+
+    .conditions-grid,
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .checkbox-card {
+        min-height: 42px;
+    }
+
+
+    .back-button,
+    .continue-button {
+        font-size: 11.5px;
+    }
+
+
+    .button-arrow {
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP - AJUSTE FINAL
+   TUDO VISÍVEL SEM SCROLL
+========================================================= */
+
+@media (min-width: 1100px) and (min-height: 760px) {
+
+    body {
+        overflow-y: hidden;
+    }
+
+
+    .main-content {
+        height: calc(100vh - 78px);
+
+        display: flex;
+        align-items: stretch;
+    }
+
+
+    .assessment-card {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* =====================================================
+       CORPO
+    ===================================================== */
+
+    .assessment-body {
+        flex: 1;
+
+        min-height: 0;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(650px, 1.02fr)
+            minmax(500px, 0.98fr);
+
+        align-items: stretch;
+
+        gap: 40px;
+
+        padding-top: 8px;
+    }
+
+
+    /* =====================================================
+       FORMULÁRIO
+    ===================================================== */
+
+    .form-area {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-self: stretch;
+    }
+
+
+    .assessment-description {
+        margin-bottom: 18px;
+
+        font-size: 14px;
+    }
+
+
+    #symptomsForm {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        max-height: 555px;
+    }
+
+
+    /* =====================================================
+       SEÇÕES
+    ===================================================== */
+
+    .question-section {
+        margin-bottom: 22px;
+    }
+
+
+    .question-section h2 {
+        margin-bottom: 11px;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       CHECKBOXES
+    ===================================================== */
+
+    .checkbox-grid {
+        gap: 11px;
+    }
+
+
+    .checkbox-card {
+        min-height: 44px;
+
+        padding:
+            0
+            10px;
+
+        font-size: 12px;
+    }
+
+
+    .custom-checkbox {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    /* =====================================================
+       TEXTAREA
+    ===================================================== */
+
+    .details-section {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        min-height: 0;
+    }
+
+
+    .textarea-wrapper {
+        flex: 1;
+
+        min-height: 0;
+    }
+
+
+    .textarea-wrapper textarea {
+        height: 150px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       ILUSTRAÇÃO
+    ===================================================== */
+
+    .illustration-area {
+        width: 100%;
+        height: 100%;
+
+        min-height: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .symptoms-image {
+        width: 100%;
+
+        max-width: 650px;
+        max-height: 510px;
+
+        object-fit: contain;
+    }
+
+
+    /* =====================================================
+       RODAPÉ
+    ===================================================== */
+
+    .assessment-navigation {
+        margin-top: 10px;
+
+        min-height: 52px;
+    }
+
+}
