@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Estilo de Vida | GenSaúde SUS
+    </title>
+
+
+    <!-- =========================================
+         CSS DA TELA
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="estilo_vida.css"
+    >
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <div
+        id="global-header"
+        data-active="prevencao"
+    ></div>
+
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================================
+             CARD PRINCIPAL
+        ========================================== -->
+
+        <section class="assessment-card">
+
+
+            <!-- =====================================
+                 CABEÇALHO
+            ====================================== -->
+
+            <div class="assessment-header">
+
+
+                <!-- TÍTULO -->
+
+                <div class="assessment-title">
+
+                    <h1>
+                        Avaliação preventiva
+                    </h1>
+
+                    <p>
+                        Etapa 3 de 5 - Estilo de vida
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROGRESSO
+                ================================== -->
+
+                <div
+                    class="progress-container"
+                    aria-label="Progresso da avaliação"
+                >
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div
+                        class="progress-step completed"
+                        data-step="1"
+                    >
+
+                        <div class="step-circle">
+                            ✓
+                        </div>
+
+                        <span>
+                            Dados pessoais
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line completed-line"></div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div
+                        class="progress-step completed"
+                        data-step="2"
+                    >
+
+                        <div class="step-circle">
+                            ✓
+                        </div>
+
+                        <span>
+                            Histórico familiar
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line completed-line"></div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div
+                        class="progress-step active"
+                        data-step="3"
+                    >
+
+                        <div class="step-circle">
+                            3
+                        </div>
+
+                        <span>
+                            Estilo de vida
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 4 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="4"
+                    >
+
+                        <div class="step-circle">
+                            4
+                        </div>
+
+                        <span>
+                            Sintomas e condições
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 5 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="5"
+                    >
+
+                        <div class="step-circle">
+                            5
+                        </div>
+
+                        <span>
+                            Resumo
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 CORPO
+            ====================================== -->
+
+            <div class="assessment-body">
+
+
+                <!-- =================================
+                     FORMULÁRIO
+                ================================== -->
+
+                <section class="form-area">
+
+
+                    <!-- ORIENTAÇÃO -->
+
+                    <p class="assessment-description">
+
+                        Suas respostas nos ajudam a personalizar
+                        orientações preventivas para você.
+
+                    </p>
+
+
+
+                    <!-- =================================
+                         FORM
+                    ================================== -->
+
+                    <form
+                        id="lifestyleForm"
+                        novalidate
+                    >
+
+
+                        <!-- =================================
+                             ATIVIDADE FÍSICA
+                        ================================== -->
+
+                        <section class="question-block">
+
+
+                            <div class="question-header">
+
+                                <div class="question-icon">
+
+                                    <img
+                                        src="../imagens/atividade_fisica.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Atividade física
+                                    </h2>
+
+                                    <p>
+                                        Com que frequência você realiza
+                                        atividade física?
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="answer-options three-options">
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="atividadeFisica"
+                                        value="nunca"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Nunca
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="atividadeFisica"
+                                        value="1_2_semana"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        1-2 vezes por semana
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="atividadeFisica"
+                                        value="3_mais_semana"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        +3 vezes por semana
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             ALIMENTAÇÃO
+                        ================================== -->
+
+                        <section class="question-block">
+
+
+                            <div class="question-header">
+
+                                <div class="question-icon">
+
+                                    <img
+                                        src="../imagens/alimentacao.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Alimentação
+                                    </h2>
+
+                                    <p>
+                                        Como você avalia sua alimentação
+                                        no dia a dia?
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="answer-options three-options">
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="alimentacao"
+                                        value="equilibrada"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Equilibrada
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="alimentacao"
+                                        value="moderada"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Moderada
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="alimentacao"
+                                        value="precisa_melhorar"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Precisa melhorar
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             SONO + FUMO
+                        ================================== -->
+
+                        <div class="double-question-row">
+
+
+                            <!-- =================================
+                                 SONO
+                            ================================== -->
+
+                            <section class="question-block compact-question">
+
+
+                                <div class="question-header">
+
+                                    <div class="question-icon">
+
+                                        <img
+                                            src="../imagens/sono.png"
+                                            alt=""
+                                            onerror="this.style.visibility='hidden'"
+                                        >
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h2>
+                                            Sono médio por noite
+                                        </h2>
+
+                                        <p>
+                                            Quantas horas você dorme,
+                                            em média?
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="select-wrapper">
+
+                                    <select
+                                        id="sonoHoras"
+                                        name="sonoHoras"
+                                        required
+                                    >
+
+                                        <option
+                                            value=""
+                                            selected
+                                            disabled
+                                        >
+                                            Selecione
+                                        </option>
+
+                                        <option value="menos_5">
+                                            Menos de 5 horas
+                                        </option>
+
+                                        <option value="5_6">
+                                            5 a 6 horas
+                                        </option>
+
+                                        <option value="7_8">
+                                            7 a 8 horas
+                                        </option>
+
+                                        <option value="mais_8">
+                                            Mais de 8 horas
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 FUMO
+                            ================================== -->
+
+                            <section class="question-block compact-question smoke-question">
+
+
+                                <div class="question-header">
+
+                                    <div class="question-icon">
+
+                                        <img
+                                            src="../imagens/fumo.png"
+                                            alt=""
+                                            onerror="this.style.visibility='hidden'"
+                                        >
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <h2>
+                                            Você fuma?
+                                        </h2>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="answer-options smoke-options">
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="fuma"
+                                            value="nao"
+                                        >
+
+                                        <span>
+
+                                            <span class="option-circle"></span>
+
+                                            Não
+
+                                        </span>
+
+                                    </label>
+
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="fuma"
+                                            value="as_vezes"
+                                        >
+
+                                        <span>
+
+                                            <span class="option-circle"></span>
+
+                                            Às vezes
+
+                                        </span>
+
+                                    </label>
+
+
+
+                                    <label class="answer-option">
+
+                                        <input
+                                            type="radio"
+                                            name="fuma"
+                                            value="sim"
+                                        >
+
+                                        <span>
+
+                                            <span class="option-circle"></span>
+
+                                            Sim
+
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+
+                            </section>
+
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CONSUMO DE ÁLCOOL
+                        ================================== -->
+
+                        <section class="question-block">
+
+
+                            <div class="question-header">
+
+                                <div class="question-icon">
+
+                                    <img
+                                        src="../imagens/alcool.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Consumo de álcool
+                                    </h2>
+
+                                    <p>
+                                        Como você classifica seu
+                                        consumo de álcool?
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="answer-options three-options">
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="alcool"
+                                        value="nao"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Não
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="alcool"
+                                        value="socialmente"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Socialmente
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <label class="answer-option">
+
+                                    <input
+                                        type="radio"
+                                        name="alcool"
+                                        value="frequente"
+                                    >
+
+                                    <span>
+
+                                        <span class="option-circle"></span>
+
+                                        Frequente
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             OBSERVAÇÕES
+                        ================================== -->
+
+                        <section class="question-block observations-block">
+
+
+                            <div class="question-header">
+
+                                <div class="question-icon">
+
+                                    <img
+                                        src="../imagens/observacoes.png"
+                                        alt=""
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Observações
+                                        <span class="optional-label">
+                                            (Opcional)
+                                        </span>
+                                    </h2>
+
+                                    <p>
+                                        Conte-nos algo que considere
+                                        importante sobre seu estilo de vida.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="textarea-wrapper">
+
+                                <textarea
+                                    id="observacoes"
+                                    name="observacoes"
+                                    maxlength="500"
+                                    placeholder="Escreva aqui (máx. 500 caracteres)"
+                                ></textarea>
+
+
+                                <span
+                                    id="characterCounter"
+                                    class="character-counter"
+                                >
+                                    0/500
+                                </span>
+
+                            </div>
+
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             MENSAGEM
+                        ================================== -->
+
+                        <p
+                            id="formMessage"
+                            class="form-message"
+                            aria-live="polite"
+                        ></p>
+
+
+                    </form>
+
+
+                </section>
+
+
+
+                <!-- =================================
+                     ILUSTRAÇÃO
+                ================================== -->
+
+                <section class="illustration-area">
+
+                    <img
+                        src="../imagens/estilo_vida.png"
+                        alt="Ilustração relacionada a hábitos saudáveis"
+                        class="lifestyle-image"
+                        onerror="this.style.visibility='hidden'"
+                    >
+
+                </section>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 NAVEGAÇÃO
+            ====================================== -->
+
+            <div class="assessment-navigation">
+
+
+                <!-- VOLTAR -->
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backButton"
+                >
+
+                    <span class="button-arrow">
+                        ←
+                    </span>
+
+                    <span>
+                        Voltar
+                    </span>
+
+                </button>
+
+
+
+                <!-- SEGURANÇA -->
+
+                <div class="security-message">
+
+                    <span class="security-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Suas informações estão seguras e protegidas.
+                    </span>
+
+                </div>
+
+
+
+                <!-- CONTINUAR -->
+
+                <button
+                    type="button"
+                    class="continue-button"
+                    id="continueButton"
+                >
+
+                    <span>
+                        Continuar
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="../componentes/auth.js"
+    ></script>
+
+
+    <script
+        src="../componentes/header.js"
+    ></script>
+
+
+    <script
+        src="estilo_vida.js"
+    ></script>
+
+
+</body>
+
+</html>
