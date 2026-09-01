@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,20 +12,38 @@
 
     <title>Criar conta | GenSaúde SUS</title>
 
-    <link rel="stylesheet" href="cadastro.css">
-    <link rel="stylesheet" href="../componentes/header.css">
+
+    <!-- =====================================
+         CSS DA TELA
+    ====================================== -->
+
+    <link
+        rel="stylesheet"
+        href="cadastro.css"
+    >
+
+
+    <!-- =====================================
+         HEADER GLOBAL
+    ====================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
 </head>
+
 
 <body>
 
+
     <!-- =====================================
-         CABEÇALHO
+         HEADER GLOBAL
     ====================================== -->
 
-    <div
-    id="global-header"
-    data-logged="false"
-    ></div>
+    <div id="global-header"></div>
+
 
 
     <!-- =====================================
@@ -72,9 +91,15 @@
                 </div>
 
 
-                <!-- FORMULÁRIO -->
 
-                <form id="cadastroForm">
+                <!-- =====================================
+                     FORMULÁRIO
+                ====================================== -->
+
+                <form
+                    id="cadastroForm"
+                    novalidate
+                >
 
 
                     <!-- =================================
@@ -104,10 +129,11 @@
 
 
                     <!-- =================================
-                         CPF + DATA
+                         CPF + DATA DE NASCIMENTO
                     ================================== -->
 
                     <div class="form-row">
+
 
                         <!-- CPF -->
 
@@ -127,10 +153,12 @@
                                 placeholder="CPF"
                                 maxlength="14"
                                 inputmode="numeric"
+                                autocomplete="off"
                                 required
                             >
 
                         </div>
+
 
 
                         <!-- DATA DE NASCIMENTO -->
@@ -145,12 +173,11 @@
                             >
 
                             <input
-                                type="text"
+                                type="date"
                                 id="dataNascimento"
                                 name="dataNascimento"
-                                placeholder="Data de nascimento"
-                                maxlength="10"
-                                inputmode="numeric"
+                                autocomplete="bday"
+                                min="1900-01-01"
                                 required
                             >
 
@@ -165,6 +192,7 @@
                     ================================== -->
 
                     <div class="form-row">
+
 
                         <!-- EMAIL -->
 
@@ -187,6 +215,7 @@
                             >
 
                         </div>
+
 
 
                         <!-- TELEFONE -->
@@ -223,6 +252,7 @@
 
                     <div class="form-row">
 
+
                         <!-- CEP -->
 
                         <div class="input-group">
@@ -246,6 +276,7 @@
                             >
 
                         </div>
+
 
 
                         <!-- CIDADE -->
@@ -290,10 +321,15 @@
                         <select
                             id="estado"
                             name="estado"
+                            autocomplete="address-level1"
                             required
                         >
 
-                            <option value="" selected disabled>
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
                                 Estado
                             </option>
 
@@ -337,6 +373,7 @@
 
                     <div class="form-row">
 
+
                         <!-- SENHA -->
 
                         <div class="input-group password-group">
@@ -354,6 +391,7 @@
                                 name="senha"
                                 placeholder="Senha"
                                 autocomplete="new-password"
+                                minlength="6"
                                 required
                             >
 
@@ -377,6 +415,7 @@
                         </div>
 
 
+
                         <!-- CONFIRMAR SENHA -->
 
                         <div class="input-group password-group">
@@ -394,6 +433,7 @@
                                 name="confirmarSenha"
                                 placeholder="Confirmar senha"
                                 autocomplete="new-password"
+                                minlength="6"
                                 required
                             >
 
@@ -440,7 +480,9 @@
 
 
                         <p>
+
                             Li e concordo com os
+
                             <a href="#">
                                 Termos de Uso
                             </a>
@@ -450,6 +492,7 @@
                             <a href="#">
                                 Política de Privacidade
                             </a>
+
                         </p>
 
                     </div>
@@ -484,12 +527,17 @@
                     </p>
 
 
-                    <!-- MENSAGEM JS -->
+
+                    <!-- =================================
+                         MENSAGEM
+                    ================================== -->
 
                     <p
                         id="formMessage"
                         class="form-message"
+                        aria-live="polite"
                     ></p>
+
 
                 </form>
 
@@ -499,9 +547,28 @@
 
     </main>
 
-    <script src="../componentes/auth.js"></script>
-    <script src="cadastro.js"></script>
-    <script src="../componentes/header.js"></script>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+
+         ORDEM IMPORTANTE:
+         auth -> header -> cadastro
+    ====================================== -->
+
+    <script
+        src="../componentes/auth.js"
+    ></script>
+
+    <script
+        src="../componentes/header.js"
+    ></script>
+
+    <script
+        src="cadastro.js"
+    ></script>
+
+
 </body>
 
 </html>

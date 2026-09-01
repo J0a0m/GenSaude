@@ -1,0 +1,100 @@
+/* =========================================
+   AVISO GLOBAL - GENSAÚDE
+========================================= */
+
+#global-disclaimer {
+    width: 100%;
+}
+
+
+.global-disclaimer {
+    position: relative;
+
+    width: 100%;
+    min-height: 40px;
+
+    padding: 6px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #dbe8fa;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+
+.global-disclaimer-left {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.global-disclaimer-icon {
+    width: 18px;
+    height: 18px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.global-disclaimer-left p {
+    margin: 0;
+
+    color: #31569b;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+}
+
+
+.global-disclaimer-decoration {
+    width: 130px;
+    height: 33px;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: right center;
+
+    opacity: 0.75;
+}
+
+
+@media (max-width: 650px) {
+
+    .global-disclaimer {
+        min-height: 52px;
+
+        padding: 8px 12px;
+    }
+
+
+    .global-disclaimer-left p {
+        font-size: 12px;
+    }
+
+
+    .global-disclaimer-decoration {
+        display: none;
+    }
+
+}

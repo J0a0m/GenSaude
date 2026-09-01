@@ -1,218 +1,275 @@
 // ==========================================
+// INÍCIO LOGADO - GENSAÚDE
+// ==========================================
+
+
+// ==========================================
 // ELEMENTOS
 // ==========================================
 
-const profileButton =
-    document.getElementById("profileButton");
-
-const profileName =
-    document.getElementById("profileName");
-
 const firstName =
-    document.getElementById("firstName");
+    document.getElementById(
+        "firstName"
+    );
 
 const assessmentButton =
-    document.getElementById("assessmentButton");
+    document.getElementById(
+        "assessmentButton"
+    );
 
 const historyCard =
-    document.getElementById("historyCard");
+    document.getElementById(
+        "historyCard"
+    );
 
 const ubsCard =
-    document.getElementById("ubsCard");
+    document.getElementById(
+        "ubsCard"
+    );
 
 const unitsCard =
-    document.getElementById("unitsCard");
+    document.getElementById(
+        "unitsCard"
+    );
 
 const educationCard =
-    document.getElementById("educationCard");
+    document.getElementById(
+        "educationCard"
+    );
 
 const lastAssessmentCard =
-    document.getElementById("lastAssessmentCard");
+    document.getElementById(
+        "lastAssessmentCard"
+    );
 
 const referenceUnitCard =
-    document.getElementById("referenceUnitCard");
+    document.getElementById(
+        "referenceUnitCard"
+    );
 
 const nextActionCard =
-    document.getElementById("nextActionCard");
+    document.getElementById(
+        "nextActionCard"
+    );
 
 
 // ==========================================
-// DADOS DO USUÁRIO
+// VERIFICAR USUÁRIO LOGADO
 // ==========================================
 
-/*
-    FUTURAMENTE ESSES DADOS PODERÃO VIR
-    DO BANCO DE DADOS / API.
+let sessao = null;
 
-    POR ENQUANTO ESTÁ JOÃO SILVA
-    PARA FICAR IGUAL AO PROTÓTIPO.
-*/
 
-const usuario = {
+if (
+    typeof getSessao ===
+    "function"
+) {
 
-    nomeCompleto:
-        "João Silva"
+    sessao =
+        getSessao();
 
-};
+}
 
 
 // ==========================================
-// CARREGAR NOME
+// PROTEGER TELA
+// ==========================================
+
+if (!sessao) {
+
+    // Se não existir sessão,
+    // o usuário não pode acessar
+    // a tela inicial logada.
+
+    window.location.href =
+        "../tela_login/login.html";
+
+} else {
+
+    carregarUsuario();
+
+}
+
+
+// ==========================================
+// CARREGAR NOME DO USUÁRIO
 // ==========================================
 
 function carregarUsuario() {
 
     const nomeCompleto =
-        usuario.nomeCompleto;
+        sessao.nome
+            ? sessao.nome.trim()
+            : "Usuário";
 
+
+    // Exemplo:
+    // Vitor Oliveira Rangel
+    // ↓
+    // Vitor
 
     const primeiroNome =
-        nomeCompleto.split(" ")[0];
+        nomeCompleto
+            .split(/\s+/)[0];
 
 
-    profileName.textContent =
-        nomeCompleto;
+    if (firstName) {
 
-
-    firstName.textContent =
-        primeiroNome;
-
-}
-
-
-carregarUsuario();
-
-
-// ==========================================
-// PERFIL
-// ==========================================
-
-profileButton.addEventListener(
-    "click",
-    () => {
-
-        window.location.href =
-            "perfil.html";
+        firstName.textContent =
+            primeiroNome;
 
     }
-);
+
+}
 
 
 // ==========================================
 // INICIAR AVALIAÇÃO
 // ==========================================
 
-assessmentButton.addEventListener(
-    "click",
-    () => {
+if (assessmentButton) {
 
-        window.location.href =
-            "avaliacao.html";
+    assessmentButton.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "avaliacao.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
 // HISTÓRICO FAMILIAR
 // ==========================================
 
-historyCard.addEventListener(
-    "click",
-    () => {
+if (historyCard) {
 
-        window.location.href =
-            "historico-familiar.html";
+    historyCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "historico-familiar.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
 // UBS OU UPA
 // ==========================================
 
-ubsCard.addEventListener(
-    "click",
-    () => {
+if (ubsCard) {
 
-        window.location.href =
-            "ubs-ou-upa.html";
+    ubsCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "../tela_ubs_upa/ubs_upa.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
 // UNIDADES PRÓXIMAS
 // ==========================================
 
-unitsCard.addEventListener(
-    "click",
-    () => {
+if (unitsCard) {
 
-        window.location.href =
-            "unidades.html";
+    unitsCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "../tela_unidades/unidades.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
-// EDUCAÇÃO
+// EDUCAÇÃO EM SAÚDE
 // ==========================================
 
-educationCard.addEventListener(
-    "click",
-    () => {
+if (educationCard) {
 
-        window.location.href =
-            "educacao.html";
+    educationCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "../tela_educacao/educacao.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
 // ÚLTIMA AVALIAÇÃO
 // ==========================================
 
-lastAssessmentCard.addEventListener(
-    "click",
-    () => {
+if (lastAssessmentCard) {
 
-        window.location.href =
-            "resultado-avaliacao.html";
+    lastAssessmentCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "resultado-avaliacao.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
 // UBS DE REFERÊNCIA
 // ==========================================
 
-referenceUnitCard.addEventListener(
-    "click",
-    () => {
+if (referenceUnitCard) {
 
-        window.location.href =
-            "ubs-referencia.html";
+    referenceUnitCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "ubs-referencia.html";
+
+        }
+    );
+
+}
 
 
 // ==========================================
 // PRÓXIMA AÇÃO
 // ==========================================
 
-nextActionCard.addEventListener(
-    "click",
-    () => {
+if (nextActionCard) {
 
-        window.location.href =
-            "acompanhamento.html";
+    nextActionCard.addEventListener(
+        "click",
+        () => {
 
-    }
-);
+            window.location.href =
+                "acompanhamento.html";
+
+        }
+    );
+
+}

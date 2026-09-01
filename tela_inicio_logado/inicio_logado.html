@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,24 +12,44 @@
 
     <title>Início | GenSaúde SUS</title>
 
+
+    <!-- =========================================
+         CSS DA TELA
+    ========================================== -->
+
     <link
         rel="stylesheet"
         href="inicio_logado.css"
     >
-    <link rel="stylesheet" href="../componentes/header.css">
+
+
+    <!-- =========================================
+         COMPONENTES GLOBAIS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../componentes/disclaimer.css"
+    >
+
 </head>
+
 
 <body>
 
+
     <!-- =========================================
-         HEADER
+         HEADER GLOBAL
     ========================================== -->
 
     <div
-    id="global-header"
-    data-active="inicio"
-    data-logged="true"
-    data-name="João Silva"
+        id="global-header"
+        data-active="inicio"
     ></div>
 
 
@@ -47,15 +68,19 @@
         <section class="welcome-section">
 
             <h1>
+
                 Olá,
+
                 <span id="firstName">
-                    João
+                    Usuário
                 </span>
 
                 <span class="wave">
                     👋
                 </span>
+
             </h1>
+
 
             <p>
                 Cuide hoje para prevenir problemas amanhã.
@@ -71,11 +96,13 @@
 
         <section class="preventive-banner">
 
+
             <div class="preventive-content">
 
                 <h2>
                     Avaliação Preventiva
                 </h2>
+
 
                 <p>
                     Descubra seus fatores de risco
@@ -106,7 +133,10 @@
             </div>
 
 
-            <!-- ILUSTRAÇÃO -->
+
+            <!-- =====================================
+                 ILUSTRAÇÃO
+            ====================================== -->
 
             <div class="preventive-image-area">
 
@@ -129,6 +159,7 @@
 
         <section class="quick-access-section">
 
+
             <h2 class="section-title">
                 Acesso rápido
             </h2>
@@ -137,8 +168,9 @@
             <div class="quick-access-grid">
 
 
+
                 <!-- =================================
-                     HISTÓRICO
+                     HISTÓRICO FAMILIAR
                 ================================== -->
 
                 <button
@@ -162,6 +194,7 @@
                             <br>
                             Familiar
                         </h3>
+
 
                         <p>
                             Veja e atualize seu
@@ -207,6 +240,7 @@
                             UBS ou UPA?
                         </h3>
 
+
                         <p>
                             Saiba onde
                             <br>
@@ -230,7 +264,7 @@
 
 
                 <!-- =================================
-                     UNIDADES
+                     UNIDADES PRÓXIMAS
                 ================================== -->
 
                 <button
@@ -255,6 +289,7 @@
                             Próximas
                         </h3>
 
+
                         <p>
                             Encontre unidades
                             <br>
@@ -276,7 +311,7 @@
 
 
                 <!-- =================================
-                     EDUCAÇÃO
+                     EDUCAÇÃO EM SAÚDE
                 ================================== -->
 
                 <button
@@ -301,6 +336,7 @@
                             Saúde
                         </h3>
 
+
                         <p>
                             Conteúdo para
                             <br>
@@ -321,6 +357,7 @@
 
                 </button>
 
+
             </div>
 
         </section>
@@ -333,12 +370,14 @@
 
         <section class="tracking-section">
 
+
             <h2 class="section-title">
                 Seu acompanhamento
             </h2>
 
 
             <div class="tracking-grid">
+
 
 
                 <!-- =================================
@@ -365,9 +404,11 @@
                             Última avaliação
                         </span>
 
+
                         <strong class="tracking-danger">
                             Atenção Recomendada
                         </strong>
+
 
                         <span class="tracking-detail">
                             Realizada em 15/04/2026
@@ -411,9 +452,11 @@
                             UBS de referência
                         </span>
 
+
                         <strong class="tracking-primary">
                             UBS Jardim das Flores
                         </strong>
+
 
                         <span class="tracking-detail">
                             Rua das Flores, 320 - Jardim das Flores
@@ -457,9 +500,11 @@
                             Próxima ação
                         </span>
 
+
                         <strong class="tracking-success">
                             Acompanhamento
                         </strong>
+
 
                         <span class="tracking-detail">
                             Recomendado em 15/07/2026
@@ -477,6 +522,7 @@
 
                 </button>
 
+
             </div>
 
         </section>
@@ -484,45 +530,64 @@
 
 
         <!-- =========================================
-             AVISO
+             AVISO GLOBAL
         ========================================== -->
 
         <section class="disclaimer-section">
 
-            <div class="disclaimer-box">
-
-                <div class="disclaimer-left">
-
-                    <img
-                        src="../imagens/disclaimer.png"
-                        alt=""
-                        class="disclaimer-icon"
-                        onerror="this.style.visibility='hidden'"
-                    >
-
-                    <p>
-                        O GenSaúde SUS orienta, mas não substitui avaliação profissional.
-                    </p>
-
-                </div>
-
-
-                <img
-                    src="../imagens/efeito_disclaimer.png"
-                    alt=""
-                    class="disclaimer-decoration"
-                    onerror="this.style.visibility='hidden'"
-                >
-
-            </div>
+            <div id="global-disclaimer"></div>
 
         </section>
 
+
     </main>
 
-    <script src="../componentes/auth.js"></script>
-    <script src="inicio-logado.js"></script>
-    <script src="../componentes/header.js"></script>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+
+    <!--
+        1 - AUTENTICAÇÃO
+
+        Precisa carregar primeiro.
+        O header e a tela usam getSessao().
+    -->
+
+    <script
+        src="../componentes/auth.js"
+    ></script>
+
+
+    <!--
+        2 - HEADER GLOBAL
+    -->
+
+    <script
+        src="../componentes/header.js"
+    ></script>
+
+
+    <!--
+        3 - JAVASCRIPT DA TELA
+    -->
+
+    <script
+        src="inicio_logado.js"
+    ></script>
+
+
+    <!--
+        4 - AVISO GLOBAL
+    -->
+
+    <script
+        src="../componentes/disclaimer.js"
+    ></script>
+
+
 </body>
 
 </html>
