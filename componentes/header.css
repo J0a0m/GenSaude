@@ -154,10 +154,17 @@
    PERFIL - USUÁRIO LOGADO
 ========================================= */
 
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
 .profile-button {
     height: 40px;
 
-    padding: 0 10px;
+    padding: 0 12px;
 
     display: flex;
     align-items: center;
@@ -179,12 +186,23 @@
 
     cursor: pointer;
 
-    transition: background-color 0.2s ease;
+    max-width: 155px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
+
 
 .profile-button:hover {
     background-color: #0648bd;
 }
+
+
+.profile-button:active {
+    transform: scale(0.98);
+}
+
 
 .profile-icon {
     width: 20px;
@@ -195,6 +213,67 @@
     display: block;
 
     flex-shrink: 0;
+}
+
+
+.profile-name {
+    display: block;
+
+    max-width: 105px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   BOTÃO SAIR
+========================================= */
+
+.logout-button {
+    height: 40px;
+
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #d93025;
+    border-radius: 9px;
+
+    background-color: #d93025;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.logout-button:hover {
+    background-color: #b3261e;
+    border-color: #b3261e;
+}
+
+
+.logout-button:active {
+    transform: scale(0.97);
 }
 
 

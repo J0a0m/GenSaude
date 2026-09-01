@@ -17,7 +17,7 @@ if (headerContainer) {
 
 
     // ======================================
-    // VERIFICAR SESSÃO AUTOMATICAMENTE
+    // VERIFICAR SESSÃO
     // ======================================
 
     let sessao = null;
@@ -36,12 +36,82 @@ if (headerContainer) {
 
     const userName =
         logged && sessao.nome
-            ? sessao.nome
+            ? sessao.nome.trim()
             : "";
 
 
     // ======================================
-    // EVITAR HTML INSERIDO PELO USUÁRIO
+    // RESUMIR NOME
+    // ======================================
+
+    function resumirNome(nome) {
+
+        if (!nome) {
+            return "";
+        }
+
+
+        const partes =
+            nome
+                .trim()
+                .split(/\s+/);
+
+
+        // Exemplo:
+        // "Vitor" continua "Vitor"
+
+        if (partes.length === 1) {
+
+            if (partes[0].length > 14) {
+
+                return (
+                    partes[0].substring(0, 12) +
+                    "..."
+                );
+
+            }
+
+            return partes[0];
+        }
+
+
+        const primeiroNome =
+            partes[0];
+
+        const ultimoNome =
+            partes[partes.length - 1];
+
+
+        // Nome pequeno pode aparecer completo
+
+        if (nome.length <= 18) {
+
+            return nome;
+
+        }
+
+
+        // Exemplo:
+        // Vitor Oliveira Rangel
+        // vira:
+        // Vitor R.
+
+        return (
+            primeiroNome +
+            " " +
+            ultimoNome.charAt(0).toUpperCase() +
+            "."
+        );
+
+    }
+
+
+    const displayName =
+        resumirNome(userName);
+
+
+    // ======================================
+    // EVITAR HTML INSERIDO NO NOME
     // ======================================
 
     function escaparHTML(texto) {
@@ -58,6 +128,9 @@ if (headerContainer) {
 
 
     const nomeSeguro =
+        escaparHTML(displayName);
+
+    const nomeCompletoSeguro =
         escaparHTML(userName);
 
 
@@ -84,6 +157,7 @@ if (headerContainer) {
                         type="button"
                         class="profile-button"
                         id="profileButton"
+                        title="${nomeCompletoSeguro}"
                     >
 
                         <img
@@ -92,7 +166,7 @@ if (headerContainer) {
                             class="profile-icon"
                         >
 
-                        <span>
+                        <span class="profile-name">
                             ${nomeSeguro}
                         </span>
 
@@ -269,7 +343,6 @@ if (headerContainer) {
 
                 } else {
 
-                    // FALLBACK
                     localStorage.removeItem(
                         "gensaude_sessao"
                     );
@@ -287,7 +360,7 @@ if (headerContainer) {
 
 
     // ======================================
-    // BOTÃO DE PERFIL
+    // PERFIL
     // ======================================
 
     const profileButton =
@@ -303,14 +376,14 @@ if (headerContainer) {
             () => {
 
                 /*
-                    FUTURAMENTE:
+                FUTURAMENTE:
 
-                    window.location.href =
-                        "../tela_perfil/perfil.html";
+                window.location.href =
+                    "../tela_perfil/perfil.html";
                 */
 
                 console.log(
-                    "Perfil do usuário:",
+                    "Usuário:",
                     sessao
                 );
 
