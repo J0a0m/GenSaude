@@ -21,6 +21,6 @@ startAssessmentButton.addEventListener("click", () => {
         window.location.href = "avaliacao.html";
     */
 
-    window.location.href = "../tela_login/login.html";
+    window.location.href = "../tela_prevencao/prevencao.html";
 
 });

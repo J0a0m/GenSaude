@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Avaliação Preventiva | GenSaúde SUS
+    </title>
+
+
+    <!-- =========================================
+         CSS DA TELA
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="prevencao.css"
+    >
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER GLOBAL
+    ========================================== -->
+
+    <div
+        id="global-header"
+        data-active="prevencao"
+    ></div>
+
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================================
+             CARD PRINCIPAL DA AVALIAÇÃO
+        ========================================== -->
+
+        <section class="assessment-card">
+
+
+            <!-- =====================================
+                 CABEÇALHO
+            ====================================== -->
+
+            <div class="assessment-header">
+
+
+                <!-- TÍTULO -->
+
+                <div class="assessment-title">
+
+                    <h1>
+                        Avaliação preventiva
+                    </h1>
+
+                    <p>
+                        Etapa 1 de 5 - Dados pessoais
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROGRESSO
+                ================================== -->
+
+                <div
+                    class="progress-container"
+                    aria-label="Progresso da avaliação"
+                >
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div
+                        class="progress-step active"
+                        data-step="1"
+                    >
+
+                        <div class="step-circle">
+                            1
+                        </div>
+
+                        <span>
+                            Dados pessoais
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="2"
+                    >
+
+                        <div class="step-circle">
+                            2
+                        </div>
+
+                        <span>
+                            Histórico familiar
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="3"
+                    >
+
+                        <div class="step-circle">
+                            3
+                        </div>
+
+                        <span>
+                            Estilo de vida
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 4 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="4"
+                    >
+
+                        <div class="step-circle">
+                            4
+                        </div>
+
+                        <span>
+                            Sintomas e condições
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <!-- ETAPA 5 -->
+
+                    <div
+                        class="progress-step"
+                        data-step="5"
+                    >
+
+                        <div class="step-circle">
+                            5
+                        </div>
+
+                        <span>
+                            Resumo
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 CONTEÚDO
+            ====================================== -->
+
+            <div class="assessment-body">
+
+
+                <!-- =================================
+                     FORMULÁRIO
+                ================================== -->
+
+                <section class="form-area">
+
+
+                    <!-- TEXTO -->
+
+                    <p class="assessment-description">
+
+                        Preencha suas informações básicas para que
+                        possamos oferecer orientações preventivas
+                        mais personalizadas e seguras.
+
+                    </p>
+
+
+
+                    <!-- =================================
+                         FORMULÁRIO
+                    ================================== -->
+
+                    <form
+                        id="personalDataForm"
+                        novalidate
+                    >
+
+
+                        <!-- =================================
+                             NOME COMPLETO
+                        ================================== -->
+
+                        <div class="form-group full">
+
+                            <label for="nome">
+                                Nome completo
+                            </label>
+
+
+                            <div class="input-wrapper">
+
+                                <img
+                                    src="../imagens/usuario.png"
+                                    alt=""
+                                    class="field-icon"
+                                    onerror="this.style.visibility='hidden'"
+                                >
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    placeholder="Digite seu nome completo"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             DATA + SEXO
+                        ================================== -->
+
+                        <div class="form-row">
+
+
+                            <!-- DATA -->
+
+                            <div class="form-group">
+
+                                <label for="dataNascimento">
+                                    Data de nascimento
+                                </label>
+
+
+                                <div class="input-wrapper">
+
+                                    <img
+                                        src="../imagens/calendario.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                    <input
+                                        type="date"
+                                        id="dataNascimento"
+                                        name="dataNascimento"
+                                        autocomplete="bday"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SEXO -->
+
+                            <div class="form-group">
+
+                                <label for="sexo">
+                                    Sexo
+                                </label>
+
+
+                                <div class="input-wrapper select-wrapper">
+
+                                    <span class="field-symbol">
+                                        ⚥
+                                    </span>
+
+
+                                    <select
+                                        id="sexo"
+                                        name="sexo"
+                                        required
+                                    >
+
+                                        <option
+                                            value=""
+                                            selected
+                                            disabled
+                                        >
+                                            Selecione
+                                        </option>
+
+                                        <option value="masculino">
+                                            Masculino
+                                        </option>
+
+                                        <option value="feminino">
+                                            Feminino
+                                        </option>
+
+                                        <option value="outro">
+                                            Outro
+                                        </option>
+
+                                        <option value="nao_informar">
+                                            Prefiro não informar
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CPF + EMAIL
+                        ================================== -->
+
+                        <div class="form-row">
+
+
+                            <!-- CPF -->
+
+                            <div class="form-group">
+
+                                <label for="cpf">
+                                    CPF
+                                </label>
+
+
+                                <div class="input-wrapper">
+
+                                    <img
+                                        src="../imagens/cpf.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                    <input
+                                        type="text"
+                                        id="cpf"
+                                        name="cpf"
+                                        placeholder="000.000.000-00"
+                                        maxlength="14"
+                                        inputmode="numeric"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+
+                                <div class="input-wrapper">
+
+                                    <img
+                                        src="../imagens/email.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="seu@email.com"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CELULAR + CEP
+                        ================================== -->
+
+                        <div class="form-row">
+
+
+                            <!-- CELULAR -->
+
+                            <div class="form-group">
+
+                                <label for="telefone">
+                                    Celular
+                                </label>
+
+
+                                <div class="input-wrapper">
+
+                                    <img
+                                        src="../imagens/telefone.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                    <input
+                                        type="text"
+                                        id="telefone"
+                                        name="telefone"
+                                        placeholder="(00) 00000-0000"
+                                        maxlength="15"
+                                        inputmode="numeric"
+                                        autocomplete="tel"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- CEP -->
+
+                            <div class="form-group">
+
+                                <label for="cep">
+                                    CEP
+                                </label>
+
+
+                                <div class="input-wrapper">
+
+                                    <img
+                                        src="../imagens/CEP.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                    <input
+                                        type="text"
+                                        id="cep"
+                                        name="cep"
+                                        placeholder="00000-000"
+                                        maxlength="9"
+                                        inputmode="numeric"
+                                        autocomplete="postal-code"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CIDADE + ESTADO
+                        ================================== -->
+
+                        <div class="form-row location-row">
+
+
+                            <!-- CIDADE -->
+
+                            <div class="form-group city-group">
+
+                                <label for="cidade">
+                                    Cidade
+                                </label>
+
+
+                                <div class="input-wrapper">
+
+                                    <img
+                                        src="../imagens/cidade.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+                                    <input
+                                        type="text"
+                                        id="cidade"
+                                        name="cidade"
+                                        placeholder="Digite sua cidade"
+                                        autocomplete="address-level2"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ESTADO -->
+
+                            <div class="form-group state-group">
+
+                                <label for="estado">
+                                    Estado
+                                </label>
+
+
+                                <div class="input-wrapper select-wrapper">
+
+                                    <img
+                                        src="../imagens/estado.png"
+                                        alt=""
+                                        class="field-icon"
+                                        onerror="this.style.visibility='hidden'"
+                                    >
+
+
+                                    <select
+                                        id="estado"
+                                        name="estado"
+                                        autocomplete="address-level1"
+                                        required
+                                    >
+
+                                        <option
+                                            value=""
+                                            selected
+                                            disabled
+                                        >
+                                            Selecione
+                                        </option>
+
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             MENSAGEM
+                        ================================== -->
+
+                        <p
+                            id="formMessage"
+                            class="form-message"
+                            aria-live="polite"
+                        ></p>
+
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- =================================
+                     ILUSTRAÇÃO
+                ================================== -->
+
+                <section class="illustration-area">
+
+                    <img
+                        src="../imagens/ilustracao_cadastro.png"
+                        alt="Ilustração sobre dados de saúde"
+                        class="assessment-image"
+                        onerror="this.style.visibility='hidden'"
+                    >
+
+                </section>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 NAVEGAÇÃO
+            ====================================== -->
+
+            <div class="assessment-navigation">
+
+
+                <!-- VOLTAR -->
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backButton"
+                >
+
+                    <span class="button-arrow">
+                        ←
+                    </span>
+
+                    <span>
+                        Voltar
+                    </span>
+
+                </button>
+
+
+
+                <!-- CONTINUAR -->
+
+                <button
+                    type="button"
+                    class="continue-button"
+                    id="continueButton"
+                >
+
+                    <span>
+                        Continuar
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 AVISO ESPECÍFICO DA AVALIAÇÃO
+            ====================================== -->
+
+            <div class="assessment-notice">
+
+                <div class="assessment-notice-content">
+
+                    <span class="notice-icon">
+                        !
+                    </span>
+
+
+                    <p>
+                        Seus dados são utilizados apenas para
+                        orientação preventiva e segurança do atendimento.
+                    </p>
+
+                </div>
+
+
+                <img
+                    src="../imagens/efeito_disclaimer.png"
+                    alt=""
+                    class="notice-decoration"
+                    onerror="this.style.visibility='hidden'"
+                >
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+
+    <!-- AUTENTICAÇÃO -->
+
+    <script
+        src="../componentes/auth.js"
+    ></script>
+
+
+    <!-- HEADER GLOBAL -->
+
+    <script
+        src="../componentes/header.js"
+    ></script>
+
+
+    <!-- PREVENÇÃO -->
+
+    <script
+        src="prevencao.js"
+    ></script>
+
+
+</body>
+
+</html>
