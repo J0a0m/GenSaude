@@ -51,6 +51,7 @@ if (dadosSalvos) {
 // PREENCHER RESUMO
 // ==========================================
 
+
 function preencherResumo(){
 
 
@@ -59,7 +60,6 @@ function preencherResumo(){
         return;
 
     }
-
 
 
 
@@ -91,7 +91,9 @@ function preencherResumo(){
 
     preencherCampo(
         "resumoSexo",
-        dadosPessoais.sexo
+        traduzirSexo(
+            dadosPessoais.sexo
+        )
     );
 
 
@@ -117,93 +119,13 @@ function preencherResumo(){
 
 
 
-    let historicoTexto = [];
-
-
-
-    adicionarHistorico(
-        "Mãe",
-        historico.mae,
-        historicoTexto
-    );
-
-
-    adicionarHistorico(
-        "Pai",
-        historico.pai,
-        historicoTexto
-    );
-
-
-    adicionarHistorico(
-        "Avós",
-        historico.avos,
-        historicoTexto
-    );
-
-
-
-    const complementares =
-        historico.complementares || {};
-
-
-
-    if(
-        complementares.cancer === "sim"
-    ){
-
-        historicoTexto.push(
-            "Histórico familiar de câncer"
-        );
-
-    }
-
-
-
-    if(
-        complementares.avc === "sim"
-    ){
-
-        historicoTexto.push(
-            "Histórico familiar de AVC"
-        );
-
-    }
-
-
-
-    if(
-        complementares.doencaRenal === "sim"
-    ){
-
-        historicoTexto.push(
-            "Histórico familiar de doença renal"
-        );
-
-    }
-
-
-
-    if(
-        complementares.hereditaria === "sim"
-    ){
-
-        historicoTexto.push(
-            "Doença hereditária conhecida na família"
-        );
-
-    }
-
-
-
     preencherCampo(
         "resumoHistorico",
-        historicoTexto.length
-        ?
-        historicoTexto.join("\n")
-        :
-        "Nenhuma condição informada"
+        montarHistorico(
+            historico
+        )
     );
+
 
 
 
@@ -261,7 +183,6 @@ function preencherResumo(){
 
 
 
-
     // ======================================
     // SINTOMAS E CONDIÇÕES
     // ======================================
@@ -291,8 +212,8 @@ function preencherResumo(){
     );
 
 
-
 }
+
 
 
 
@@ -306,8 +227,116 @@ function preencherResumo(){
 // ==========================================
 
 
-function adicionarHistorico(
-    familiar,
+function montarHistorico(
+    historico
+){
+
+
+    let resultado = [];
+
+
+
+    adicionarFamiliar(
+        "Mãe",
+        historico.mae,
+        resultado
+    );
+
+
+
+    adicionarFamiliar(
+        "Pai",
+        historico.pai,
+        resultado
+    );
+
+
+
+    adicionarFamiliar(
+        "Avós",
+        historico.avos,
+        resultado
+    );
+
+
+
+
+    const complementares =
+        historico.complementares || {};
+
+
+
+    if(
+        complementares.cancer === "sim"
+    ){
+
+        resultado.push(
+            "Histórico familiar de câncer"
+        );
+
+    }
+
+
+
+    if(
+        complementares.avc === "sim"
+    ){
+
+        resultado.push(
+            "Histórico familiar de AVC"
+        );
+
+    }
+
+
+
+    if(
+        complementares.doencaRenal === "sim"
+    ){
+
+        resultado.push(
+            "Histórico familiar de doença renal"
+        );
+
+    }
+
+
+
+    if(
+        complementares.hereditaria === "sim"
+    ){
+
+        resultado.push(
+            "Doença hereditária conhecida"
+        );
+
+    }
+
+
+
+
+    return resultado.length
+
+        ?
+
+        resultado.join("\n\n")
+
+        :
+
+        "Nenhuma condição informada";
+
+
+}
+
+
+
+
+
+
+
+
+function adicionarFamiliar(
+    nome,
     dados,
     lista
 ){
@@ -366,13 +395,14 @@ function adicionarHistorico(
     ){
 
         lista.push(
-            `${familiar}: ${condicoes.join(", ")}`
+            `${nome}: ${condicoes.join(", ")}`
         );
 
     }
 
 
 }
+
 
 
 
@@ -401,15 +431,14 @@ function preencherCampo(
 
     if(elemento){
 
-
         elemento.textContent =
             valor || "-";
-
 
     }
 
 
 }
+
 
 
 
@@ -428,9 +457,7 @@ function formatarLista(
 ){
 
 
-    if(
-        !lista
-    ){
+    if(!lista){
 
         return "Nenhum informado";
 
@@ -454,6 +481,7 @@ function formatarLista(
 
 
 }
+
 
 
 
@@ -525,15 +553,58 @@ function traduzirValor(
     };
 
 
-
     return traducoes[valor]
-        ||
-        valor
-        ||
-        "-";
+
+    ||
+
+    valor
+
+    ||
+
+    "-";
 
 
 }
+
+
+
+
+
+
+
+
+function traduzirSexo(
+    sexo
+){
+
+
+    const valores = {
+
+        masculino:
+        "Masculino",
+
+        feminino:
+        "Feminino",
+
+        outro:
+        "Outro"
+
+    };
+
+
+    return valores[sexo]
+
+    ||
+
+    sexo
+
+    ||
+
+    "-";
+
+
+}
+
 
 
 
@@ -586,6 +657,7 @@ function calcularIdade(
 
     if(
         mes < 0 ||
+
         (
             mes === 0 &&
             hoje.getDate()
@@ -612,8 +684,9 @@ function calcularIdade(
 
 
 
+
 // ==========================================
-// BOTÃO VOLTAR
+// VOLTAR
 // ==========================================
 
 
@@ -649,8 +722,9 @@ if(backButton){
 
 
 
+
 // ==========================================
-// BOTÕES EDITAR
+// EDITAR
 // ==========================================
 
 
@@ -688,7 +762,7 @@ editButtons.forEach(
 
 
                 window.location.href =
-                    paginas[index];
+                paginas[index];
 
 
             }
@@ -697,6 +771,7 @@ editButtons.forEach(
 
     }
 );
+
 
 
 
@@ -747,8 +822,9 @@ if(finishButton){
 
 
 
+
 // ==========================================
-// EXECUÇÃO
+// EXECUTAR
 // ==========================================
 
 
