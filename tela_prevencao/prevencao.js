@@ -992,7 +992,7 @@ function validarESalvar() {
         () => {
 
             window.location.href =
-                "prevencao_historico.html";
+                "../tela_historico_familiar/historico.html";
 
         },
         400

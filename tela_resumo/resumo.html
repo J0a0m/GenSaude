@@ -31,9 +31,11 @@
 
 
 
+
 <!-- =========================================
      CONTEÚDO PRINCIPAL
 ========================================= -->
+
 
 <main class="main-content">
 
@@ -43,7 +45,7 @@
 
 
 <!-- =========================================
-     CABEÇALHO DA AVALIAÇÃO
+     CABEÇALHO
 ========================================= -->
 
 
@@ -61,12 +63,10 @@
             Etapa 5 de 5 - Resumo
         </p>
 
-
     </div>
 
 
 
-    <!-- PROGRESSO -->
 
     <div class="progress-area">
 
@@ -80,6 +80,7 @@
         <div class="line"></div>
 
 
+
         <div class="step completed">
             <span>✓</span>
             <p>Histórico familiar</p>
@@ -87,6 +88,7 @@
 
 
         <div class="line"></div>
+
 
 
         <div class="step completed">
@@ -98,6 +100,7 @@
         <div class="line"></div>
 
 
+
         <div class="step completed">
             <span>✓</span>
             <p>Sintomas e condições</p>
@@ -105,6 +108,7 @@
 
 
         <div class="line"></div>
+
 
 
         <div class="step active">
@@ -128,6 +132,7 @@
 
 
 
+
 <p class="description">
 
 Revise as informações abaixo antes de finalizar a avaliação.
@@ -139,7 +144,7 @@ Revise as informações abaixo antes de finalizar a avaliação.
 
 
 <!-- =========================================
-     ÁREA CENTRAL
+     CONTEÚDO
 ========================================= -->
 
 
@@ -151,24 +156,31 @@ Revise as informações abaixo antes de finalizar a avaliação.
 
 
 
-<!-- DADOS PESSOAIS -->
+
+
+<!-- =========================================
+     DADOS PESSOAIS
+========================================= -->
+
 
 <div class="summary-box">
 
 
 <div class="box-title">
 
-    <h2>
-        👤 Dados pessoais
-    </h2>
+
+<h2>
+    👤 Dados pessoais
+</h2>
 
 
-    <button>
-        ✎
-    </button>
+<button type="button">
+    ✎
+</button>
 
 
 </div>
+
 
 
 <div class="box-line"></div>
@@ -178,17 +190,22 @@ Revise as informações abaixo antes de finalizar a avaliação.
 <div class="info-grid">
 
 
+
 <div>
 
 <strong>
 Nome completo
 </strong>
 
-<p>
-João Silva
+
+<p id="resumoNome">
+-
 </p>
 
+
 </div>
+
+
 
 
 <div>
@@ -197,11 +214,15 @@ João Silva
 Idade
 </strong>
 
-<p>
-18
+
+<p id="resumoIdade">
+-
 </p>
 
+
 </div>
+
+
 
 
 <div>
@@ -210,11 +231,15 @@ Idade
 Sexo
 </strong>
 
-<p>
-Masculino
+
+<p id="resumoSexo">
+-
 </p>
 
+
 </div>
+
+
 
 
 <div>
@@ -223,24 +248,31 @@ Masculino
 Cidade/Estado
 </strong>
 
-<p>
-São Paulo - SP
+
+<p id="resumoLocalizacao">
+-
 </p>
 
-</div>
-
-
-</div>
-
 
 </div>
 
 
 
+</div>
 
 
 
-<!-- ESTILO DE VIDA -->
+</div>
+
+
+
+
+
+
+
+<!-- =========================================
+     HISTÓRICO FAMILIAR
+========================================= -->
 
 
 <div class="summary-box">
@@ -248,24 +280,82 @@ São Paulo - SP
 
 <div class="box-title">
 
+
 <h2>
-❤️ Estilo de vida
+    🧬 Histórico familiar
 </h2>
 
 
-<button>
-✎
+<button type="button">
+    ✎
 </button>
 
 
 </div>
 
 
+
 <div class="box-line"></div>
 
 
 
-<div class="info-grid lifestyle">
+<div class="symptoms-text">
+
+
+<strong>
+Condições identificadas
+</strong>
+
+
+<p id="resumoHistorico">
+-
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =========================================
+     ESTILO DE VIDA
+========================================= -->
+
+
+<div class="summary-box">
+
+
+<div class="box-title">
+
+
+<h2>
+    ❤️ Estilo de vida
+</h2>
+
+
+<button type="button">
+    ✎
+</button>
+
+
+</div>
+
+
+
+<div class="box-line"></div>
+
+
+
+<div class="info-grid">
+
 
 
 <div>
@@ -274,9 +364,11 @@ São Paulo - SP
 Atividade física
 </strong>
 
-<p>
-Pratica regularmente.
+
+<p id="resumoAtividade">
+-
 </p>
+
 
 </div>
 
@@ -288,9 +380,11 @@ Pratica regularmente.
 Alimentação
 </strong>
 
-<p>
-Equilibrada.
+
+<p id="resumoAlimentacao">
+-
 </p>
+
 
 </div>
 
@@ -302,9 +396,11 @@ Equilibrada.
 Sono
 </strong>
 
-<p>
-7 a 8 horas por noite.
+
+<p id="resumoSono">
+-
 </p>
+
 
 </div>
 
@@ -316,23 +412,30 @@ Sono
 Tabagismo
 </strong>
 
-<p>
-Não fuma.
+
+<p id="resumoTabagismo">
+-
 </p>
 
+
+</div>
+
+
+
 </div>
 
 
 </div>
 
 
-</div>
 
 
 
 
 
-<!-- SINTOMAS -->
+<!-- =========================================
+     SINTOMAS E CONDIÇÕES
+========================================= -->
 
 
 <div class="summary-box">
@@ -342,23 +445,26 @@ Não fuma.
 
 
 <h2>
-☑ Sintomas e condições
+    ☑ Sintomas e condições
 </h2>
 
 
-<button>
-✎
+<button type="button">
+    ✎
 </button>
 
 
 </div>
 
 
+
 <div class="box-line"></div>
 
 
 
+
 <div class="symptoms-text">
+
 
 
 <strong>
@@ -366,9 +472,10 @@ Condições selecionadas
 </strong>
 
 
-<p>
-Diabetes, Hipertensão
+<p id="resumoCondicoes">
+-
 </p>
+
 
 
 
@@ -377,18 +484,13 @@ Sintomas selecionados
 </strong>
 
 
-<p>
-Cansaço excessivo,
-Dores de cabeça frequentes
+<p id="resumoSintomas">
+-
 </p>
 
 
-</div>
-
 
 </div>
-
-
 
 
 </div>
@@ -397,7 +499,17 @@ Dores de cabeça frequentes
 
 
 
-<!-- IMAGEM -->
+</div>
+
+
+
+
+
+
+
+<!-- =========================================
+     IMAGEM LATERAL
+========================================= -->
 
 
 <div class="summary-image">
@@ -418,7 +530,9 @@ onerror="this.style.visibility='hidden'"
 
 
 
+
 </div>
+
 
 
 
@@ -433,11 +547,16 @@ onerror="this.style.visibility='hidden'"
 <div class="summary-footer">
 
 
-<button class="back-button">
+
+<button
+class="back-button"
+type="button">
 
 ← Voltar
 
 </button>
+
+
 
 
 
@@ -452,7 +571,10 @@ Suas informações estão seguras e protegidas.
 
 
 
-<button class="finish-button">
+
+<button
+class="finish-button"
+type="button">
 
 ✓ Finalizar →
 
@@ -461,6 +583,7 @@ Suas informações estão seguras e protegidas.
 
 
 </div>
+
 
 
 
@@ -473,6 +596,7 @@ Suas informações estão seguras e protegidas.
 
 
 
+
 <script src="../componentes/auth.js"></script>
 
 <script src="resumo.js"></script>
@@ -481,5 +605,6 @@ Suas informações estão seguras e protegidas.
 
 
 </body>
+
 
 </html>
