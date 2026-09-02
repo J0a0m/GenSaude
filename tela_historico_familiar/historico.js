@@ -10,16 +10,16 @@
 // =========================================================
 
 const familyHistoryForm =
-    document.getElementById("familyHistoryForm");
+    document.getElementById(
+        "familyHistoryForm"
+    );
+
 
 const formMessage =
-    document.getElementById("formMessage");
+    document.getElementById(
+        "formMessage"
+    );
 
-const backButton =
-    document.getElementById("backButton");
-
-const continueButton =
-    document.getElementById("continueButton");
 
 const radioInputs =
     document.querySelectorAll(
@@ -34,6 +34,7 @@ const radioInputs =
 const ASSESSMENT_KEY =
     "gensaude_avaliacao_preventiva";
 
+
 const LOGIN_DESTINATION_KEY =
     "gensaude_destino_apos_login";
 
@@ -45,8 +46,10 @@ const LOGIN_DESTINATION_KEY =
 const PREVIOUS_PAGE =
     "../tela_prevencao/prevencao.html";
 
+
 const NEXT_PAGE =
     "../tela_estilo_vida/estilo_vida.html";
+
 
 const LOGIN_PAGE =
     "../tela_login/login.html";
@@ -59,21 +62,28 @@ const LOGIN_PAGE =
 const QUESTIONS = [
 
     // MÃE
+
     "mae_diabetes",
     "mae_hipertensao",
     "mae_cardiaca",
 
+
     // PAI
+
     "pai_diabetes",
     "pai_hipertensao",
     "pai_cardiaca",
 
+
     // AVÓS
+
     "avos_diabetes",
     "avos_hipertensao",
     "avos_cardiaca",
 
-    // COMPLEMENTARES
+
+    // PERGUNTAS COMPLEMENTARES
+
     "familia_cancer",
     "familia_avc",
     "familia_doenca_renal",
@@ -86,9 +96,12 @@ const QUESTIONS = [
 // VARIÁVEIS
 // =========================================================
 
-let sessao = null;
+let sessao =
+    null;
 
-let avaliacaoAtual = null;
+
+let avaliacaoAtual =
+    null;
 
 
 // =========================================================
@@ -96,7 +109,8 @@ let avaliacaoAtual = null;
 // =========================================================
 
 if (
-    typeof getSessao === "function"
+    typeof getSessao ===
+    "function"
 ) {
 
     sessao =
@@ -128,7 +142,7 @@ if (!sessao) {
 
 
 // =========================================================
-// INICIAR
+// INICIAR PÁGINA
 // =========================================================
 
 function iniciarPagina() {
@@ -138,7 +152,7 @@ function iniciarPagina() {
 
 
     // =====================================================
-    // NÃO EXISTE AVALIAÇÃO
+    // AVALIAÇÃO NÃO ENCONTRADA
     // =====================================================
 
     if (!avaliacaoAtual) {
@@ -152,12 +166,16 @@ function iniciarPagina() {
 
 
     // =====================================================
-    // AVALIAÇÃO PERTENCE A OUTRO USUÁRIO
+    // AVALIAÇÃO DE OUTRO USUÁRIO
     // =====================================================
 
     if (
-        String(avaliacaoAtual.usuarioId) !==
-        String(sessao.id)
+        String(
+            avaliacaoAtual.usuarioId
+        ) !==
+        String(
+            sessao.id
+        )
     ) {
 
         window.location.href =
@@ -199,34 +217,59 @@ function criarHistoricoVazio() {
 
         mae: {
 
-            diabetes: "",
-            hipertensao: "",
-            cardiaca: ""
+            diabetes:
+                "",
+
+            hipertensao:
+                "",
+
+            cardiaca:
+                ""
 
         },
+
 
         pai: {
 
-            diabetes: "",
-            hipertensao: "",
-            cardiaca: ""
+            diabetes:
+                "",
+
+            hipertensao:
+                "",
+
+            cardiaca:
+                ""
 
         },
+
 
         avos: {
 
-            diabetes: "",
-            hipertensao: "",
-            cardiaca: ""
+            diabetes:
+                "",
+
+            hipertensao:
+                "",
+
+            cardiaca:
+                ""
 
         },
 
+
         complementares: {
 
-            cancer: "",
-            avc: "",
-            doencaRenal: "",
-            hereditaria: ""
+            cancer:
+                "",
+
+            avc:
+                "",
+
+            doencaRenal:
+                "",
+
+            hereditaria:
+                ""
 
         }
 
@@ -431,7 +474,7 @@ function carregarRespostasSalvas() {
 
 
     // =====================================================
-    // COMPLEMENTARES
+    // PERGUNTAS COMPLEMENTARES
     // =====================================================
 
     marcarResposta(
@@ -477,7 +520,7 @@ function carregarRespostasSalvas() {
 
 
 // =========================================================
-// BUSCAR RESPOSTA DE FAMILIAR
+// BUSCAR RESPOSTA DE UM FAMILIAR
 // =========================================================
 
 function obterResposta(
@@ -487,7 +530,9 @@ function obterResposta(
     chaveAntiga
 ) {
 
-    // FORMATO NOVO
+    // =====================================================
+    // FORMATO ATUAL
+    // =====================================================
 
     if (
         historico[familiar] &&
@@ -499,7 +544,9 @@ function obterResposta(
     }
 
 
-    // COMPATIBILIDADE COM FORMATO ANTIGO
+    // =====================================================
+    // COMPATIBILIDADE COM O FORMATO ANTIGO
+    // =====================================================
 
     if (
         historico[chaveAntiga]
@@ -525,7 +572,9 @@ function obterRespostaComplementar(
     chaveAntiga
 ) {
 
-    // FORMATO NOVO
+    // =====================================================
+    // FORMATO ATUAL
+    // =====================================================
 
     if (
         historico.complementares &&
@@ -537,7 +586,9 @@ function obterRespostaComplementar(
     }
 
 
-    // COMPATIBILIDADE
+    // =====================================================
+    // COMPATIBILIDADE COM O FORMATO ANTIGO
+    // =====================================================
 
     if (
         historico[chaveAntiga]
@@ -554,7 +605,7 @@ function obterRespostaComplementar(
 
 
 // =========================================================
-// MARCAR RADIO
+// MARCAR RESPOSTA
 // =========================================================
 
 function marcarResposta(
@@ -616,35 +667,41 @@ function configurarEventos() {
 
 
     // =====================================================
-    // VOLTAR
+    // EVENTO DO FOOTER - VOLTAR
     // =====================================================
 
-    if (backButton) {
+    document.addEventListener(
+        "avaliacao:voltar",
+        (event) => {
 
-        backButton.addEventListener(
-            "click",
-            voltarEtapa
-        );
-
-    }
+            event.preventDefault();
 
 
-    // =====================================================
-    // CONTINUAR
-    // =====================================================
+            voltarEtapa();
 
-    if (continueButton) {
-
-        continueButton.addEventListener(
-            "click",
-            continuarEtapa
-        );
-
-    }
+        }
+    );
 
 
     // =====================================================
-    // FORMULÁRIO
+    // EVENTO DO FOOTER - CONTINUAR
+    // =====================================================
+
+    document.addEventListener(
+        "avaliacao:continuar",
+        (event) => {
+
+            event.preventDefault();
+
+
+            continuarEtapa();
+
+        }
+    );
+
+
+    // =====================================================
+    // ENVIAR FORMULÁRIO PELO ENTER
     // =====================================================
 
     if (familyHistoryForm) {
@@ -654,6 +711,7 @@ function configurarEventos() {
             (event) => {
 
                 event.preventDefault();
+
 
                 continuarEtapa();
 
@@ -692,7 +750,7 @@ function obterValorResposta(
 
 
 // =========================================================
-// MONTAR HISTÓRICO COMPLETO
+// MONTAR HISTÓRICO FAMILIAR COMPLETO
 // =========================================================
 
 function montarHistoricoFamiliar() {
@@ -772,7 +830,7 @@ function montarHistoricoFamiliar() {
 
 
         // =================================================
-        // COMPLEMENTARES
+        // PERGUNTAS COMPLEMENTARES
         // =================================================
 
         complementares: {
@@ -838,6 +896,11 @@ function salvarRespostasParciais() {
 
 function voltarEtapa() {
 
+    /*
+        As respostas marcadas são salvas antes
+        de retornar para a etapa anterior.
+    */
+
     salvarRespostasParciais();
 
 
@@ -894,7 +957,7 @@ function continuarEtapa() {
 
 
     // =====================================================
-    // SALVAR
+    // SALVAR HISTÓRICO FAMILIAR
     // =====================================================
 
     avaliacaoAtual.historicoFamiliar =
@@ -911,7 +974,7 @@ function continuarEtapa() {
 
 
     // =====================================================
-    // SUCESSO
+    // MOSTRAR SUCESSO
     // =====================================================
 
     mostrarMensagem(
@@ -920,16 +983,24 @@ function continuarEtapa() {
     );
 
 
-    if (continueButton) {
+    // =====================================================
+    // DESATIVAR BOTÃO TEMPORARIAMENTE
+    // =====================================================
 
-        continueButton.disabled =
-            true;
+    if (
+        typeof definirAvaliacaoFooterCarregando ===
+        "function"
+    ) {
+
+        definirAvaliacaoFooterCarregando(
+            true
+        );
 
     }
 
 
     // =====================================================
-    // IR PARA ETAPA 3
+    // IR PARA A ETAPA 3
     // =====================================================
 
     setTimeout(
@@ -997,11 +1068,6 @@ function destacarPergunta(
     }
 
 
-    // =====================================================
-    // PODE SER PERGUNTA FAMILIAR
-    // OU COMPLEMENTAR
-    // =====================================================
-
     const bloco =
         primeiroRadio.closest(
             ".condition-row, .complementary-question"
@@ -1017,8 +1083,11 @@ function destacarPergunta(
 
         bloco.scrollIntoView(
             {
-                behavior: "smooth",
-                block: "center"
+                behavior:
+                    "smooth",
+
+                block:
+                    "center"
             }
         );
 

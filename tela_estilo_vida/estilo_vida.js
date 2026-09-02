@@ -14,35 +14,30 @@ const lifestyleForm =
         "lifestyleForm"
     );
 
+
 const sonoHorasSelect =
     document.getElementById(
         "sonoHoras"
     );
+
 
 const observacoesInput =
     document.getElementById(
         "observacoes"
     );
 
+
 const characterCounter =
     document.getElementById(
         "characterCounter"
     );
+
 
 const formMessage =
     document.getElementById(
         "formMessage"
     );
 
-const backButton =
-    document.getElementById(
-        "backButton"
-    );
-
-const continueButton =
-    document.getElementById(
-        "continueButton"
-    );
 
 const radioInputs =
     document.querySelectorAll(
@@ -57,6 +52,7 @@ const radioInputs =
 const ASSESSMENT_KEY =
     "gensaude_avaliacao_preventiva";
 
+
 const LOGIN_DESTINATION_KEY =
     "gensaude_destino_apos_login";
 
@@ -68,8 +64,10 @@ const LOGIN_DESTINATION_KEY =
 const PREVIOUS_PAGE =
     "../tela_historico_familiar/historico.html";
 
+
 const NEXT_PAGE =
     "../tela_sintomas_condicoes/sintomas_condicoes.html";
+
 
 const LOGIN_PAGE =
     "../tela_login/login.html";
@@ -96,6 +94,7 @@ const REQUIRED_FIELDS = [
 
 let sessao =
     null;
+
 
 let avaliacaoAtual =
     null;
@@ -207,7 +206,7 @@ function iniciarPagina() {
 
 
 // =========================================================
-// OBJETO VAZIO
+// CRIAR OBJETO VAZIO
 // =========================================================
 
 function criarEstiloVidaVazio() {
@@ -429,7 +428,7 @@ function marcarRadio(
 function configurarEventos() {
 
     // =====================================================
-    // RADIOS
+    // RESPOSTAS DE RADIO
     // =====================================================
 
     radioInputs.forEach(
@@ -495,35 +494,41 @@ function configurarEventos() {
 
 
     // =====================================================
-    // VOLTAR
+    // EVENTO DO FOOTER - VOLTAR
     // =====================================================
 
-    if (backButton) {
+    document.addEventListener(
+        "avaliacao:voltar",
+        (event) => {
 
-        backButton.addEventListener(
-            "click",
-            voltarEtapa
-        );
-
-    }
+            event.preventDefault();
 
 
-    // =====================================================
-    // CONTINUAR
-    // =====================================================
+            voltarEtapa();
 
-    if (continueButton) {
-
-        continueButton.addEventListener(
-            "click",
-            continuarEtapa
-        );
-
-    }
+        }
+    );
 
 
     // =====================================================
-    // SUBMIT
+    // EVENTO DO FOOTER - CONTINUAR
+    // =====================================================
+
+    document.addEventListener(
+        "avaliacao:continuar",
+        (event) => {
+
+            event.preventDefault();
+
+
+            continuarEtapa();
+
+        }
+    );
+
+
+    // =====================================================
+    // ENVIAR FORMULÁRIO
     // =====================================================
 
     if (lifestyleForm) {
@@ -533,6 +538,7 @@ function configurarEventos() {
             (event) => {
 
                 event.preventDefault();
+
 
                 continuarEtapa();
 
@@ -644,7 +650,7 @@ function montarEstiloDeVida() {
 
 
 // =========================================================
-// SALVAR PARCIALMENTE
+// SALVAR RESPOSTAS PARCIAIS
 // =========================================================
 
 function salvarRespostasParciais() {
@@ -677,6 +683,11 @@ function salvarRespostasParciais() {
 
 function voltarEtapa() {
 
+    /*
+        Salva as respostas atuais antes
+        de voltar para o Histórico Familiar.
+    */
+
     salvarRespostasParciais();
 
 
@@ -707,7 +718,7 @@ function continuarEtapa() {
 
 
     // =====================================================
-    // VALIDAR
+    // VALIDAR CAMPOS OBRIGATÓRIOS
     // =====================================================
 
     const campoPendente =
@@ -750,7 +761,7 @@ function continuarEtapa() {
 
 
     // =====================================================
-    // SUCESSO
+    // MOSTRAR SUCESSO
     // =====================================================
 
     mostrarMensagem(
@@ -759,16 +770,24 @@ function continuarEtapa() {
     );
 
 
-    if (continueButton) {
+    // =====================================================
+    // DESATIVAR BOTÃO TEMPORARIAMENTE
+    // =====================================================
 
-        continueButton.disabled =
-            true;
+    if (
+        typeof definirAvaliacaoFooterCarregando ===
+        "function"
+    ) {
+
+        definirAvaliacaoFooterCarregando(
+            true
+        );
 
     }
 
 
     // =====================================================
-    // PRÓXIMA TELA
+    // IR PARA A PRÓXIMA TELA
     // =====================================================
 
     setTimeout(
@@ -882,7 +901,7 @@ function destacarCampo(
 
 
     // =====================================================
-    // SELECT
+    // CAMPO DE SELEÇÃO
     // =====================================================
 
     if (

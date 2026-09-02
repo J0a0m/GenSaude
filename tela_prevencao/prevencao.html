@@ -15,9 +15,7 @@
     </title>
 
 
-    <!-- =========================================
-         CSS DA TELA
-    ========================================== -->
+    <!-- CSS DA TELA -->
 
     <link
         rel="stylesheet"
@@ -25,13 +23,19 @@
     >
 
 
-    <!-- =========================================
-         HEADER GLOBAL
-    ========================================== -->
+    <!-- HEADER GLOBAL -->
 
     <link
         rel="stylesheet"
         href="../componentes/header.css"
+    >
+
+
+    <!-- FOOTER DA AVALIAÇÃO -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/avaliacao_footer.css"
     >
 
 </head>
@@ -40,9 +44,7 @@
 <body>
 
 
-    <!-- =========================================
-         HEADER GLOBAL
-    ========================================== -->
+    <!-- HEADER GLOBAL -->
 
     <div
         id="global-header"
@@ -51,28 +53,18 @@
 
 
 
-    <!-- =========================================
-         CONTEÚDO PRINCIPAL
-    ========================================== -->
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main class="main-content">
 
 
-        <!-- =========================================
-             CARD PRINCIPAL DA AVALIAÇÃO
-        ========================================== -->
-
         <section class="assessment-card">
 
 
-            <!-- =====================================
-                 CABEÇALHO
-            ====================================== -->
+            <!-- CABEÇALHO -->
 
             <div class="assessment-header">
 
-
-                <!-- TÍTULO -->
 
                 <div class="assessment-title">
 
@@ -88,17 +80,13 @@
 
 
 
-                <!-- =================================
-                     PROGRESSO
-                ================================== -->
+                <!-- PROGRESSO -->
 
                 <div
                     class="progress-container"
                     aria-label="Progresso da avaliação"
                 >
 
-
-                    <!-- ETAPA 1 -->
 
                     <div
                         class="progress-step active"
@@ -119,8 +107,6 @@
                     <div class="progress-line"></div>
 
 
-                    <!-- ETAPA 2 -->
-
                     <div
                         class="progress-step"
                         data-step="2"
@@ -139,8 +125,6 @@
 
                     <div class="progress-line"></div>
 
-
-                    <!-- ETAPA 3 -->
 
                     <div
                         class="progress-step"
@@ -161,8 +145,6 @@
                     <div class="progress-line"></div>
 
 
-                    <!-- ETAPA 4 -->
-
                     <div
                         class="progress-step"
                         data-step="4"
@@ -181,8 +163,6 @@
 
                     <div class="progress-line"></div>
 
-
-                    <!-- ETAPA 5 -->
 
                     <div
                         class="progress-step"
@@ -206,21 +186,15 @@
 
 
 
-            <!-- =====================================
-                 CONTEÚDO
-            ====================================== -->
+            <!-- CONTEÚDO -->
 
             <div class="assessment-body">
 
 
-                <!-- =================================
-                     FORMULÁRIO
-                ================================== -->
+                <!-- FORMULÁRIO -->
 
                 <section class="form-area">
 
-
-                    <!-- TEXTO -->
 
                     <p class="assessment-description">
 
@@ -232,19 +206,13 @@
 
 
 
-                    <!-- =================================
-                         FORMULÁRIO
-                    ================================== -->
-
                     <form
                         id="personalDataForm"
                         novalidate
                     >
 
 
-                        <!-- =================================
-                             NOME COMPLETO
-                        ================================== -->
+                        <!-- NOME COMPLETO -->
 
                         <div class="form-group full">
 
@@ -277,14 +245,10 @@
 
 
 
-                        <!-- =================================
-                             DATA + SEXO
-                        ================================== -->
+                        <!-- DATA DE NASCIMENTO E SEXO -->
 
                         <div class="form-row">
 
-
-                            <!-- DATA -->
 
                             <div class="form-group">
 
@@ -315,8 +279,6 @@
                             </div>
 
 
-
-                            <!-- SEXO -->
 
                             <div class="form-group">
 
@@ -372,14 +334,10 @@
 
 
 
-                        <!-- =================================
-                             CPF + EMAIL
-                        ================================== -->
+                        <!-- CPF E E-MAIL -->
 
                         <div class="form-row">
 
-
-                            <!-- CPF -->
 
                             <div class="form-group">
 
@@ -412,8 +370,6 @@
                             </div>
 
 
-
-                            <!-- EMAIL -->
 
                             <div class="form-group">
 
@@ -448,14 +404,10 @@
 
 
 
-                        <!-- =================================
-                             CELULAR + CEP
-                        ================================== -->
+                        <!-- CELULAR E CEP -->
 
                         <div class="form-row">
 
-
-                            <!-- CELULAR -->
 
                             <div class="form-group">
 
@@ -489,8 +441,6 @@
                             </div>
 
 
-
-                            <!-- CEP -->
 
                             <div class="form-group">
 
@@ -527,14 +477,10 @@
 
 
 
-                        <!-- =================================
-                             CIDADE + ESTADO
-                        ================================== -->
+                        <!-- CIDADE E ESTADO -->
 
                         <div class="form-row location-row">
 
-
-                            <!-- CIDADE -->
 
                             <div class="form-group city-group">
 
@@ -566,8 +512,6 @@
                             </div>
 
 
-
-                            <!-- ESTADO -->
 
                             <div class="form-group state-group">
 
@@ -601,33 +545,113 @@
                                             Selecione
                                         </option>
 
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantins</option>
+                                        <option value="AC">
+                                            Acre
+                                        </option>
+
+                                        <option value="AL">
+                                            Alagoas
+                                        </option>
+
+                                        <option value="AP">
+                                            Amapá
+                                        </option>
+
+                                        <option value="AM">
+                                            Amazonas
+                                        </option>
+
+                                        <option value="BA">
+                                            Bahia
+                                        </option>
+
+                                        <option value="CE">
+                                            Ceará
+                                        </option>
+
+                                        <option value="DF">
+                                            Distrito Federal
+                                        </option>
+
+                                        <option value="ES">
+                                            Espírito Santo
+                                        </option>
+
+                                        <option value="GO">
+                                            Goiás
+                                        </option>
+
+                                        <option value="MA">
+                                            Maranhão
+                                        </option>
+
+                                        <option value="MT">
+                                            Mato Grosso
+                                        </option>
+
+                                        <option value="MS">
+                                            Mato Grosso do Sul
+                                        </option>
+
+                                        <option value="MG">
+                                            Minas Gerais
+                                        </option>
+
+                                        <option value="PA">
+                                            Pará
+                                        </option>
+
+                                        <option value="PB">
+                                            Paraíba
+                                        </option>
+
+                                        <option value="PR">
+                                            Paraná
+                                        </option>
+
+                                        <option value="PE">
+                                            Pernambuco
+                                        </option>
+
+                                        <option value="PI">
+                                            Piauí
+                                        </option>
+
+                                        <option value="RJ">
+                                            Rio de Janeiro
+                                        </option>
+
+                                        <option value="RN">
+                                            Rio Grande do Norte
+                                        </option>
+
+                                        <option value="RS">
+                                            Rio Grande do Sul
+                                        </option>
+
+                                        <option value="RO">
+                                            Rondônia
+                                        </option>
+
+                                        <option value="RR">
+                                            Roraima
+                                        </option>
+
+                                        <option value="SC">
+                                            Santa Catarina
+                                        </option>
+
+                                        <option value="SP">
+                                            São Paulo
+                                        </option>
+
+                                        <option value="SE">
+                                            Sergipe
+                                        </option>
+
+                                        <option value="TO">
+                                            Tocantins
+                                        </option>
 
                                     </select>
 
@@ -639,9 +663,7 @@
 
 
 
-                        <!-- =================================
-                             MENSAGEM
-                        ================================== -->
+                        <!-- MENSAGEM DE VALIDAÇÃO -->
 
                         <p
                             id="formMessage"
@@ -656,9 +678,7 @@
 
 
 
-                <!-- =================================
-                     ILUSTRAÇÃO
-                ================================== -->
+                <!-- ILUSTRAÇÃO -->
 
                 <section class="illustration-area">
 
@@ -676,85 +696,12 @@
 
 
 
-            <!-- =====================================
-                 NAVEGAÇÃO
-            ====================================== -->
+            <!-- FOOTER PADRONIZADO -->
 
-            <div class="assessment-navigation">
-
-
-                <!-- VOLTAR -->
-
-                <button
-                    type="button"
-                    class="back-button"
-                    id="backButton"
-                >
-
-                    <span class="button-arrow">
-                        ←
-                    </span>
-
-                    <span>
-                        Voltar
-                    </span>
-
-                </button>
-
-
-
-                <!-- CONTINUAR -->
-
-                <button
-                    type="button"
-                    class="continue-button"
-                    id="continueButton"
-                >
-
-                    <span>
-                        Continuar
-                    </span>
-
-                    <span class="button-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-            </div>
-
-
-
-            <!-- =====================================
-                 AVISO ESPECÍFICO DA AVALIAÇÃO
-            ====================================== -->
-
-            <div class="assessment-notice">
-
-                <div class="assessment-notice-content">
-
-                    <span class="notice-icon">
-                        !
-                    </span>
-
-
-                    <p>
-                        Seus dados são utilizados apenas para
-                        orientação preventiva e segurança do atendimento.
-                    </p>
-
-                </div>
-
-
-                <img
-                    src="../imagens/efeito_disclaimer.png"
-                    alt=""
-                    class="notice-decoration"
-                    onerror="this.style.visibility='hidden'"
-                >
-
-            </div>
+            <div
+                id="avaliacao-footer"
+                data-back="../tela_inicio_logado/inicio_logado.html"
+            ></div>
 
 
         </section>
@@ -762,11 +709,6 @@
 
     </main>
 
-
-
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
 
 
     <!-- AUTENTICAÇÃO -->
@@ -783,7 +725,14 @@
     ></script>
 
 
-    <!-- PREVENÇÃO -->
+    <!-- FOOTER DA AVALIAÇÃO -->
+
+    <script
+        src="../componentes/avaliacao_footer.js"
+    ></script>
+
+
+    <!-- JAVASCRIPT DA TELA -->
 
     <script
         src="prevencao.js"

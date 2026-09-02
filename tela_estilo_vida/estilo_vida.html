@@ -15,9 +15,7 @@
     </title>
 
 
-    <!-- =========================================
-         CSS DA TELA
-    ========================================== -->
+    <!-- CSS DA TELA -->
 
     <link
         rel="stylesheet"
@@ -25,13 +23,19 @@
     >
 
 
-    <!-- =========================================
-         HEADER GLOBAL
-    ========================================== -->
+    <!-- HEADER GLOBAL -->
 
     <link
         rel="stylesheet"
         href="../componentes/header.css"
+    >
+
+
+    <!-- FOOTER DA AVALIAÇÃO -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/avaliacao_footer.css"
     >
 
 </head>
@@ -40,9 +44,7 @@
 <body>
 
 
-    <!-- =========================================
-         HEADER GLOBAL
-    ========================================== -->
+    <!-- HEADER GLOBAL -->
 
     <div
         id="global-header"
@@ -51,28 +53,18 @@
 
 
 
-    <!-- =========================================
-         CONTEÚDO PRINCIPAL
-    ========================================== -->
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main class="main-content">
 
 
-        <!-- =========================================
-             CARD PRINCIPAL
-        ========================================== -->
-
         <section class="assessment-card">
 
 
-            <!-- =====================================
-                 CABEÇALHO
-            ====================================== -->
+            <!-- CABEÇALHO -->
 
             <div class="assessment-header">
 
-
-                <!-- TÍTULO -->
 
                 <div class="assessment-title">
 
@@ -88,17 +80,13 @@
 
 
 
-                <!-- =================================
-                     PROGRESSO
-                ================================== -->
+                <!-- PROGRESSO -->
 
                 <div
                     class="progress-container"
                     aria-label="Progresso da avaliação"
                 >
 
-
-                    <!-- ETAPA 1 -->
 
                     <div
                         class="progress-step completed"
@@ -119,8 +107,6 @@
                     <div class="progress-line completed-line"></div>
 
 
-                    <!-- ETAPA 2 -->
-
                     <div
                         class="progress-step completed"
                         data-step="2"
@@ -139,8 +125,6 @@
 
                     <div class="progress-line completed-line"></div>
 
-
-                    <!-- ETAPA 3 -->
 
                     <div
                         class="progress-step active"
@@ -161,8 +145,6 @@
                     <div class="progress-line"></div>
 
 
-                    <!-- ETAPA 4 -->
-
                     <div
                         class="progress-step"
                         data-step="4"
@@ -181,8 +163,6 @@
 
                     <div class="progress-line"></div>
 
-
-                    <!-- ETAPA 5 -->
 
                     <div
                         class="progress-step"
@@ -206,21 +186,15 @@
 
 
 
-            <!-- =====================================
-                 CORPO
-            ====================================== -->
+            <!-- CORPO -->
 
             <div class="assessment-body">
 
 
-                <!-- =================================
-                     FORMULÁRIO
-                ================================== -->
+                <!-- FORMULÁRIO -->
 
                 <section class="form-area">
 
-
-                    <!-- ORIENTAÇÃO -->
 
                     <p class="assessment-description">
 
@@ -231,19 +205,13 @@
 
 
 
-                    <!-- =================================
-                         FORM
-                    ================================== -->
-
                     <form
                         id="lifestyleForm"
                         novalidate
                     >
 
 
-                        <!-- =================================
-                             ATIVIDADE FÍSICA
-                        ================================== -->
+                        <!-- ATIVIDADE FÍSICA -->
 
                         <section class="question-block">
 
@@ -347,9 +315,7 @@
 
 
 
-                        <!-- =================================
-                             ALIMENTAÇÃO
-                        ================================== -->
+                        <!-- ALIMENTAÇÃO -->
 
                         <section class="question-block">
 
@@ -453,16 +419,12 @@
 
 
 
-                        <!-- =================================
-                             SONO + FUMO
-                        ================================== -->
+                        <!-- SONO E FUMO -->
 
                         <div class="double-question-row">
 
 
-                            <!-- =================================
-                                 SONO
-                            ================================== -->
+                            <!-- SONO -->
 
                             <section class="question-block compact-question">
 
@@ -538,9 +500,7 @@
 
 
 
-                            <!-- =================================
-                                 FUMO
-                            ================================== -->
+                            <!-- FUMO -->
 
                             <section class="question-block compact-question smoke-question">
 
@@ -642,9 +602,7 @@
 
 
 
-                        <!-- =================================
-                             CONSUMO DE ÁLCOOL
-                        ================================== -->
+                        <!-- CONSUMO DE ÁLCOOL -->
 
                         <section class="question-block">
 
@@ -748,9 +706,7 @@
 
 
 
-                        <!-- =================================
-                             OBSERVAÇÕES
-                        ================================== -->
+                        <!-- OBSERVAÇÕES -->
 
                         <section class="question-block observations-block">
 
@@ -772,9 +728,11 @@
 
                                     <h2>
                                         Observações
+
                                         <span class="optional-label">
                                             (Opcional)
                                         </span>
+
                                     </h2>
 
                                     <p>
@@ -812,9 +770,7 @@
 
 
 
-                        <!-- =================================
-                             MENSAGEM
-                        ================================== -->
+                        <!-- MENSAGEM DE VALIDAÇÃO -->
 
                         <p
                             id="formMessage"
@@ -830,9 +786,7 @@
 
 
 
-                <!-- =================================
-                     ILUSTRAÇÃO
-                ================================== -->
+                <!-- ILUSTRAÇÃO -->
 
                 <section class="illustration-area">
 
@@ -850,69 +804,12 @@
 
 
 
-            <!-- =====================================
-                 NAVEGAÇÃO
-            ====================================== -->
+            <!-- FOOTER PADRONIZADO -->
 
-            <div class="assessment-navigation">
-
-
-                <!-- VOLTAR -->
-
-                <button
-                    type="button"
-                    class="back-button"
-                    id="backButton"
-                >
-
-                    <span class="button-arrow">
-                        ←
-                    </span>
-
-                    <span>
-                        Voltar
-                    </span>
-
-                </button>
-
-
-
-                <!-- SEGURANÇA -->
-
-                <div class="security-message">
-
-                    <span class="security-icon">
-                        ✓
-                    </span>
-
-                    <span>
-                        Suas informações estão seguras e protegidas.
-                    </span>
-
-                </div>
-
-
-
-                <!-- CONTINUAR -->
-
-                <button
-                    type="button"
-                    class="continue-button"
-                    id="continueButton"
-                >
-
-                    <span>
-                        Continuar
-                    </span>
-
-                    <span class="button-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-            </div>
+            <div
+                id="avaliacao-footer"
+                data-back="../tela_historico_familiar/historico.html"
+            ></div>
 
 
         </section>
@@ -922,19 +819,28 @@
 
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
+    <!-- AUTENTICAÇÃO -->
 
     <script
         src="../componentes/auth.js"
     ></script>
 
 
+    <!-- HEADER GLOBAL -->
+
     <script
         src="../componentes/header.js"
     ></script>
 
+
+    <!-- FOOTER DA AVALIAÇÃO -->
+
+    <script
+        src="../componentes/avaliacao_footer.js"
+    ></script>
+
+
+    <!-- JAVASCRIPT DA TELA -->
 
     <script
         src="estilo_vida.js"

@@ -4,14 +4,41 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Resumo | GenSaúde SUS</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="resumo.css">
+    <title>
+        Resumo | GenSaúde SUS
+    </title>
 
-    <link rel="stylesheet" href="../componentes/header.css">
-    <link rel="stylesheet" href="../componentes/disclaimer.css">
+
+    <!-- CSS DA TELA -->
+
+    <link
+        rel="stylesheet"
+        href="resumo.css"
+    >
+
+
+    <!-- COMPONENTES GLOBAIS -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../componentes/disclaimer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../componentes/avaliacao_footer.css"
+    >
 
 </head>
 
@@ -19,795 +46,530 @@
 <body>
 
 
-<div
-    id="global-header"
-    data-active="prevencao"
-    data-logged="true">
-</div>
+    <!-- HEADER GLOBAL -->
+
+    <div
+        id="global-header"
+        data-active="prevencao"
+        data-logged="true"
+    ></div>
 
 
 
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="main-content">
 
 
-<main class="main-content">
+        <section class="summary-card">
 
 
-<section class="summary-card">
+            <!-- CABEÇALHO -->
+
+            <div class="summary-header">
 
 
+                <div class="title-area">
 
+                    <h1>
+                        Avaliação preventiva
+                    </h1>
 
+                    <p>
+                        Etapa 5 de 5 - Resumo
+                    </p>
 
-
-<div class="summary-header">
-
-
-    <div class="title-area">
-
-
-        <h1>
-            Avaliação preventiva
-        </h1>
-
-
-        <p>
-            Etapa 5 de 5 - Resumo
-        </p>
-
-
-    </div>
+                </div>
 
 
 
+                <!-- PROGRESSO -->
+
+                <div class="progress-area">
+
+
+                    <div class="step completed">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Dados pessoais
+                        </p>
+
+                    </div>
+
+
+                    <div class="line"></div>
+
+
+                    <div class="step completed">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Histórico familiar
+                        </p>
+
+                    </div>
+
+
+                    <div class="line"></div>
+
+
+                    <div class="step completed">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Estilo de vida
+                        </p>
+
+                    </div>
+
+
+                    <div class="line"></div>
+
+
+                    <div class="step completed">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Sintomas e condições
+                        </p>
+
+                    </div>
+
+
+                    <div class="line"></div>
+
+
+                    <div class="step active">
+
+                        <span>
+                            5
+                        </span>
+
+                        <p>
+                            Resumo
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
 
 
-    <div class="progress-area">
+            <!-- DESCRIÇÃO -->
 
+            <p class="description">
 
-        <div class="step completed">
+                Revise as informações abaixo antes
+                de finalizar a avaliação.
 
-            <span>✓</span>
-
-            <p>
-                Dados pessoais
             </p>
 
-        </div>
 
 
+            <!-- CONTEÚDO DO RESUMO -->
 
-        <div class="line"></div>
+            <div class="summary-content">
 
 
+                <div class="summary-left">
 
 
-        <div class="step completed">
+                    <!-- DADOS PESSOAIS -->
 
-            <span>✓</span>
+                    <div class="summary-box">
 
-            <p>
-                Histórico familiar
-            </p>
 
-        </div>
+                        <div class="box-title">
 
 
+                            <div class="title-content">
 
-        <div class="line"></div>
+                                <img
+                                    src="../imagens/icone_dados_pessoais.png"
+                                    alt="Dados pessoais"
+                                    class="box-icon"
+                                >
 
+                                <h2>
+                                    Dados pessoais
+                                </h2>
 
+                            </div>
 
 
-        <div class="step completed">
+                            <button
+                                type="button"
+                                aria-label="Editar dados pessoais"
+                            >
+                                ✎
+                            </button>
 
-            <span>✓</span>
 
-            <p>
-                Estilo de vida
-            </p>
+                        </div>
 
-        </div>
 
+                        <div class="box-line"></div>
 
 
-        <div class="line"></div>
+                        <div class="info-grid">
 
 
+                            <div>
 
+                                <strong>
+                                    Nome completo
+                                </strong>
 
-        <div class="step completed">
+                                <p id="resumoNome">
+                                    -
+                                </p>
 
-            <span>✓</span>
+                            </div>
 
-            <p>
-                Sintomas e condições
-            </p>
 
-        </div>
+                            <div>
 
+                                <strong>
+                                    Idade
+                                </strong>
 
+                                <p id="resumoIdade">
+                                    -
+                                </p>
 
-        <div class="line"></div>
+                            </div>
 
 
+                            <div>
 
+                                <strong>
+                                    Sexo
+                                </strong>
 
-        <div class="step active">
+                                <p id="resumoSexo">
+                                    -
+                                </p>
 
+                            </div>
 
-            <span>
-                5
-            </span>
 
+                            <div>
 
-            <p>
-                Resumo
-            </p>
+                                <strong>
+                                    Cidade/Estado
+                                </strong>
 
+                                <p id="resumoLocalizacao">
+                                    -
+                                </p>
 
-        </div>
+                            </div>
 
 
+                        </div>
 
-    </div>
 
+                    </div>
 
 
-</div>
 
+                    <!-- HISTÓRICO FAMILIAR -->
 
+                    <div class="summary-box">
 
 
+                        <div class="box-title">
 
 
+                            <div class="title-content">
 
-<p class="description">
+                                <img
+                                    src="../imagens/icone_historico_familiar.png"
+                                    alt="Histórico familiar"
+                                    class="box-icon"
+                                >
 
-Revise as informações abaixo antes de finalizar a avaliação.
+                                <h2>
+                                    Histórico familiar
+                                </h2>
 
-</p>
+                            </div>
 
 
+                            <button
+                                type="button"
+                                aria-label="Editar histórico familiar"
+                            >
+                                ✎
+                            </button>
 
 
+                        </div>
 
 
+                        <div class="box-line"></div>
 
 
+                        <div class="symptoms-text">
 
-<div class="summary-content">
+                            <strong>
+                                Condições identificadas
+                            </strong>
 
+                            <p id="resumoHistorico">
+                                -
+                            </p>
 
+                        </div>
 
-<div class="summary-left">
 
+                    </div>
 
 
 
+                    <!-- ESTILO DE VIDA -->
 
+                    <div class="summary-box">
 
 
-<!-- =========================================
-     DADOS PESSOAIS
-========================================= -->
+                        <div class="box-title">
 
 
-<div class="summary-box">
+                            <div class="title-content">
 
+                                <img
+                                    src="../imagens/icone_historico_familiar.png"
+                                    alt="Estilo de vida"
+                                    class="box-icon"
+                                >
 
-<div class="box-title">
+                                <h2>
+                                    Estilo de vida
+                                </h2>
 
+                            </div>
 
-<div class="title-content">
 
+                            <button
+                                type="button"
+                                aria-label="Editar estilo de vida"
+                            >
+                                ✎
+                            </button>
 
-<img
 
-src="../imagens/icone_dados_pessoais.png"
+                        </div>
 
-alt="Dados pessoais"
 
-class="box-icon"
+                        <div class="box-line"></div>
 
->
 
+                        <div class="info-grid">
 
-<h2>
-Dados pessoais
-</h2>
 
+                            <div>
 
-</div>
+                                <strong>
+                                    Atividade física
+                                </strong>
 
+                                <p id="resumoAtividade">
+                                    -
+                                </p>
 
+                            </div>
 
-<button type="button">
 
-✎
+                            <div>
 
-</button>
+                                <strong>
+                                    Alimentação
+                                </strong>
 
+                                <p id="resumoAlimentacao">
+                                    -
+                                </p>
 
-</div>
+                            </div>
 
 
+                            <div>
 
+                                <strong>
+                                    Sono
+                                </strong>
 
-<div class="box-line"></div>
+                                <p id="resumoSono">
+                                    -
+                                </p>
 
+                            </div>
 
 
+                            <div>
 
+                                <strong>
+                                    Tabagismo
+                                </strong>
 
-<div class="info-grid">
+                                <p id="resumoTabagismo">
+                                    -
+                                </p>
 
+                            </div>
 
 
-<div>
+                        </div>
 
-<strong>
-Nome completo
-</strong>
 
+                    </div>
 
-<p id="resumoNome">
--
-</p>
 
 
-</div>
+                    <!-- SINTOMAS E CONDIÇÕES -->
 
+                    <div class="summary-box">
 
 
+                        <div class="box-title">
 
 
-<div>
+                            <div class="title-content">
 
-<strong>
-Idade
-</strong>
+                                <img
+                                    src="../imagens/icone_sintomas_condicoes.png"
+                                    alt="Sintomas e condições"
+                                    class="box-icon"
+                                >
 
+                                <h2>
+                                    Sintomas e condições
+                                </h2>
 
-<p id="resumoIdade">
--
-</p>
+                            </div>
 
 
-</div>
+                            <button
+                                type="button"
+                                aria-label="Editar sintomas e condições"
+                            >
+                                ✎
+                            </button>
 
 
+                        </div>
 
 
+                        <div class="box-line"></div>
 
-<div>
 
-<strong>
-Sexo
-</strong>
+                        <div class="symptoms-text">
 
+                            <strong>
+                                Condições selecionadas
+                            </strong>
 
-<p id="resumoSexo">
--
-</p>
+                            <p id="resumoCondicoes">
+                                -
+                            </p>
 
 
-</div>
+                            <strong>
+                                Sintomas selecionados
+                            </strong>
 
+                            <p id="resumoSintomas">
+                                -
+                            </p>
 
+                        </div>
 
 
+                    </div>
 
-<div>
 
-<strong>
-Cidade/Estado
-</strong>
+                </div>
 
 
-<p id="resumoLocalizacao">
--
-</p>
 
+                <!-- ILUSTRAÇÃO -->
 
-</div>
+                <div class="summary-image">
 
+                    <img
+                        src="../imagens/ilustracao_resumo.png"
+                        alt="Resumo da avaliação"
+                        onerror="this.style.visibility='hidden'"
+                    >
 
+                </div>
 
-</div>
 
+            </div>
 
 
-</div>
 
+            <!-- FOOTER PADRONIZADO -->
 
+            <div
+                id="avaliacao-footer"
+                data-final="true"
+                data-back="../tela_sintomas_condicoes/sintomas_condicoes.html"
+            ></div>
 
 
+        </section>
 
 
+    </main>
 
 
 
-<!-- =========================================
-     HISTÓRICO FAMILIAR
-========================================= -->
+    <!-- AUTENTICAÇÃO -->
 
+    <script
+        src="../componentes/auth.js"
+    ></script>
 
-<div class="summary-box">
 
+    <!-- HEADER GLOBAL -->
 
-<div class="box-title">
+    <script
+        src="../componentes/header.js"
+    ></script>
 
 
+    <!-- FOOTER DA AVALIAÇÃO -->
 
-<div class="title-content">
+    <script
+        src="../componentes/avaliacao_footer.js"
+    ></script>
 
 
-<img
+    <!-- JAVASCRIPT DA TELA -->
 
-src="../imagens/icone_historico_familiar.png"
-
-alt="Histórico familiar"
-
-class="box-icon"
-
->
-
-
-<h2>
-
-Histórico familiar
-
-</h2>
-
-
-</div>
-
-
-
-
-<button type="button">
-
-✎
-
-</button>
-
-
-</div>
-
-
-
-
-<div class="box-line"></div>
-
-
-
-
-
-<div class="symptoms-text">
-
-
-
-<strong>
-Condições identificadas
-</strong>
-
-
-
-<p id="resumoHistorico">
-
--
-
-</p>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- =========================================
-     ESTILO DE VIDA
-========================================= -->
-
-
-<div class="summary-box">
-
-
-<div class="box-title">
-
-
-
-<div class="title-content">
-
-
-<img
-
-src="../imagens/icone_historico_familiar.png"
-
-alt="Estilo de vida"
-
-class="box-icon"
-
->
-
-
-<h2>
-
-Estilo de vida
-
-</h2>
-
-
-</div>
-
-
-
-
-<button type="button">
-
-✎
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-<div class="box-line"></div>
-
-
-
-
-
-
-
-<div class="info-grid">
-
-
-
-<div>
-
-<strong>
-Atividade física
-</strong>
-
-
-<p id="resumoAtividade">
--
-</p>
-
-
-</div>
-
-
-
-
-<div>
-
-<strong>
-Alimentação
-</strong>
-
-
-<p id="resumoAlimentacao">
--
-</p>
-
-
-</div>
-
-
-
-
-<div>
-
-<strong>
-Sono
-</strong>
-
-
-<p id="resumoSono">
--
-</p>
-
-
-</div>
-
-
-
-
-<div>
-
-<strong>
-Tabagismo
-</strong>
-
-
-<p id="resumoTabagismo">
--
-</p>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- =========================================
-     SINTOMAS E CONDIÇÕES
-========================================= -->
-
-
-<div class="summary-box">
-
-
-<div class="box-title">
-
-
-
-<div class="title-content">
-
-
-<img
-
-src="../imagens/icone_sintomas_condicoes.png"
-
-alt="Sintomas e condições"
-
-class="box-icon"
-
->
-
-
-
-<h2>
-
-Sintomas e condições
-
-</h2>
-
-
-</div>
-
-
-
-
-<button type="button">
-
-✎
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-<div class="box-line"></div>
-
-
-
-
-
-<div class="symptoms-text">
-
-
-
-<strong>
-Condições selecionadas
-</strong>
-
-
-
-<p id="resumoCondicoes">
-
--
-
-</p>
-
-
-
-
-
-<strong>
-Sintomas selecionados
-</strong>
-
-
-
-<p id="resumoSintomas">
-
--
-
-</p>
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- =========================================
-     IMAGEM LATERAL
-========================================= -->
-
-
-<div class="summary-image">
-
-
-<img
-
-src="../imagens/ilustracao_resumo.png"
-
-alt="Resumo da avaliação"
-
-onerror="this.style.visibility='hidden'"
-
->
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- =========================================
-     RODAPÉ
-========================================= -->
-
-
-<div class="summary-footer">
-
-
-
-
-
-<button
-
-class="back-button"
-
-type="button">
-
-← Voltar
-
-</button>
-
-
-
-
-
-
-
-<div class="security-message">
-
-
-🛡
-
-Suas informações estão seguras e protegidas.
-
-
-</div>
-
-
-
-
-
-
-
-<button
-
-class="finish-button"
-
-type="button">
-
-
-✓ Finalizar →
-
-</button>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-</section>
-
-
-
-</main>
-
-
-
-
-
-
-
-<script src="../componentes/auth.js"></script>
-
-<script src="resumo.js"></script>
-
-<script src="../componentes/header.js"></script>
-
+    <script
+        src="resumo.js"
+    ></script>
 
 
 </body>
-
 
 </html>

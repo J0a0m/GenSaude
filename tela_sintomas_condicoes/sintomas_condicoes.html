@@ -15,9 +15,7 @@
     </title>
 
 
-    <!-- =========================================
-         CSS DA TELA
-    ========================================== -->
+    <!-- CSS DA TELA -->
 
     <link
         rel="stylesheet"
@@ -25,13 +23,19 @@
     >
 
 
-    <!-- =========================================
-         HEADER GLOBAL
-    ========================================== -->
+    <!-- HEADER GLOBAL -->
 
     <link
         rel="stylesheet"
         href="../componentes/header.css"
+    >
+
+
+    <!-- FOOTER DA AVALIAÇÃO -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/avaliacao_footer.css"
     >
 
 </head>
@@ -40,9 +44,7 @@
 <body>
 
 
-    <!-- =========================================
-         HEADER GLOBAL
-    ========================================== -->
+    <!-- HEADER GLOBAL -->
 
     <div
         id="global-header"
@@ -51,28 +53,18 @@
 
 
 
-    <!-- =========================================
-         CONTEÚDO PRINCIPAL
-    ========================================== -->
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main class="main-content">
 
 
-        <!-- =========================================
-             CARD PRINCIPAL
-        ========================================== -->
-
         <section class="assessment-card">
 
 
-            <!-- =====================================
-                 CABEÇALHO
-            ====================================== -->
+            <!-- CABEÇALHO -->
 
             <div class="assessment-header">
 
-
-                <!-- TÍTULO -->
 
                 <div class="assessment-title">
 
@@ -88,17 +80,13 @@
 
 
 
-                <!-- =================================
-                     PROGRESSO
-                ================================== -->
+                <!-- PROGRESSO -->
 
                 <div
                     class="progress-container"
                     aria-label="Progresso da avaliação"
                 >
 
-
-                    <!-- ETAPA 1 -->
 
                     <div
                         class="progress-step completed"
@@ -119,8 +107,6 @@
                     <div class="progress-line completed-line"></div>
 
 
-                    <!-- ETAPA 2 -->
-
                     <div
                         class="progress-step completed"
                         data-step="2"
@@ -139,8 +125,6 @@
 
                     <div class="progress-line completed-line"></div>
 
-
-                    <!-- ETAPA 3 -->
 
                     <div
                         class="progress-step completed"
@@ -161,8 +145,6 @@
                     <div class="progress-line completed-line"></div>
 
 
-                    <!-- ETAPA 4 -->
-
                     <div
                         class="progress-step active"
                         data-step="4"
@@ -181,8 +163,6 @@
 
                     <div class="progress-line"></div>
 
-
-                    <!-- ETAPA 5 -->
 
                     <div
                         class="progress-step"
@@ -206,21 +186,15 @@
 
 
 
-            <!-- =====================================
-                 CORPO
-            ====================================== -->
+            <!-- CORPO -->
 
             <div class="assessment-body">
 
 
-                <!-- =================================
-                     FORMULÁRIO
-                ================================== -->
+                <!-- FORMULÁRIO -->
 
                 <section class="form-area">
 
-
-                    <!-- ORIENTAÇÃO -->
 
                     <p class="assessment-description">
 
@@ -232,19 +206,13 @@
 
 
 
-                    <!-- =================================
-                         FORM
-                    ================================== -->
-
                     <form
                         id="symptomsForm"
                         novalidate
                     >
 
 
-                        <!-- =================================
-                             CONDIÇÕES DIAGNOSTICADAS
-                        ================================== -->
+                        <!-- CONDIÇÕES DIAGNOSTICADAS -->
 
                         <section class="question-section">
 
@@ -305,7 +273,7 @@
 
 
 
-                                <!-- COLESTEROL -->
+                                <!-- COLESTEROL ALTO -->
 
                                 <label class="checkbox-option">
 
@@ -408,9 +376,7 @@
 
 
 
-                        <!-- =================================
-                             SINTOMAS RECENTES
-                        ================================== -->
+                        <!-- SINTOMAS RECENTES -->
 
                         <section class="question-section symptoms-section">
 
@@ -573,9 +539,7 @@
 
 
 
-                        <!-- =================================
-                             DETALHES ADICIONAIS
-                        ================================== -->
+                        <!-- DETALHES ADICIONAIS -->
 
                         <section class="question-section details-section">
 
@@ -609,9 +573,7 @@
 
 
 
-                        <!-- =================================
-                             MENSAGEM
-                        ================================== -->
+                        <!-- MENSAGEM DE VALIDAÇÃO -->
 
                         <p
                             id="formMessage"
@@ -627,9 +589,7 @@
 
 
 
-                <!-- =================================
-                     ILUSTRAÇÃO
-                ================================== -->
+                <!-- ILUSTRAÇÃO -->
 
                 <section class="illustration-area">
 
@@ -647,69 +607,12 @@
 
 
 
-            <!-- =====================================
-                 NAVEGAÇÃO
-            ====================================== -->
+            <!-- FOOTER PADRONIZADO -->
 
-            <div class="assessment-navigation">
-
-
-                <!-- VOLTAR -->
-
-                <button
-                    type="button"
-                    class="back-button"
-                    id="backButton"
-                >
-
-                    <span class="button-arrow">
-                        ←
-                    </span>
-
-                    <span>
-                        Voltar
-                    </span>
-
-                </button>
-
-
-
-                <!-- SEGURANÇA -->
-
-                <div class="security-message">
-
-                    <span class="security-icon">
-                        ✓
-                    </span>
-
-                    <span>
-                        Suas informações estão seguras e protegidas.
-                    </span>
-
-                </div>
-
-
-
-                <!-- CONTINUAR -->
-
-                <button
-                    type="button"
-                    class="continue-button"
-                    id="continueButton"
-                >
-
-                    <span>
-                        Continuar
-                    </span>
-
-                    <span class="button-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-            </div>
+            <div
+                id="avaliacao-footer"
+                data-back="../tela_estilo_vida/estilo_vida.html"
+            ></div>
 
 
         </section>
@@ -719,19 +622,28 @@
 
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
+    <!-- AUTENTICAÇÃO -->
 
     <script
         src="../componentes/auth.js"
     ></script>
 
 
+    <!-- HEADER GLOBAL -->
+
     <script
         src="../componentes/header.js"
     ></script>
 
+
+    <!-- FOOTER DA AVALIAÇÃO -->
+
+    <script
+        src="../componentes/avaliacao_footer.js"
+    ></script>
+
+
+    <!-- JAVASCRIPT DA TELA -->
 
     <script
         src="sintomas_condicoes.js"

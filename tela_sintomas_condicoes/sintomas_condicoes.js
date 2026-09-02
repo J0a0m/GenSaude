@@ -51,18 +51,6 @@ const formMessage =
     );
 
 
-const backButton =
-    document.getElementById(
-        "backButton"
-    );
-
-
-const continueButton =
-    document.getElementById(
-        "continueButton"
-    );
-
-
 // =========================================================
 // LOCALSTORAGE
 // =========================================================
@@ -155,7 +143,7 @@ function iniciarPagina() {
 
 
     // =====================================================
-    // NÃO EXISTE AVALIAÇÃO
+    // AVALIAÇÃO NÃO EXISTE
     // =====================================================
 
     if (!avaliacaoAtual) {
@@ -220,11 +208,14 @@ function criarSintomasCondicoesVazio() {
 
     return {
 
-        condicoesDiagnosticadas: [],
+        condicoesDiagnosticadas:
+            [],
 
-        sintomasRecentes: [],
+        sintomasRecentes:
+            [],
 
-        detalhesAdicionais: ""
+        detalhesAdicionais:
+            ""
 
     };
 
@@ -317,7 +308,7 @@ function carregarRespostasSalvas() {
 
 
     // =====================================================
-    // CONDIÇÕES
+    // CONDIÇÕES DIAGNOSTICADAS
     // =====================================================
 
     const condicoes =
@@ -341,14 +332,14 @@ function carregarRespostasSalvas() {
 
 
     // =====================================================
-    // NORMALIZAR "NENHUMA"
+    // NORMALIZAR OPÇÃO "NENHUMA"
     // =====================================================
 
     normalizarNenhuma();
 
 
     // =====================================================
-    // SINTOMAS
+    // SINTOMAS RECENTES
     // =====================================================
 
     const sintomas =
@@ -372,7 +363,7 @@ function carregarRespostasSalvas() {
 
 
     // =====================================================
-    // DETALHES
+    // DETALHES ADICIONAIS
     // =====================================================
 
     if (detailsInput) {
@@ -393,7 +384,7 @@ function carregarRespostasSalvas() {
 function configurarEventos() {
 
     // =====================================================
-    // CONDIÇÕES
+    // CONDIÇÕES DIAGNOSTICADAS
     // =====================================================
 
     conditionInputs.forEach(
@@ -422,7 +413,7 @@ function configurarEventos() {
 
 
     // =====================================================
-    // SINTOMAS
+    // SINTOMAS RECENTES
     // =====================================================
 
     symptomInputs.forEach(
@@ -444,7 +435,7 @@ function configurarEventos() {
 
 
     // =====================================================
-    // DETALHES
+    // DETALHES ADICIONAIS
     // =====================================================
 
     if (detailsInput) {
@@ -464,35 +455,41 @@ function configurarEventos() {
 
 
     // =====================================================
-    // VOLTAR
+    // EVENTO DO FOOTER - VOLTAR
     // =====================================================
 
-    if (backButton) {
+    document.addEventListener(
+        "avaliacao:voltar",
+        (event) => {
 
-        backButton.addEventListener(
-            "click",
-            voltarEtapa
-        );
-
-    }
+            event.preventDefault();
 
 
-    // =====================================================
-    // CONTINUAR
-    // =====================================================
+            voltarEtapa();
 
-    if (continueButton) {
-
-        continueButton.addEventListener(
-            "click",
-            continuarEtapa
-        );
-
-    }
+        }
+    );
 
 
     // =====================================================
-    // SUBMIT
+    // EVENTO DO FOOTER - CONTINUAR
+    // =====================================================
+
+    document.addEventListener(
+        "avaliacao:continuar",
+        (event) => {
+
+            event.preventDefault();
+
+
+            continuarEtapa();
+
+        }
+    );
+
+
+    // =====================================================
+    // ENVIAR FORMULÁRIO
     // =====================================================
 
     if (symptomsForm) {
@@ -502,6 +499,7 @@ function configurarEventos() {
             (event) => {
 
                 event.preventDefault();
+
 
                 continuarEtapa();
 
@@ -554,7 +552,7 @@ function tratarSelecaoCondicao(
 
 
     // =====================================================
-    // MARCOU ALGUMA CONDIÇÃO REAL
+    // USUÁRIO MARCOU UMA CONDIÇÃO
     // =====================================================
 
     if (
@@ -573,7 +571,7 @@ function tratarSelecaoCondicao(
 
 
 // =========================================================
-// NORMALIZAR "NENHUMA"
+// NORMALIZAR OPÇÃO "NENHUMA"
 // =========================================================
 
 function normalizarNenhuma() {
@@ -661,7 +659,7 @@ function montarSintomasCondicoes() {
 
 
 // =========================================================
-// SALVAR PARCIALMENTE
+// SALVAR RESPOSTAS PARCIAIS
 // =========================================================
 
 function salvarRespostasParciais() {
@@ -689,7 +687,7 @@ function salvarRespostasParciais() {
 
 
 // =========================================================
-// CONTADOR
+// CONTADOR DE CARACTERES
 // =========================================================
 
 function atualizarContador() {
@@ -721,6 +719,11 @@ function atualizarContador() {
 // =========================================================
 
 function voltarEtapa() {
+
+    /*
+        Salva as condições, sintomas e detalhes
+        atuais antes de retornar.
+    */
 
     salvarRespostasParciais();
 
@@ -781,12 +784,12 @@ function continuarEtapa() {
     }
 
 
-    // =====================================================
-    // OBSERVAÇÃO SOBRE SINTOMAS
-    //
-    // Sintomas recentes NÃO são obrigatórios.
-    // O usuário pode não estar sentindo nenhum sintoma.
-    // =====================================================
+    /*
+        Os sintomas recentes não são obrigatórios.
+
+        O usuário pode não estar sentindo nenhum
+        dos sintomas apresentados.
+    */
 
 
     // =====================================================
@@ -807,7 +810,7 @@ function continuarEtapa() {
 
 
     // =====================================================
-    // SUCESSO
+    // MOSTRAR SUCESSO
     // =====================================================
 
     mostrarMensagem(
@@ -816,16 +819,24 @@ function continuarEtapa() {
     );
 
 
-    if (continueButton) {
+    // =====================================================
+    // DESATIVAR BOTÃO TEMPORARIAMENTE
+    // =====================================================
 
-        continueButton.disabled =
-            true;
+    if (
+        typeof definirAvaliacaoFooterCarregando ===
+        "function"
+    ) {
+
+        definirAvaliacaoFooterCarregando(
+            true
+        );
 
     }
 
 
     // =====================================================
-    // IR PARA RESUMO
+    // IR PARA O RESUMO
     // =====================================================
 
     setTimeout(

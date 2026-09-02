@@ -5,7 +5,7 @@
 
 
 // ==========================================
-// CARREGAR AVALIAÇÃO
+// CONFIGURAÇÕES
 // ==========================================
 
 const ASSESSMENT_KEY =
@@ -18,9 +18,13 @@ const dadosSalvos =
     );
 
 
-let avaliacao = null;
+let avaliacao =
+    null;
 
 
+// ==========================================
+// CARREGAR AVALIAÇÃO
+// ==========================================
 
 if (dadosSalvos) {
 
@@ -30,7 +34,6 @@ if (dadosSalvos) {
             JSON.parse(
                 dadosSalvos
             );
-
 
     } catch (erro) {
 
@@ -44,40 +47,32 @@ if (dadosSalvos) {
 }
 
 
-
-
-
 // ==========================================
 // PREENCHER RESUMO
 // ==========================================
 
+function preencherResumo() {
 
-function preencherResumo(){
-
-
-    if(!avaliacao){
+    if (!avaliacao) {
 
         return;
 
     }
 
 
-
     // ======================================
     // DADOS PESSOAIS
     // ======================================
 
-
     const dadosPessoais =
-        avaliacao.dadosPessoais || {};
-
+        avaliacao.dadosPessoais ||
+        {};
 
 
     preencherCampo(
         "resumoNome",
         dadosPessoais.nome
     );
-
 
 
     preencherCampo(
@@ -88,7 +83,6 @@ function preencherResumo(){
     );
 
 
-
     preencherCampo(
         "resumoSexo",
         traduzirSexo(
@@ -97,26 +91,19 @@ function preencherResumo(){
     );
 
 
-
     preencherCampo(
         "resumoLocalizacao",
         `${dadosPessoais.cidade || "-"} - ${dadosPessoais.estado || "-"}`
     );
 
 
-
-
-
-
-
     // ======================================
     // HISTÓRICO FAMILIAR
     // ======================================
 
-
     const historico =
-        avaliacao.historicoFamiliar || {};
-
+        avaliacao.historicoFamiliar ||
+        {};
 
 
     preencherCampo(
@@ -127,20 +114,13 @@ function preencherResumo(){
     );
 
 
-
-
-
-
-
-
     // ======================================
     // ESTILO DE VIDA
     // ======================================
 
-
     const estilo =
-        avaliacao.estiloDeVida || {};
-
+        avaliacao.estiloDeVida ||
+        {};
 
 
     preencherCampo(
@@ -151,14 +131,12 @@ function preencherResumo(){
     );
 
 
-
     preencherCampo(
         "resumoAlimentacao",
         traduzirValor(
             estilo.alimentacao
         )
     );
-
 
 
     preencherCampo(
@@ -169,7 +147,6 @@ function preencherResumo(){
     );
 
 
-
     preencherCampo(
         "resumoTabagismo",
         traduzirValor(
@@ -178,62 +155,55 @@ function preencherResumo(){
     );
 
 
-
-
-
-
-
     // ======================================
     // SINTOMAS E CONDIÇÕES
     // ======================================
 
-
     const sintomas =
-        avaliacao.sintomasCondicoes || {};
+        avaliacao.sintomasCondicoes ||
+        {};
 
 
+    /*
+        Primeiro tenta carregar os nomes usados
+        atualmente pelo formulário.
+
+        As opções seguintes mantêm compatibilidade
+        com versões antigas do localStorage.
+    */
 
     preencherCampo(
         "resumoCondicoes",
         formatarLista(
+            sintomas.condicoesDiagnosticadas ||
             sintomas.condicoes ||
             sintomas.condicoesSelecionadas
         )
     );
 
 
-
     preencherCampo(
         "resumoSintomas",
         formatarLista(
+            sintomas.sintomasRecentes ||
             sintomas.sintomas ||
             sintomas.sintomasSelecionados
         )
     );
 
-
 }
 
 
-
-
-
-
-
-
-
 // ==========================================
-// HISTÓRICO FAMILIAR
+// MONTAR HISTÓRICO FAMILIAR
 // ==========================================
-
 
 function montarHistorico(
     historico
-){
+) {
 
-
-    let resultado = [];
-
+    const resultado =
+        [];
 
 
     adicionarFamiliar(
@@ -243,13 +213,11 @@ function montarHistorico(
     );
 
 
-
     adicionarFamiliar(
         "Pai",
         historico.pai,
         resultado
     );
-
 
 
     adicionarFamiliar(
@@ -259,16 +227,15 @@ function montarHistorico(
     );
 
 
-
-
     const complementares =
-        historico.complementares || {};
+        historico.complementares ||
+        {};
 
 
-
-    if(
-        complementares.cancer === "sim"
-    ){
+    if (
+        complementares.cancer ===
+        "sim"
+    ) {
 
         resultado.push(
             "Histórico familiar de câncer"
@@ -277,10 +244,10 @@ function montarHistorico(
     }
 
 
-
-    if(
-        complementares.avc === "sim"
-    ){
+    if (
+        complementares.avc ===
+        "sim"
+    ) {
 
         resultado.push(
             "Histórico familiar de AVC"
@@ -289,10 +256,10 @@ function montarHistorico(
     }
 
 
-
-    if(
-        complementares.doencaRenal === "sim"
-    ){
+    if (
+        complementares.doencaRenal ===
+        "sim"
+    ) {
 
         resultado.push(
             "Histórico familiar de doença renal"
@@ -301,10 +268,10 @@ function montarHistorico(
     }
 
 
-
-    if(
-        complementares.hereditaria === "sim"
-    ){
+    if (
+        complementares.hereditaria ===
+        "sim"
+    ) {
 
         resultado.push(
             "Doença hereditária conhecida"
@@ -313,50 +280,38 @@ function montarHistorico(
     }
 
 
-
-
-    return resultado.length
-
-        ?
-
-        resultado.join("\n\n")
-
-        :
-
-        "Nenhuma condição informada";
-
+    return resultado.length > 0
+        ? resultado.join("\n\n")
+        : "Nenhuma condição informada";
 
 }
 
 
-
-
-
-
-
+// ==========================================
+// ADICIONAR CONDIÇÕES DO FAMILIAR
+// ==========================================
 
 function adicionarFamiliar(
     nome,
     dados,
     lista
-){
+) {
 
-
-    if(!dados){
+    if (!dados) {
 
         return;
 
     }
 
 
+    const condicoes =
+        [];
 
-    let condicoes = [];
 
-
-
-    if(
-        dados.diabetes === "sim"
-    ){
+    if (
+        dados.diabetes ===
+        "sim"
+    ) {
 
         condicoes.push(
             "Diabetes"
@@ -365,10 +320,10 @@ function adicionarFamiliar(
     }
 
 
-
-    if(
-        dados.hipertensao === "sim"
-    ){
+    if (
+        dados.hipertensao ===
+        "sim"
+    ) {
 
         condicoes.push(
             "Hipertensão"
@@ -377,10 +332,10 @@ function adicionarFamiliar(
     }
 
 
-
-    if(
-        dados.cardiaca === "sim"
-    ){
+    if (
+        dados.cardiaca ===
+        "sim"
+    ) {
 
         condicoes.push(
             "Doença cardíaca"
@@ -389,10 +344,9 @@ function adicionarFamiliar(
     }
 
 
-
-    if(
+    if (
         condicoes.length > 0
-    ){
+    ) {
 
         lista.push(
             `${nome}: ${condicoes.join(", ")}`
@@ -400,27 +354,17 @@ function adicionarFamiliar(
 
     }
 
-
 }
 
 
-
-
-
-
-
-
-
 // ==========================================
-// PREENCHER ELEMENTOS
+// PREENCHER ELEMENTO
 // ==========================================
-
 
 function preencherCampo(
     id,
     valor
-){
-
+) {
 
     const elemento =
         document.getElementById(
@@ -428,305 +372,324 @@ function preencherCampo(
         );
 
 
-
-    if(elemento){
+    if (elemento) {
 
         elemento.textContent =
             valor || "-";
 
     }
 
-
 }
-
-
-
-
-
-
-
 
 
 // ==========================================
 // FORMATAR LISTAS
 // ==========================================
 
-
 function formatarLista(
     lista
-){
+) {
+
+    const traducoes = {
+
+        diabetes:
+            "Diabetes",
+
+        hipertensao:
+            "Hipertensão",
+
+        colesterol_alto:
+            "Colesterol alto",
+
+        asma:
+            "Asma",
+
+        obesidade:
+            "Obesidade",
+
+        nenhuma:
+            "Nenhuma",
+
+        dor_cabeca:
+            "Dor de cabeça",
+
+        cansaco:
+            "Cansaço",
+
+        falta_ar:
+            "Falta de ar",
+
+        tontura:
+            "Tontura",
+
+        dor_peito:
+            "Dor no peito",
+
+        febre:
+            "Febre"
+
+    };
 
 
-    if(!lista){
+    if (!lista) {
 
         return "Nenhum informado";
 
     }
 
 
+    if (
+        Array.isArray(
+            lista
+        )
+    ) {
 
-    if(
-        Array.isArray(lista)
-    ){
+        if (
+            lista.length === 0
+        ) {
 
-        return lista.join(
-            ", "
-        );
+            return "Nenhum informado";
+
+        }
+
+
+        return lista
+            .map(
+                (item) =>
+                    traducoes[item] ||
+                    item
+            )
+            .join(
+                ", "
+            );
 
     }
 
 
-
     return lista;
 
-
 }
-
-
-
-
-
-
-
 
 
 // ==========================================
 // TRADUZIR VALORES
 // ==========================================
 
-
 function traduzirValor(
     valor
-){
-
+) {
 
     const traducoes = {
 
-
         "3_mais_semana":
-        "+3 vezes por semana",
-
+            "+3 vezes por semana",
 
         "1_2_semana":
-        "1 a 2 vezes por semana",
-
+            "1 a 2 vezes por semana",
 
         "nunca":
-        "Nunca",
-
+            "Nunca",
 
         "equilibrada":
-        "Equilibrada",
-
+            "Equilibrada",
 
         "moderada":
-        "Moderada",
-
+            "Moderada",
 
         "precisa_melhorar":
-        "Precisa melhorar",
-
+            "Precisa melhorar",
 
         "menos_5":
-        "Menos de 5 horas por noite",
+            "Menos de 5 horas por noite",
 
+        "5_6":
+            "5 a 6 horas por noite",
 
         "5_7":
-        "5 a 7 horas por noite",
-
+            "5 a 7 horas por noite",
 
         "7_8":
-        "7 a 8 horas por noite",
+            "7 a 8 horas por noite",
 
+        "mais_8":
+            "Mais de 8 horas por noite",
 
         "sim":
-        "Sim",
-
+            "Sim",
 
         "nao":
-        "Não",
-
+            "Não",
 
         "as_vezes":
-        "Às vezes"
+            "Às vezes",
+
+        "socialmente":
+            "Socialmente",
+
+        "frequente":
+            "Frequente"
 
     };
 
 
-    return traducoes[valor]
-
-    ||
-
-    valor
-
-    ||
-
-    "-";
-
+    return traducoes[valor] ||
+        valor ||
+        "-";
 
 }
 
 
-
-
-
-
-
+// ==========================================
+// TRADUZIR SEXO
+// ==========================================
 
 function traduzirSexo(
     sexo
-){
-
+) {
 
     const valores = {
 
         masculino:
-        "Masculino",
+            "Masculino",
 
         feminino:
-        "Feminino",
+            "Feminino",
 
         outro:
-        "Outro"
+            "Outro",
+
+        nao_informar:
+            "Prefiro não informar"
 
     };
 
 
-    return valores[sexo]
-
-    ||
-
-    sexo
-
-    ||
-
-    "-";
-
+    return valores[sexo] ||
+        sexo ||
+        "-";
 
 }
-
-
-
-
-
-
-
 
 
 // ==========================================
 // CALCULAR IDADE
 // ==========================================
 
-
 function calcularIdade(
     data
-){
+) {
 
-
-    if(!data){
+    if (!data) {
 
         return "-";
 
     }
 
 
+    const partes =
+        data.split("-");
+
+
+    if (
+        partes.length !== 3
+    ) {
+
+        return "-";
+
+    }
+
+
+    const anoNascimento =
+        Number(
+            partes[0]
+        );
+
+
+    const mesNascimento =
+        Number(
+            partes[1]
+        ) - 1;
+
+
+    const diaNascimento =
+        Number(
+            partes[2]
+        );
+
 
     const nascimento =
-        new Date(data);
+        new Date(
+            anoNascimento,
+            mesNascimento,
+            diaNascimento
+        );
 
+
+    if (
+        Number.isNaN(
+            nascimento.getTime()
+        )
+    ) {
+
+        return "-";
+
+    }
 
 
     const hoje =
         new Date();
 
 
-
     let idade =
-        hoje.getFullYear()
-        -
+        hoje.getFullYear() -
         nascimento.getFullYear();
 
 
-
-    const mes =
-        hoje.getMonth()
-        -
+    const diferencaMes =
+        hoje.getMonth() -
         nascimento.getMonth();
 
 
-
-    if(
-        mes < 0 ||
-
+    if (
+        diferencaMes < 0 ||
         (
-            mes === 0 &&
-            hoje.getDate()
-            <
-            nascimento.getDate()
+            diferencaMes === 0 &&
+            hoje.getDate() <
+                nascimento.getDate()
         )
-    ){
+    ) {
 
         idade--;
 
     }
 
 
-
-    return idade + " anos";
-
+    return `${idade} anos`;
 
 }
 
 
-
-
-
-
-
-
-
 // ==========================================
-// VOLTAR
+// EVENTO DO FOOTER - VOLTAR
 // ==========================================
 
+document.addEventListener(
+    "avaliacao:voltar",
+    (event) => {
 
-const backButton =
-    document.querySelector(
-        ".back-button"
-    );
-
-
-
-if(backButton){
+        event.preventDefault();
 
 
-    backButton.addEventListener(
-        "click",
-        ()=>{
-
-
-            window.location.href =
+        window.location.href =
             "../tela_sintomas_condicoes/sintomas_condicoes.html";
 
-
-        }
-    );
-
-
-}
-
-
-
-
-
-
-
+    }
+);
 
 
 // ==========================================
-// EDITAR
+// BOTÕES DE EDIÇÃO
 // ==========================================
-
 
 const editButtons =
     document.querySelectorAll(
@@ -734,18 +697,15 @@ const editButtons =
     );
 
 
-
 editButtons.forEach(
     (
         button,
         index
-    )=>{
-
+    ) => {
 
         button.addEventListener(
             "click",
-            ()=>{
-
+            () => {
 
                 const paginas = [
 
@@ -760,72 +720,115 @@ editButtons.forEach(
                 ];
 
 
+                const pagina =
+                    paginas[index];
 
-                window.location.href =
-                paginas[index];
 
+                if (pagina) {
+
+                    window.location.href =
+                        pagina;
+
+                }
 
             }
         );
-
 
     }
 );
 
 
+// ==========================================
+// EVENTO DO FOOTER - FINALIZAR
+// ==========================================
+
+document.addEventListener(
+    "avaliacao:continuar",
+    (event) => {
+
+        event.preventDefault();
 
 
+        finalizarAvaliacao();
 
-
-
+    }
+);
 
 
 // ==========================================
-// FINALIZAR
+// FINALIZAR AVALIAÇÃO
 // ==========================================
 
+function finalizarAvaliacao() {
 
-const finishButton =
-    document.querySelector(
-        ".finish-button"
+    /*
+        Nenhuma resposta é apagada.
+
+        O objeto completo é mantido e recebe
+        apenas os dados de finalização.
+    */
+
+    if (avaliacao) {
+
+        const agora =
+            new Date()
+                .toISOString();
+
+
+        avaliacao = {
+
+            ...avaliacao,
+
+            etapaAtual:
+                5,
+
+            finalizada:
+                true,
+
+            finalizadaEm:
+                agora,
+
+            atualizadoEm:
+                agora
+
+        };
+
+
+        localStorage.setItem(
+            ASSESSMENT_KEY,
+            JSON.stringify(
+                avaliacao
+            )
+        );
+
+    }
+
+
+    if (
+        typeof definirAvaliacaoFooterCarregando ===
+        "function"
+    ) {
+
+        definirAvaliacaoFooterCarregando(
+            true
+        );
+
+    }
+
+
+    alert(
+        "Avaliação preventiva finalizada com sucesso!"
     );
 
 
-
-if(finishButton){
-
-
-    finishButton.addEventListener(
-        "click",
-        ()=>{
-
-
-            alert(
-                "Avaliação preventiva finalizada com sucesso!"
-            );
-
-
-            window.location.href =
-            "../tela_inicio_logado/inicio_logado.html";
-
-
-        }
-    );
-
+    window.location.href =
+        "../tela_inicio_logado/inicio_logado.html";
 
 }
-
-
-
-
-
-
-
 
 
 // ==========================================
 // EXECUTAR
 // ==========================================
-
 
 preencherResumo();

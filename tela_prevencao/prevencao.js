@@ -14,64 +14,64 @@ const personalDataForm =
         "personalDataForm"
     );
 
+
 const nomeInput =
     document.getElementById(
         "nome"
     );
+
 
 const dataNascimentoInput =
     document.getElementById(
         "dataNascimento"
     );
 
+
 const sexoSelect =
     document.getElementById(
         "sexo"
     );
+
 
 const cpfInput =
     document.getElementById(
         "cpf"
     );
 
+
 const emailInput =
     document.getElementById(
         "email"
     );
+
 
 const telefoneInput =
     document.getElementById(
         "telefone"
     );
 
+
 const cepInput =
     document.getElementById(
         "cep"
     );
+
 
 const cidadeInput =
     document.getElementById(
         "cidade"
     );
 
+
 const estadoSelect =
     document.getElementById(
         "estado"
     );
 
+
 const formMessage =
     document.getElementById(
         "formMessage"
-    );
-
-const backButton =
-    document.getElementById(
-        "backButton"
-    );
-
-const continueButton =
-    document.getElementById(
-        "continueButton"
     );
 
 
@@ -82,6 +82,7 @@ const continueButton =
 const ASSESSMENT_KEY =
     "gensaude_avaliacao_preventiva";
 
+
 const SESSION_KEY =
     "gensaude_sessao";
 
@@ -90,18 +91,24 @@ const SESSION_KEY =
 // CONTROLE DO CEP
 // ==========================================
 
-let ultimoCepConsultado = "";
+let ultimoCepConsultado =
+    "";
 
-let consultandoCep = false;
+
+let consultandoCep =
+    false;
 
 
 // ==========================================
-// SESSÃO / USUÁRIO
+// SESSÃO E USUÁRIO
 // ==========================================
 
-let sessao = null;
+let sessao =
+    null;
 
-let usuarioAtual = null;
+
+let usuarioAtual =
+    null;
 
 
 if (
@@ -159,7 +166,7 @@ function iniciarPagina() {
 
 
     // ======================================
-    // FALLBACK
+    // USUÁRIO ALTERNATIVO
     // ======================================
 
     if (!usuarioAtual) {
@@ -209,13 +216,15 @@ function iniciarPagina() {
 
 
 // ==========================================
-// CONFIGURAR DATA
+// CONFIGURAR DATA DE NASCIMENTO
 // ==========================================
 
 function configurarDataNascimento() {
 
     if (!dataNascimentoInput) {
+
         return;
+
     }
 
 
@@ -226,6 +235,7 @@ function configurarDataNascimento() {
     const ano =
         hoje.getFullYear();
 
+
     const mes =
         String(
             hoje.getMonth() + 1
@@ -233,6 +243,7 @@ function configurarDataNascimento() {
             2,
             "0"
         );
+
 
     const dia =
         String(
@@ -255,35 +266,60 @@ function configurarDataNascimento() {
 
 function preencherDadosUsuario() {
 
+    if (
+        !nomeInput ||
+        !dataNascimentoInput ||
+        !sexoSelect ||
+        !cpfInput ||
+        !emailInput ||
+        !telefoneInput ||
+        !cepInput ||
+        !cidadeInput ||
+        !estadoSelect
+    ) {
+
+        return;
+
+    }
+
+
     nomeInput.value =
         usuarioAtual.nome || "";
+
 
     dataNascimentoInput.value =
         usuarioAtual.dataNascimento || "";
 
+
     sexoSelect.value =
         usuarioAtual.sexo || "";
+
 
     cpfInput.value =
         formatarCPF(
             usuarioAtual.cpf || ""
         );
 
+
     emailInput.value =
         usuarioAtual.email || "";
+
 
     telefoneInput.value =
         formatarTelefone(
             usuarioAtual.telefone || ""
         );
 
+
     cepInput.value =
         formatarCEP(
             usuarioAtual.cep || ""
         );
 
+
     cidadeInput.value =
         usuarioAtual.cidade || "";
+
 
     estadoSelect.value =
         usuarioAtual.estado || "";
@@ -305,28 +341,42 @@ function preencherDadosUsuario() {
 
 
 // ==========================================
-// MÁSCARA CPF
+// MÁSCARA DO CPF
 // ==========================================
 
-cpfInput.addEventListener(
-    "input",
-    () => {
+if (cpfInput) {
 
-        cpfInput.value =
-            formatarCPF(
-                cpfInput.value
-            );
+    cpfInput.addEventListener(
+        "input",
+        () => {
 
-    }
-);
+            cpfInput.value =
+                formatarCPF(
+                    cpfInput.value
+                );
+
+        }
+    );
+
+}
 
 
-function formatarCPF(valor) {
+function formatarCPF(
+    valor
+) {
 
     let numeros =
-        String(valor)
-            .replace(/\D/g, "")
-            .substring(0, 11);
+        String(
+            valor
+        )
+            .replace(
+                /\D/g,
+                ""
+            )
+            .substring(
+                0,
+                11
+            );
 
 
     if (
@@ -368,28 +418,42 @@ function formatarCPF(valor) {
 
 
 // ==========================================
-// MÁSCARA TELEFONE
+// MÁSCARA DO TELEFONE
 // ==========================================
 
-telefoneInput.addEventListener(
-    "input",
-    () => {
+if (telefoneInput) {
 
-        telefoneInput.value =
-            formatarTelefone(
-                telefoneInput.value
-            );
+    telefoneInput.addEventListener(
+        "input",
+        () => {
 
-    }
-);
+            telefoneInput.value =
+                formatarTelefone(
+                    telefoneInput.value
+                );
+
+        }
+    );
+
+}
 
 
-function formatarTelefone(valor) {
+function formatarTelefone(
+    valor
+) {
 
     let numeros =
-        String(valor)
-            .replace(/\D/g, "")
-            .substring(0, 11);
+        String(
+            valor
+        )
+            .replace(
+                /\D/g,
+                ""
+            )
+            .substring(
+                0,
+                11
+            );
 
 
     if (
@@ -413,64 +477,82 @@ function formatarTelefone(valor) {
     }
 
 
-    return numeros
-        .replace(/-$/, "");
+    return numeros.replace(
+        /-$/,
+        ""
+    );
 
 }
 
 
 // ==========================================
-// MÁSCARA CEP
+// MÁSCARA DO CEP
 // ==========================================
 
-cepInput.addEventListener(
-    "input",
-    () => {
+if (cepInput) {
 
-        cepInput.value =
-            formatarCEP(
-                cepInput.value
-            );
+    cepInput.addEventListener(
+        "input",
+        () => {
 
-
-        const cepNumeros =
-            cepInput.value
-                .replace(/\D/g, "");
+            cepInput.value =
+                formatarCEP(
+                    cepInput.value
+                );
 
 
-        if (
-            cepNumeros.length < 8
-        ) {
+            const cepNumeros =
+                cepInput.value.replace(
+                    /\D/g,
+                    ""
+                );
 
-            ultimoCepConsultado =
-                "";
 
-            return;
+            if (
+                cepNumeros.length < 8
+            ) {
+
+                ultimoCepConsultado =
+                    "";
+
+                return;
+
+            }
+
+
+            if (
+                cepNumeros !==
+                ultimoCepConsultado
+            ) {
+
+                consultarCep(
+                    cepNumeros
+                );
+
+            }
 
         }
+    );
+
+}
 
 
-        if (
-            cepNumeros !==
-            ultimoCepConsultado
-        ) {
-
-            consultarCep(
-                cepNumeros
-            );
-
-        }
-
-    }
-);
-
-
-function formatarCEP(valor) {
+function formatarCEP(
+    valor
+) {
 
     let numeros =
-        String(valor)
-            .replace(/\D/g, "")
-            .substring(0, 8);
+        String(
+            valor
+        )
+            .replace(
+                /\D/g,
+                ""
+            )
+            .substring(
+                0,
+                8
+            );
 
 
     if (
@@ -500,12 +582,15 @@ async function consultarCep(
 ) {
 
     if (consultandoCep) {
+
         return;
+
     }
 
 
     consultandoCep =
         true;
+
 
     ultimoCepConsultado =
         cep;
@@ -517,6 +602,7 @@ async function consultarCep(
 
     cidadeInput.disabled =
         true;
+
 
     estadoSelect.disabled =
         true;
@@ -548,8 +634,10 @@ async function consultarCep(
             cidadeInput.value =
                 "";
 
+
             estadoSelect.value =
                 "";
+
 
             ultimoCepConsultado =
                 "";
@@ -590,8 +678,10 @@ async function consultarCep(
         cidadeInput.value =
             "";
 
+
         estadoSelect.value =
             "";
+
 
         ultimoCepConsultado =
             "";
@@ -608,8 +698,10 @@ async function consultarCep(
         cidadeInput.disabled =
             false;
 
+
         estadoSelect.disabled =
             false;
+
 
         consultandoCep =
             false;
@@ -620,44 +712,42 @@ async function consultarCep(
 
 
 // ==========================================
-// VOLTAR
+// EVENTO DO FOOTER - VOLTAR
 // ==========================================
 
-if (backButton) {
+document.addEventListener(
+    "avaliacao:voltar",
+    (event) => {
 
-    backButton.addEventListener(
-        "click",
-        () => {
-
-            window.location.href =
-                "../tela_inicio_logado/inicio_logado.html";
-
-        }
-    );
-
-}
+        event.preventDefault();
 
 
-// ==========================================
-// CONTINUAR
-// ==========================================
+        window.location.href =
+            "../tela_inicio_logado/inicio_logado.html";
 
-if (continueButton) {
-
-    continueButton.addEventListener(
-        "click",
-        () => {
-
-            validarESalvar();
-
-        }
-    );
-
-}
+    }
+);
 
 
 // ==========================================
-// SUBMIT PELO ENTER
+// EVENTO DO FOOTER - CONTINUAR
+// ==========================================
+
+document.addEventListener(
+    "avaliacao:continuar",
+    (event) => {
+
+        event.preventDefault();
+
+
+        validarESalvar();
+
+    }
+);
+
+
+// ==========================================
+// ENVIAR FORMULÁRIO PELO ENTER
 // ==========================================
 
 if (personalDataForm) {
@@ -667,6 +757,7 @@ if (personalDataForm) {
         (event) => {
 
             event.preventDefault();
+
 
             validarESalvar();
 
@@ -692,38 +783,52 @@ function validarESalvar() {
     const nome =
         nomeInput.value.trim();
 
+
     const dataNascimento =
         dataNascimentoInput.value;
+
 
     const sexo =
         sexoSelect.value;
 
+
     const cpf =
-        cpfInput.value
-            .replace(/\D/g, "");
+        cpfInput.value.replace(
+            /\D/g,
+            ""
+        );
+
 
     const email =
         emailInput.value
             .trim()
             .toLowerCase();
 
+
     const telefone =
-        telefoneInput.value
-            .replace(/\D/g, "");
+        telefoneInput.value.replace(
+            /\D/g,
+            ""
+        );
+
 
     const cep =
-        cepInput.value
-            .replace(/\D/g, "");
+        cepInput.value.replace(
+            /\D/g,
+            ""
+        );
+
 
     const cidade =
         cidadeInput.value.trim();
+
 
     const estado =
         estadoSelect.value;
 
 
     // ======================================
-    // NOME
+    // VALIDAR NOME
     // ======================================
 
     if (
@@ -741,7 +846,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // DATA
+    // VALIDAR DATA
     // ======================================
 
     if (!dataNascimento) {
@@ -792,7 +897,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // SEXO
+    // VALIDAR SEXO
     // ======================================
 
     if (!sexo) {
@@ -808,7 +913,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // CPF
+    // VALIDAR CPF
     // ======================================
 
     if (
@@ -826,7 +931,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // EMAIL
+    // VALIDAR E-MAIL
     // ======================================
 
     if (
@@ -846,7 +951,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // TELEFONE
+    // VALIDAR TELEFONE
     // ======================================
 
     if (
@@ -864,7 +969,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // CEP
+    // VALIDAR CEP
     // ======================================
 
     if (
@@ -882,7 +987,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // CIDADE
+    // VALIDAR CIDADE
     // ======================================
 
     if (
@@ -901,7 +1006,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // ESTADO
+    // VALIDAR ESTADO
     // ======================================
 
     if (!estado) {
@@ -917,7 +1022,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // OBJETO DOS DADOS
+    // OBJETO DOS DADOS PESSOAIS
     // ======================================
 
     const dadosPessoais = {
@@ -953,7 +1058,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // ATUALIZAR CONTA
+    // ATUALIZAR CONTA LOCAL
     // ======================================
 
     atualizarContaLocal(
@@ -971,7 +1076,7 @@ function validarESalvar() {
 
 
     // ======================================
-    // SUCESSO
+    // MOSTRAR SUCESSO
     // ======================================
 
     mostrarMensagem(
@@ -980,8 +1085,20 @@ function validarESalvar() {
     );
 
 
-    continueButton.disabled =
-        true;
+    // ======================================
+    // DESATIVAR BOTÃO TEMPORARIAMENTE
+    // ======================================
+
+    if (
+        typeof definirAvaliacaoFooterCarregando ===
+        "function"
+    ) {
+
+        definirAvaliacaoFooterCarregando(
+            true
+        );
+
+    }
 
 
     // ======================================
@@ -1010,9 +1127,8 @@ function atualizarContaLocal(
 ) {
 
     /*
-        O auth.js já possui essas funções.
-        Utilizamos a mesma lista de usuários
-        salva durante o cadastro.
+        O auth.js possui as funções utilizadas
+        para acessar e salvar a lista de usuários.
     */
 
     if (
@@ -1105,14 +1221,15 @@ function atualizarContaLocal(
 
 
 // ==========================================
-// SALVAR AVALIAÇÃO
+// SALVAR AVALIAÇÃO NO LOCALSTORAGE
 // ==========================================
 
 function salvarEtapaAvaliacao(
     dadosPessoais
 ) {
 
-    let avaliacao = {};
+    let avaliacao =
+        {};
 
 
     const dadosSalvos =
@@ -1132,6 +1249,12 @@ function salvarEtapaAvaliacao(
 
         } catch (erro) {
 
+            console.error(
+                "Erro ao carregar avaliação salva:",
+                erro
+            );
+
+
             avaliacao =
                 {};
 
@@ -1141,7 +1264,7 @@ function salvarEtapaAvaliacao(
 
 
     // ======================================
-    // OUTRO USUÁRIO
+    // NÃO MISTURAR DADOS DE OUTRO USUÁRIO
     // ======================================
 
     if (
@@ -1160,6 +1283,14 @@ function salvarEtapaAvaliacao(
         new Date()
             .toISOString();
 
+
+    /*
+        O espalhamento mantém as informações
+        que já existiam no localStorage.
+
+        Apenas a etapa de dados pessoais será
+        atualizada neste momento.
+    */
 
     avaliacao = {
 
@@ -1211,7 +1342,7 @@ function salvarEtapaAvaliacao(
 
 
 // ==========================================
-// VALIDAR EMAIL
+// VALIDAR E-MAIL
 // ==========================================
 
 function validarEmail(
@@ -1263,7 +1394,9 @@ function mostrarMensagem(
 ) {
 
     if (!formMessage) {
+
         return;
+
     }
 
 
@@ -1284,7 +1417,9 @@ function mostrarMensagem(
 function limparMensagem() {
 
     if (!formMessage) {
+
         return;
+
     }
 
 
