@@ -1,74 +1,83 @@
-/* =========================================
-   CONFIGURAÇÕES GERAIS
-========================================= */
+/* ==========================================
+   GENSAÚDE SUS
+   TELA DE RESUMO
+========================================== */
+
+
 
 * {
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 
 body {
 
-    min-height: 100vh;
-
-    background-color: #f7f7f7;
+    margin:0;
 
     font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
 
-    color: #06195d;
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    overflow: hidden;
+    background:#f6f8fc;
+
+    color:#06245c;
 
 }
 
 
 
-/* =========================================
+
+
+/* ==========================================
    CONTEÚDO PRINCIPAL
-========================================= */
+========================================== */
 
 
 .main-content {
 
-    width: 100%;
+    width:100%;
 
-    height: calc(100vh - 78px);
+    min-height:calc(100vh - 70px);
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    padding:20px 30px;
 
 }
 
+
+
+
+
+/* ==========================================
+   CARD PRINCIPAL
+========================================== */
 
 
 .summary-card {
 
-    width: 95%;
 
-    max-width: 1390px;
+    width:100%;
 
-    height: 760px;
+    max-width:1200px;
 
-    background-color: white;
+    background:white;
 
-    border-radius: 12px;
+    border-radius:12px;
+
+    padding:24px;
 
     box-shadow:
-        0 2px 5px rgba(0,0,0,0.18);
 
-    padding: 18px 22px;
+    0 2px 8px rgba(0,0,0,0.08);
 
-    display: flex;
-
-    flex-direction: column;
 
 }
 
@@ -76,18 +85,22 @@ body {
 
 
 
-/* =========================================
+
+
+/* ==========================================
    CABEÇALHO
-========================================= */
+========================================== */
 
 
 .summary-header {
 
-    display: flex;
 
-    justify-content: space-between;
+    display:flex;
 
-    align-items: flex-start;
+    justify-content:space-between;
+
+    align-items:flex-start;
+
 
 }
 
@@ -95,11 +108,13 @@ body {
 
 .title-area h1 {
 
-    color: #06195d;
 
-    font-size: 42px;
+    margin:0;
 
-    font-weight: 700;
+    font-size:34px;
+
+    color:#09245c;
+
 
 }
 
@@ -107,11 +122,13 @@ body {
 
 .title-area p {
 
-    margin-top: 5px;
 
-    color: #17458f;
+    margin-top:5px;
 
-    font-size: 16px;
+    font-size:14px;
+
+    color:#174ca6;
+
 
 }
 
@@ -119,22 +136,21 @@ body {
 
 
 
-/* =========================================
+
+/* ==========================================
    PROGRESSO
-========================================= */
+========================================== */
 
 
 .progress-area {
 
-    width: 62%;
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    justify-content: space-between;
+    gap:12px;
 
-    margin-top: 8px;
 
 }
 
@@ -142,13 +158,15 @@ body {
 
 .step {
 
-    display: flex;
 
-    flex-direction: column;
+    display:flex;
 
-    align-items: center;
+    flex-direction:column;
 
-    gap: 5px;
+    align-items:center;
+
+    gap:5px;
+
 
 }
 
@@ -156,25 +174,25 @@ body {
 
 .step span {
 
-    width: 40px;
 
-    height: 40px;
+    width:34px;
 
-    border-radius: 50%;
+    height:34px;
 
-    border: 2px solid #0753d6;
+    border-radius:50%;
 
-    display: flex;
+    border:2px solid #0958d9;
 
-    align-items: center;
+    display:flex;
 
-    justify-content: center;
+    align-items:center;
 
-    color:#0753d6;
+    justify-content:center;
 
-    font-weight: 700;
+    font-weight:bold;
 
-    background:white;
+    color:#0958d9;
+
 
 }
 
@@ -182,9 +200,11 @@ body {
 
 .step.completed span {
 
-    background:#0753d6;
+
+    background:#0958d9;
 
     color:white;
+
 
 }
 
@@ -192,21 +212,13 @@ body {
 
 .step p {
 
+
     font-size:11px;
 
     color:#777;
 
     white-space:nowrap;
 
-}
-
-
-
-.step.active p {
-
-    color:#0753d6;
-
-    font-weight:700;
 
 }
 
@@ -214,51 +226,57 @@ body {
 
 .line {
 
-    height:3px;
 
-    background:#0753d6;
+    width:45px;
 
-    flex:1;
+    height:2px;
 
-    margin:0 8px;
+    background:#0958d9;
+
 
 }
 
 
 
 
-/* =========================================
+
+
+
+/* ==========================================
    DESCRIÇÃO
-========================================= */
+========================================== */
 
 
 .description {
 
-    margin-top:15px;
 
-    margin-bottom:12px;
+    margin:18px 0;
+
+    color:#174ca6;
 
     font-size:14px;
 
-    color:#173c8a;
 
 }
 
 
 
 
-/* =========================================
-   ÁREA CENTRAL
-========================================= */
+
+
+
+/* ==========================================
+   CONTEÚDO DOS CARDS
+========================================== */
 
 
 .summary-content {
 
-    flex:1;
 
     display:flex;
 
     gap:30px;
+
 
 }
 
@@ -266,19 +284,227 @@ body {
 
 .summary-left {
 
+
     width:55%;
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:14px;
 
 }
 
 
 
+
+
+
+
+/* ==========================================
+   BOXES
+========================================== */
+
+
+.summary-box {
+
+
+    border:1px solid #d3dceb;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    margin-bottom:14px;
+
+
+}
+
+
+
+
+
+
+/* ==========================================
+   TITULO DOS BOXES
+========================================== */
+
+
+.box-title {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+}
+
+
+
+.title-content {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+
+}
+
+
+
+
+/* NOVOS ÍCONES */
+
+.box-icon {
+
+
+    width:26px;
+
+    height:26px;
+
+    object-fit:contain;
+
+
+}
+
+
+
+
+
+.box-title h2 {
+
+
+    margin:0;
+
+    font-size:17px;
+
+    color:#09245c;
+
+
+}
+
+
+
+.box-title button {
+
+
+    background:none;
+
+    border:none;
+
+    color:#0958d9;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+.box-line {
+
+
+    width:100%;
+
+    height:1px;
+
+    background:#e3e8f2;
+
+    margin:8px 0;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   INFORMAÇÕES
+========================================== */
+
+
+.info-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+    gap:15px;
+
+
+}
+
+
+
+.info-grid strong,
+
+.symptoms-text strong {
+
+
+    font-size:12px;
+
+    color:#174ca6;
+
+
+}
+
+
+
+.info-grid p,
+
+.symptoms-text p {
+
+
+    margin:5px 0;
+
+    font-size:13px;
+
+    color:#06245c;
+
+
+}
+
+
+
+
+
+/* HISTÓRICO COM QUEBRA DE LINHA */
+
+#resumoHistorico {
+
+
+    white-space:pre-line;
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   IMAGEM LATERAL
+========================================== */
+
+
 .summary-image {
+
 
     width:45%;
 
@@ -288,153 +514,50 @@ body {
 
     justify-content:center;
 
+
 }
 
 
 
 .summary-image img {
 
-    width:100%;
-
-    max-width:470px;
-
-    height:auto;
-
-    object-fit:contain;
-
-}
-
-
-
-
-/* =========================================
-   CARDS
-========================================= */
-
-
-.summary-box {
-
-    border:1px solid #d8dfea;
-
-    border-radius:10px;
-
-    padding:12px 15px;
-
-}
-
-
-
-.box-title {
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-
-.box-title h2 {
-
-    font-size:18px;
-
-    color:#06246e;
-
-}
-
-
-
-.box-title button {
-
-    border:none;
-
-    background:none;
-
-    color:#0753d6;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-}
-
-
-
-.box-line {
 
     width:100%;
 
-    height:2px;
+    max-width:430px;
 
-    background:#eeeeee;
-
-    margin:8px 0;
-
-}
-
-
-
-.info-grid {
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:12px;
-
-}
-
-
-
-.info-grid strong,
-.symptoms-text strong {
-
-    font-size:12px;
-
-    color:#17458f;
-
-}
-
-
-
-.info-grid p,
-.symptoms-text p {
-
-    margin-top:3px;
-
-    font-size:13px;
-
-    color:#06195d;
 
 }
 
 
 
 
-/* =========================================
+
+
+
+
+/* ==========================================
    RODAPÉ
-========================================= */
+========================================== */
 
 
 .summary-footer {
 
-    height:55px;
+
+    margin-top:10px;
 
     background:#eef5ff;
 
     border-radius:8px;
 
-    display:flex;
+    padding:10px;
 
-    align-items:center;
+    display:flex;
 
     justify-content:space-between;
 
-    padding:0 12px;
+    align-items:center;
 
-    margin-top:10px;
 
 }
 
@@ -442,21 +565,19 @@ body {
 
 .back-button {
 
-    width:130px;
-
-    height:38px;
-
-    border-radius:8px;
-
-    border:2px solid #0753d6;
 
     background:white;
 
-    color:#0753d6;
+    border:2px solid #0958d9;
 
-    font-weight:700;
+    color:#0958d9;
+
+    border-radius:8px;
+
+    padding:10px 30px;
 
     cursor:pointer;
+
 
 }
 
@@ -464,21 +585,21 @@ body {
 
 .finish-button {
 
-    width:150px;
 
-    height:38px;
+    background:#0958d9;
+
+    color:white;
 
     border:none;
 
     border-radius:8px;
 
-    background:#0753d6;
+    padding:12px 30px;
 
-    color:white;
-
-    font-weight:700;
+    font-weight:bold;
 
     cursor:pointer;
+
 
 }
 
@@ -486,86 +607,69 @@ body {
 
 .security-message {
 
-    color:#258a43;
+
+    color:#27a745;
 
     font-size:13px;
+
 
 }
 
 
 
 
-/* =========================================
+
+
+
+/* ==========================================
    RESPONSIVIDADE
-========================================= */
+========================================== */
 
 
 @media(max-width:900px){
 
 
-body{
+.summary-content {
 
-    overflow:auto;
-
-}
-
-
-.summary-card{
-
-    height:auto;
-
-    margin:20px 0;
-
-}
-
-
-
-.summary-header{
 
     flex-direction:column;
 
-}
-
-
-
-.progress-area{
-
-    width:100%;
-
-    margin-top:20px;
-
-}
-
-
-
-.summary-content{
-
-    flex-direction:column;
 
 }
 
 
 
 .summary-left,
-.summary-image{
+
+.summary-image {
+
 
     width:100%;
 
-}
-
-
-
-.info-grid{
-
-    grid-template-columns:repeat(2,1fr);
 
 }
 
 
 
-.summary-footer{
+.info-grid {
 
-    margin-top:20px;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.summary-header {
+
+
+    flex-direction:column;
+
+    gap:20px;
+
 
 }
 
