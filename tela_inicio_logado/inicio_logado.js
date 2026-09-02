@@ -134,7 +134,7 @@ if (assessmentButton) {
         () => {
 
             window.location.href =
-                "avaliacao.html";
+                "../tela_prevencao/prevencao.html";
 
         }
     );

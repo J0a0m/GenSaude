@@ -3,10 +3,13 @@
 ========================================= */
 
 #global-header {
+
     position: relative;
+
     z-index: 1000;
 
     width: 100%;
+
 }
 
 
@@ -15,10 +18,13 @@
 ========================================= */
 
 .header {
+
     position: relative;
+
     z-index: 1000;
 
     width: 100%;
+
     height: 78px;
 
     background-color: #ffffff;
@@ -29,6 +35,7 @@
         Arial,
         Helvetica,
         sans-serif;
+
 }
 
 
@@ -37,17 +44,23 @@
 ========================================= */
 
 .navbar {
-    width: 100%;
-    max-width: 1215px;
+
+    width: calc(100% - 48px);
+
+    max-width: 1500px;
+
     height: 100%;
 
     margin: 0 auto;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 22px;
+
 }
 
 
@@ -56,7 +69,9 @@
 ========================================= */
 
 .logo {
+
     display: flex;
+
     align-items: center;
 
     gap: 9px;
@@ -68,11 +83,14 @@
     text-decoration: none;
 
     white-space: nowrap;
+
 }
 
 
 .logo-img {
+
     width: 39px;
+
     height: 39px;
 
     display: block;
@@ -80,21 +98,27 @@
     object-fit: contain;
 
     flex-shrink: 0;
+
 }
 
 
 .logo-text {
+
     color: #0748c8;
 
     font-size: 25px;
+
     font-weight: 400;
 
     line-height: 1;
+
 }
 
 
 .logo-text strong {
+
     font-weight: 700;
+
 }
 
 
@@ -103,23 +127,29 @@
 ========================================= */
 
 .desktop-menu {
+
     flex: 1;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 62px;
+
 }
 
 
 .menu a,
 .desktop-menu a {
+
     position: relative;
 
     color: #061858;
 
     font-size: 16px;
+
     font-weight: 400;
 
     text-decoration: none;
@@ -128,20 +158,25 @@
 
     transition:
         color 0.2s ease;
+
 }
 
 
 .menu a:hover,
 .desktop-menu a:hover {
+
     color: #064dcc;
+
 }
 
 
 .menu a.active,
 .desktop-menu a.active {
+
     color: #064dcc;
 
     font-weight: 700;
+
 }
 
 
@@ -150,10 +185,13 @@
 ========================================= */
 
 .desktop-account-area {
+
     display: flex;
+
     align-items: center;
 
     flex-shrink: 0;
+
 }
 
 
@@ -162,12 +200,15 @@
 ========================================= */
 
 .header-login-btn {
+
     height: 40px;
 
     padding: 0 13px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 7px;
@@ -179,6 +220,7 @@
     color: #ffffff;
 
     font-size: 16px;
+
     font-weight: 700;
 
     text-decoration: none;
@@ -188,21 +230,28 @@
     transition:
         background-color 0.2s ease,
         transform 0.2s ease;
+
 }
 
 
 .header-login-btn:hover {
+
     background-color: #073ba4;
+
 }
 
 
 .header-login-btn:active {
+
     transform: scale(0.98);
+
 }
 
 
 .header-login-icon {
+
     width: 20px;
+
     height: 20px;
 
     display: block;
@@ -210,6 +259,7 @@
     object-fit: contain;
 
     flex-shrink: 0;
+
 }
 
 
@@ -218,23 +268,30 @@
 ========================================= */
 
 .profile-area {
+
     display: flex;
+
     align-items: center;
 
     gap: 8px;
 
     flex-shrink: 0;
+
 }
 
 
 .profile-button {
+
     height: 40px;
+
     max-width: 155px;
 
     padding: 0 12px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 7px;
@@ -242,6 +299,7 @@
     background-color: #0752d5;
 
     border: 2px solid #0752d5;
+
     border-radius: 9px;
 
     color: #ffffff;
@@ -252,6 +310,7 @@
         sans-serif;
 
     font-size: 16px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -261,21 +320,28 @@
     transition:
         background-color 0.2s ease,
         transform 0.2s ease;
+
 }
 
 
 .profile-button:hover {
+
     background-color: #0648bd;
+
 }
 
 
 .profile-button:active {
+
     transform: scale(0.98);
+
 }
 
 
 .profile-icon {
+
     width: 20px;
+
     height: 20px;
 
     display: block;
@@ -283,10 +349,12 @@
     object-fit: contain;
 
     flex-shrink: 0;
+
 }
 
 
 .profile-name {
+
     display: block;
 
     max-width: 105px;
@@ -296,6 +364,7 @@
     white-space: nowrap;
 
     text-overflow: ellipsis;
+
 }
 
 
@@ -304,17 +373,21 @@
 ========================================= */
 
 .logout-button {
+
     height: 40px;
 
     padding: 0 15px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background-color: #d93025;
 
     border: 2px solid #d93025;
+
     border-radius: 9px;
 
     color: #ffffff;
@@ -325,6 +398,7 @@
         sans-serif;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -335,36 +409,44 @@
         background-color 0.2s ease,
         border-color 0.2s ease,
         transform 0.2s ease;
+
 }
 
 
 .logout-button:hover {
+
     background-color: #b3261e;
 
     border-color: #b3261e;
+
 }
 
 
 .logout-button:active {
+
     transform: scale(0.97);
+
 }
 
 
 /* =========================================
    MENU HAMBÚRGUER
-
-   ESCONDIDO NO DESKTOP
 ========================================= */
 
 .mobile-menu-toggle {
+
     width: 42px;
+
     height: 42px;
 
     padding: 0;
 
     display: none;
+
     align-items: center;
+
     justify-content: center;
+
     flex-direction: column;
 
     gap: 5px;
@@ -372,6 +454,7 @@
     background-color: transparent;
 
     border: none;
+
     border-radius: 8px;
 
     cursor: pointer;
@@ -380,16 +463,21 @@
 
     transition:
         background-color 0.2s ease;
+
 }
 
 
 .mobile-menu-toggle:hover {
+
     background-color: #f1f5fb;
+
 }
 
 
 .hamburger-line {
+
     width: 23px;
+
     height: 2.5px;
 
     display: block;
@@ -401,32 +489,39 @@
     transition:
         transform 0.25s ease,
         opacity 0.2s ease;
+
 }
 
 
 /* =========================================
-   ANIMAÇÃO ☰ → X
+   ANIMAÇÃO DO MENU
 ========================================= */
 
 .mobile-menu-toggle.active
 .hamburger-line:nth-child(1) {
+
     transform:
         translateY(7.5px)
         rotate(45deg);
+
 }
 
 
 .mobile-menu-toggle.active
 .hamburger-line:nth-child(2) {
+
     opacity: 0;
+
 }
 
 
 .mobile-menu-toggle.active
 .hamburger-line:nth-child(3) {
+
     transform:
         translateY(-7.5px)
         rotate(-45deg);
+
 }
 
 
@@ -435,9 +530,11 @@
 ========================================= */
 
 .mobile-menu {
+
     position: absolute;
 
     top: 100%;
+
     left: 0;
 
     width: 100%;
@@ -468,6 +565,7 @@
         opacity 0.2s ease,
         transform 0.2s ease,
         visibility 0.2s ease;
+
 }
 
 
@@ -476,6 +574,7 @@
 ========================================= */
 
 .mobile-menu.open {
+
     opacity: 1;
 
     visibility: visible;
@@ -484,6 +583,7 @@
 
     transform:
         translateY(0);
+
 }
 
 
@@ -492,19 +592,24 @@
 ========================================= */
 
 .mobile-navigation {
+
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     padding:
         10px
         0;
+
 }
 
 
 .mobile-navigation a {
+
     width: 100%;
+
     min-height: 48px;
 
     padding:
@@ -512,6 +617,7 @@
         12px;
 
     display: flex;
+
     align-items: center;
 
     border-radius: 8px;
@@ -519,6 +625,7 @@
     color: #061858;
 
     font-size: 16px;
+
     font-weight: 500;
 
     text-decoration: none;
@@ -526,22 +633,27 @@
     transition:
         background-color 0.2s ease,
         color 0.2s ease;
+
 }
 
 
 .mobile-navigation a:hover {
+
     background-color: #f2f6fc;
 
     color: #064dcc;
+
 }
 
 
 .mobile-navigation a.active {
+
     background-color: #edf4ff;
 
     color: #064dcc;
 
     font-weight: 700;
+
 }
 
 
@@ -550,6 +662,7 @@
 ========================================= */
 
 .mobile-account-area {
+
     width: 100%;
 
     padding:
@@ -558,12 +671,14 @@
         18px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 9px;
 
     border-top:
         1px solid #e4e8ef;
+
 }
 
 
@@ -572,11 +687,15 @@
 ========================================= */
 
 .mobile-login-button {
+
     width: 100%;
+
     min-height: 46px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 8px;
@@ -588,27 +707,34 @@
     color: #ffffff;
 
     font-size: 15px;
+
     font-weight: 700;
 
     text-decoration: none;
 
     transition:
         background-color 0.2s ease;
+
 }
 
 
 .mobile-login-button:hover {
+
     background-color: #073ba4;
+
 }
 
 
 .mobile-login-icon {
+
     width: 19px;
+
     height: 19px;
 
     display: block;
 
     object-fit: contain;
+
 }
 
 
@@ -617,7 +743,9 @@
 ========================================= */
 
 .mobile-profile-button {
+
     width: 100%;
+
     min-height: 55px;
 
     padding:
@@ -625,6 +753,7 @@
         12px;
 
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -632,6 +761,7 @@
     background-color: #edf4ff;
 
     border: 1px solid #d6e4fb;
+
     border-radius: 9px;
 
     color: #061858;
@@ -642,16 +772,21 @@
 
     transition:
         background-color 0.2s ease;
+
 }
 
 
 .mobile-profile-button:hover {
+
     background-color: #e3efff;
+
 }
 
 
 .mobile-profile-icon {
+
     width: 29px;
+
     height: 29px;
 
     display: block;
@@ -659,33 +794,42 @@
     object-fit: contain;
 
     flex-shrink: 0;
+
 }
 
 
 .mobile-profile-text {
+
     min-width: 0;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 2px;
+
 }
 
 
 .mobile-profile-label {
+
     color: #60749f;
 
     font-size: 11px;
+
     font-weight: 400;
+
 }
 
 
 .mobile-profile-text strong {
+
     max-width: 220px;
 
     color: #064dcc;
 
     font-size: 15px;
+
     font-weight: 700;
 
     overflow: hidden;
@@ -693,6 +837,7 @@
     white-space: nowrap;
 
     text-overflow: ellipsis;
+
 }
 
 
@@ -701,16 +846,21 @@
 ========================================= */
 
 .mobile-logout-button {
+
     width: 100%;
+
     min-height: 44px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background-color: #d93025;
 
     border: 2px solid #d93025;
+
     border-radius: 9px;
 
     color: #ffffff;
@@ -721,6 +871,7 @@
         sans-serif;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -728,13 +879,16 @@
     transition:
         background-color 0.2s ease,
         border-color 0.2s ease;
+
 }
 
 
 .mobile-logout-button:hover {
+
     background-color: #b3261e;
 
     border-color: #b3261e;
+
 }
 
 
@@ -745,14 +899,20 @@
 @media (max-width: 1200px) {
 
     .navbar {
+
+        width: 100%;
+
         padding:
             0
             25px;
+
     }
 
 
     .desktop-menu {
+
         gap: 38px;
+
     }
 
 }
@@ -765,21 +925,28 @@
 @media (max-width: 1050px) {
 
     .desktop-menu {
+
         gap: 24px;
+
     }
 
 
     .desktop-menu a {
+
         font-size: 14px;
+
     }
 
 
     .logo-text {
+
         font-size: 22px;
+
     }
 
 
     .profile-button {
+
         max-width: 130px;
 
         padding:
@@ -787,20 +954,25 @@
             9px;
 
         font-size: 14px;
+
     }
 
 
     .profile-name {
+
         max-width: 82px;
+
     }
 
 
     .logout-button {
+
         padding:
             0
             11px;
 
         font-size: 14px;
+
     }
 
 }
@@ -812,45 +984,50 @@
 
 @media (max-width: 900px) {
 
-    /* HEADER */
-
     .header {
+
         height: 70px;
+
     }
 
 
     .navbar {
+
         padding:
             0
             20px;
+
     }
 
-
-    /* ESCONDER DESKTOP */
 
     .desktop-menu,
     .desktop-account-area {
+
         display: none;
+
     }
 
-
-    /* MOSTRAR HAMBÚRGUER */
 
     .mobile-menu-toggle {
+
         display: flex;
+
     }
 
 
-    /* LOGO */
-
     .logo-img {
+
         width: 34px;
+
         height: 34px;
+
     }
 
 
     .logo-text {
+
         font-size: 21px;
+
     }
 
 }
@@ -863,45 +1040,61 @@
 @media (max-width: 600px) {
 
     .navbar {
+
         padding:
             0
             16px;
+
     }
 
 
     .logo {
+
         gap: 7px;
+
     }
 
 
     .logo-img {
+
         width: 32px;
+
         height: 32px;
+
     }
 
 
     .logo-text {
+
         font-size: 20px;
+
     }
 
 
     .mobile-menu-toggle {
+
         width: 40px;
+
         height: 40px;
+
     }
 
 
     .mobile-menu {
+
         padding:
             0
             14px;
+
     }
 
 
     .mobile-navigation a {
+
         min-height: 46px;
 
         font-size: 15px;
+
     }
 
 }
@@ -914,43 +1107,59 @@
 @media (max-width: 380px) {
 
     .navbar {
+
         padding:
             0
             12px;
+
     }
 
 
     .logo-img {
+
         width: 29px;
+
         height: 29px;
+
     }
 
 
     .logo-text {
+
         font-size: 18px;
+
     }
 
 
     .mobile-menu-toggle {
+
         width: 38px;
+
         height: 38px;
+
     }
 
 
     .hamburger-line {
+
         width: 21px;
+
     }
 
 
     .mobile-menu {
+
         padding:
             0
             10px;
+
     }
 
 
     .mobile-profile-text strong {
+
         max-width: 190px;
+
     }
 
 }
