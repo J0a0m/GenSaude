@@ -14,16 +14,10 @@
         Resumo | GenSaúde SUS
     </title>
 
-
-    <!-- CSS DA TELA -->
-
     <link
         rel="stylesheet"
         href="resumo.css"
     >
-
-
-    <!-- COMPONENTES GLOBAIS -->
 
     <link
         rel="stylesheet"
@@ -55,7 +49,6 @@
     ></div>
 
 
-
     <!-- CONTEÚDO PRINCIPAL -->
 
     <main class="main-content">
@@ -82,7 +75,6 @@
                 </div>
 
 
-
                 <!-- PROGRESSO -->
 
                 <div class="progress-area">
@@ -95,7 +87,7 @@
                         </span>
 
                         <p>
-                            Dados pessoais
+                            Localização
                         </p>
 
                     </div>
@@ -171,16 +163,14 @@
             </div>
 
 
-
             <!-- DESCRIÇÃO -->
 
             <p class="description">
 
-                Revise as informações abaixo antes
-                de finalizar a avaliação.
+                Revise as informações abaixo antes de finalizar
+                a avaliação.
 
             </p>
-
 
 
             <!-- CONTEÚDO DO RESUMO -->
@@ -191,7 +181,7 @@
                 <div class="summary-left">
 
 
-                    <!-- DADOS PESSOAIS -->
+                    <!-- LOCALIZAÇÃO -->
 
                     <div class="summary-box">
 
@@ -202,13 +192,13 @@
                             <div class="title-content">
 
                                 <img
-                                    src="../imagens/icone_dados_pessoais.png"
-                                    alt="Dados pessoais"
+                                    src="../imagens/localizacao.png"
+                                    alt="Localização"
                                     class="box-icon"
                                 >
 
                                 <h2>
-                                    Dados pessoais
+                                    Localização
                                 </h2>
 
                             </div>
@@ -216,7 +206,7 @@
 
                             <button
                                 type="button"
-                                aria-label="Editar dados pessoais"
+                                aria-label="Editar localização"
                             >
                                 ✎
                             </button>
@@ -234,10 +224,10 @@
                             <div>
 
                                 <strong>
-                                    Nome completo
+                                    CEP
                                 </strong>
 
-                                <p id="resumoNome">
+                                <p id="resumoCep">
                                     -
                                 </p>
 
@@ -247,10 +237,10 @@
                             <div>
 
                                 <strong>
-                                    Idade
+                                    Rua e número
                                 </strong>
 
-                                <p id="resumoIdade">
+                                <p id="resumoEndereco">
                                     -
                                 </p>
 
@@ -260,10 +250,10 @@
                             <div>
 
                                 <strong>
-                                    Sexo
+                                    Bairro
                                 </strong>
 
-                                <p id="resumoSexo">
+                                <p id="resumoBairro">
                                     -
                                 </p>
 
@@ -287,7 +277,6 @@
 
 
                     </div>
-
 
 
                     <!-- HISTÓRICO FAMILIAR -->
@@ -341,7 +330,6 @@
 
 
                     </div>
-
 
 
                     <!-- ESTILO DE VIDA -->
@@ -442,7 +430,6 @@
                     </div>
 
 
-
                     <!-- SINTOMAS E CONDIÇÕES -->
 
                     <div class="summary-box">
@@ -482,6 +469,7 @@
 
                         <div class="symptoms-text">
 
+
                             <strong>
                                 Condições selecionadas
                             </strong>
@@ -499,6 +487,7 @@
                                 -
                             </p>
 
+
                         </div>
 
 
@@ -508,8 +497,7 @@
                 </div>
 
 
-
-                <!-- ILUSTRAÇÃO -->
+                <!-- IMAGEM LATERAL -->
 
                 <div class="summary-image">
 
@@ -525,8 +513,7 @@
             </div>
 
 
-
-            <!-- FOOTER PADRONIZADO -->
+            <!-- FOOTER DA AVALIAÇÃO -->
 
             <div
                 id="avaliacao-footer"
@@ -541,29 +528,19 @@
     </main>
 
 
-
-    <!-- AUTENTICAÇÃO -->
+    <!-- JAVASCRIPT -->
 
     <script
         src="../componentes/auth.js"
     ></script>
 
-
-    <!-- HEADER GLOBAL -->
-
     <script
         src="../componentes/header.js"
     ></script>
 
-
-    <!-- FOOTER DA AVALIAÇÃO -->
-
     <script
         src="../componentes/avaliacao_footer.js"
     ></script>
-
-
-    <!-- JAVASCRIPT DA TELA -->
 
     <script
         src="resumo.js"
