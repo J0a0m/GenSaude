@@ -41,7 +41,7 @@ button {
 }
 
 /* ==========================================
-   CABEÇALHO DA PÁGINA
+   CABEÇALHO
 ========================================== */
 
 .result-page-header {
@@ -72,7 +72,7 @@ button {
 }
 
 /* ==========================================
-   BOTÃO REFAZER AVALIAÇÃO
+   BOTÃO REFAZER
 ========================================== */
 
 .retake-button {
@@ -170,7 +170,7 @@ button {
 }
 
 /* ==========================================
-   CARD DO RESULTADO
+   RESULTADO PRINCIPAL
 ========================================== */
 
 .health-result-card {
@@ -249,7 +249,7 @@ button {
 }
 
 /* ==========================================
-   LISTA DE FATORES IDENTIFICADOS
+   FATORES
 ========================================== */
 
 .factors-list {
@@ -517,112 +517,149 @@ button {
 }
 
 /* ==========================================
-   MAPA DECORATIVO
+   MAPA REAL
 ========================================== */
 
-.map-preview {
+.real-map-wrapper {
     position: relative;
-    min-height: 245px;
+    width: 100%;
+    min-width: 0;
+    min-height: 260px;
     background-color: #eaf3ff;
-    background-image:
-        linear-gradient(
-            32deg,
-            transparent 46%,
-            rgba(255, 255, 255, 0.95) 47%,
-            rgba(255, 255, 255, 0.95) 53%,
-            transparent 54%
-        ),
-        linear-gradient(
-            -24deg,
-            transparent 45%,
-            rgba(255, 255, 255, 0.8) 46%,
-            rgba(255, 255, 255, 0.8) 52%,
-            transparent 53%
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent 0,
-            transparent 45px,
-            rgba(195, 215, 239, 0.55) 46px,
-            rgba(195, 215, 239, 0.55) 48px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent 0,
-            transparent 40px,
-            rgba(195, 215, 239, 0.55) 41px,
-            rgba(195, 215, 239, 0.55) 43px
-        );
+    border: 1px solid #d8e3f3;
     border-radius: 11px;
     overflow: hidden;
 }
 
-.map-preview::before {
-    content: "";
-    position: absolute;
-    left: -12%;
-    bottom: 20%;
-    width: 125%;
-    height: 34px;
-    background-color: rgba(97, 177, 236, 0.72);
-    border: 7px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    transform: rotate(-13deg);
-}
-
-.map-road {
-    position: absolute;
-    display: block;
-    height: 9px;
-    background-color: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(191, 211, 236, 0.55);
-    border-radius: 999px;
-}
-
-.road-one {
-    top: 24%;
-    left: -10%;
-    width: 85%;
-    transform: rotate(21deg);
-}
-
-.road-two {
-    top: 50%;
-    right: -18%;
-    width: 90%;
-    transform: rotate(-38deg);
-}
-
-.road-three {
-    left: 12%;
-    bottom: 17%;
-    width: 72%;
-    transform: rotate(43deg);
-}
-
-.map-pin {
-    position: absolute;
-    z-index: 3;
-}
-
-.map-pin img {
+.real-map {
+    position: relative;
+    z-index: 1;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: 260px;
+    background-color: #eaf3ff;
 }
 
-.map-pin-main {
-    top: 25%;
-    left: 27%;
-    width: 78px;
-    height: 78px;
+.real-map .leaflet-control-zoom a {
+    color: #0752d5;
 }
 
-.map-pin-secondary {
-    right: 15%;
-    bottom: 18%;
-    width: 52px;
-    height: 68px;
+.real-map .leaflet-control-attribution {
+    color: #52688f;
+    font-size: 9px;
+}
+
+.real-map .leaflet-popup-content-wrapper {
+    border-radius: 9px;
+}
+
+.real-map .leaflet-popup-content {
+    margin: 12px 14px;
+    color: #071b64;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   ESTADO DO MAPA
+========================================== */
+
+.map-status {
+    position: absolute;
+    z-index: 500;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    min-height: 42px;
+    padding: 9px 12px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #173c8a;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #cbdaf0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(7, 27, 100, 0.13);
+    font-size: 12px;
+    line-height: 1.35;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.map-status.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.map-status.error {
+    color: #9f2f27;
+    background-color: rgba(255, 242, 241, 0.97);
+    border-color: #efc4c0;
+}
+
+.map-loader {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border: 3px solid #c9daf7;
+    border-top-color: #0752d5;
+    border-radius: 50%;
+    animation: map-loader-spin 0.8s linear infinite;
+}
+
+.map-status.error .map-loader,
+.map-loader.hidden {
+    display: none;
+}
+
+@keyframes map-loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   MARCADORES DO MAPA
+========================================== */
+
+.health-map-marker {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 50% 50% 50% 8px;
+    box-shadow: 0 3px 9px rgba(7, 27, 100, 0.28);
+    font-size: 11px;
+    font-weight: 700;
+    transform: rotate(-45deg);
+}
+
+.health-map-marker span {
+    transform: rotate(45deg);
+}
+
+.health-map-marker.ubs {
+    background-color: #059c8c;
+}
+
+.health-map-marker.upa {
+    background-color: #0752d5;
+}
+
+.user-map-marker {
+    width: 22px;
+    height: 22px;
+    background-color: #1677ff;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 7px rgba(22, 119, 255, 0.2),
+        0 3px 8px rgba(7, 27, 100, 0.25);
 }
 
 /* ==========================================
@@ -634,6 +671,56 @@ button {
     display: flex;
     flex-direction: column;
 }
+
+/* CARREGAMENTO */
+
+.unit-loading-placeholder {
+    min-height: 94px;
+    padding: 17px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 11px;
+    border-bottom: 1px solid #e4e9f1;
+}
+
+.unit-loading-placeholder:last-child {
+    border-bottom: none;
+}
+
+.unit-loading-line {
+    display: block;
+    height: 12px;
+    background: linear-gradient(
+        90deg,
+        #edf2f8 25%,
+        #dfe8f4 50%,
+        #edf2f8 75%
+    );
+    background-size: 200% 100%;
+    border-radius: 999px;
+    animation: unit-loading 1.3s ease-in-out infinite;
+}
+
+.unit-loading-title {
+    width: 78%;
+}
+
+.unit-loading-distance {
+    width: 36%;
+}
+
+@keyframes unit-loading {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+/* ITEM DE UNIDADE */
 
 .unit-item {
     position: relative;
@@ -649,6 +736,7 @@ button {
     border-bottom: 1px solid #e4e9f1;
     text-align: left;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .unit-item:last-child {
@@ -685,6 +773,30 @@ button {
     font-weight: 700;
 }
 
+.unit-information .unit-address {
+    color: #60749f;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.unit-type-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px 6px;
+    color: #ffffff;
+    background-color: #0752d5;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.unit-type-badge.ubs {
+    background-color: #059c8c;
+}
+
 .unit-arrow {
     position: absolute;
     top: 50%;
@@ -693,6 +805,41 @@ button {
     height: 18px;
     object-fit: contain;
     transform: translateY(-50%);
+}
+
+/* ==========================================
+   ESTADO VAZIO OU ERRO
+========================================== */
+
+.units-empty-state {
+    min-height: 188px;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #60749f;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.retry-location-button {
+    min-height: 38px;
+    padding: 0 14px;
+    color: #0752d5;
+    background-color: #ffffff;
+    border: 1px solid #0752d5;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.retry-location-button:hover {
+    color: #ffffff;
+    background-color: #0752d5;
 }
 
 /* ==========================================
@@ -711,7 +858,8 @@ button {
 .retake-button:focus-visible,
 .primary-result-button:focus-visible,
 .nearby-units-header button:focus-visible,
-.unit-item:focus-visible {
+.unit-item:focus-visible,
+.retry-location-button:focus-visible {
     outline: 3px solid rgba(7, 82, 213, 0.28);
     outline-offset: 3px;
 }
@@ -839,9 +987,9 @@ button {
     }
 
     .result-status-content p,
+    .factors-list li,
     .care-guidance-content p,
-    .next-step-content p,
-    .factors-list li {
+    .next-step-content p {
         font-size: 13px;
     }
 
@@ -886,12 +1034,21 @@ button {
         grid-template-columns: 1fr;
     }
 
-    .map-preview {
-        min-height: 220px;
+    .real-map-wrapper,
+    .real-map {
+        min-height: 240px;
+        height: 240px;
     }
 
-    .unit-item {
-        min-height: 78px;
+    .unit-item,
+    .unit-loading-placeholder {
+        min-height: 82px;
+    }
+
+    .map-status {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
     }
 }
 
@@ -940,5 +1097,11 @@ button {
 
     .primary-result-button {
         width: 100%;
+    }
+
+    .real-map-wrapper,
+    .real-map {
+        min-height: 225px;
+        height: 225px;
     }
 }

@@ -15,6 +15,16 @@
     </title>
 
 
+    <!-- LEAFLET - MAPA INTERATIVO -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+    >
+
+
     <!-- CSS DA TELA -->
 
     <link
@@ -47,7 +57,6 @@
         id="global-header"
         data-active="prevencao"
     ></div>
-
 
 
     <!-- CONTEÚDO PRINCIPAL -->
@@ -96,7 +105,6 @@
         </header>
 
 
-
         <!-- MENSAGEM DA PÁGINA -->
 
         <p
@@ -104,7 +112,6 @@
             id="resultMessage"
             aria-live="polite"
         ></p>
-
 
 
         <!-- CONTEÚDO DO RESULTADO -->
@@ -191,7 +198,6 @@
                 </article>
 
 
-
                 <!-- ORIENTAÇÃO UBS OU UPA -->
 
                 <article class="care-guidance-card">
@@ -226,7 +232,6 @@
 
 
             </div>
-
 
 
             <!-- COLUNA DIREITA -->
@@ -291,7 +296,6 @@
                 </article>
 
 
-
                 <!-- UNIDADES PRÓXIMAS -->
 
                 <article class="nearby-units-card">
@@ -307,11 +311,13 @@
                             type="button"
                             id="viewAllUnitsButton"
                         >
+
                             Ver todas
 
                             <span aria-hidden="true">
                                 ›
                             </span>
+
                         </button>
 
                     </div>
@@ -320,123 +326,73 @@
                     <div class="nearby-units-content">
 
 
-                        <!-- MAPA DECORATIVO -->
+                        <!-- MAPA REAL -->
 
-                        <div
-                            class="map-preview"
-                            role="img"
-                            aria-label="Representação das unidades próximas"
-                        >
-
-                            <span class="map-road road-one"></span>
-
-                            <span class="map-road road-two"></span>
-
-                            <span class="map-road road-three"></span>
+                        <div class="real-map-wrapper">
 
 
-                            <span class="map-pin map-pin-main">
-
-                                <img
-                                    src="../imagens/localizacao_card.png"
-                                    alt="UBS Jardim das Flores"
-                                >
-
-                            </span>
+                            <div
+                                id="nearbyUnitsMap"
+                                class="real-map"
+                                aria-label="Mapa com sua localização e unidades de saúde próximas"
+                            ></div>
 
 
-                            <span class="map-pin map-pin-secondary">
+                            <div
+                                class="map-status"
+                                id="mapStatus"
+                                role="status"
+                                aria-live="polite"
+                            >
 
-                                <img
-                                    src="../imagens/localizacao.png"
-                                    alt="UPA Central"
-                                >
+                                <span
+                                    class="map-loader"
+                                    id="mapLoader"
+                                    aria-hidden="true"
+                                ></span>
 
-                            </span>
+                                <span id="mapStatusText">
+                                    Aguardando permissão para acessar sua localização...
+                                </span>
+
+                            </div>
+
 
                         </div>
 
 
+                        <!-- LISTA DAS UNIDADES -->
 
-                        <!-- LISTA DE UNIDADES -->
-
-                        <div class="units-list">
-
-
-                            <button
-                                type="button"
-                                class="unit-item"
-                                data-unit="ubs-jardim-das-flores"
-                            >
-
-                                <img
-                                    src="../imagens/localizacao_card.png"
-                                    alt=""
-                                    aria-hidden="true"
-                                    class="unit-marker"
-                                >
+                        <div
+                            class="units-list"
+                            id="nearbyUnitsList"
+                        >
 
 
-                                <span class="unit-information">
+                            <div class="unit-loading-placeholder">
 
-                                    <strong>
-                                        UBS Jardim das Flores
-                                    </strong>
+                                <span
+                                    class="unit-loading-line unit-loading-title"
+                                ></span>
 
-                                    <small>
-                                        1,2 km
-                                    </small>
+                                <span
+                                    class="unit-loading-line unit-loading-distance"
+                                ></span>
 
-                                </span>
-
-
-                                <img
-                                    src="../imagens/seta.png"
-                                    alt=""
-                                    aria-hidden="true"
-                                    class="unit-arrow"
-                                >
+                            </div>
 
 
-                            </button>
+                            <div class="unit-loading-placeholder">
 
+                                <span
+                                    class="unit-loading-line unit-loading-title"
+                                ></span>
 
-                            <button
-                                type="button"
-                                class="unit-item"
-                                data-unit="upa-central"
-                            >
+                                <span
+                                    class="unit-loading-line unit-loading-distance"
+                                ></span>
 
-                                <img
-                                    src="../imagens/localizacao.png"
-                                    alt=""
-                                    aria-hidden="true"
-                                    class="unit-marker"
-                                >
-
-
-                                <span class="unit-information">
-
-                                    <strong>
-                                        UPA Central
-                                    </strong>
-
-                                    <small>
-                                        3,8 km
-                                    </small>
-
-                                </span>
-
-
-                                <img
-                                    src="../imagens/seta.png"
-                                    alt=""
-                                    aria-hidden="true"
-                                    class="unit-arrow"
-                                >
-
-
-                            </button>
+                            </div>
 
 
                         </div>
@@ -454,7 +410,6 @@
         </div>
 
 
-
         <!-- AVISO GLOBAL -->
 
         <section class="disclaimer-section">
@@ -465,7 +420,6 @@
 
 
     </main>
-
 
 
     <!-- AUTENTICAÇÃO -->
@@ -479,6 +433,15 @@
 
     <script
         src="../componentes/header.js"
+    ></script>
+
+
+    <!-- LEAFLET -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""
     ></script>
 
 
