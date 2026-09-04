@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Educação em Saúde | GenSaúde SUS</title>
+
+    <!-- CSS DA TELA -->
+    <link
+        rel="stylesheet"
+        href="educacao.css"
+    >
+
+    <!-- COMPONENTES GLOBAIS -->
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../componentes/disclaimer.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- HEADER GLOBAL -->
+    <div
+        id="global-header"
+        data-active="educacao"
+    ></div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="education-main">
+
+        <!-- APRESENTAÇÃO E PESQUISA -->
+        <section class="education-hero">
+
+            <div class="education-hero-content">
+
+                <header class="education-heading">
+
+                    <h1>
+                        Educação em Saúde
+                    </h1>
+
+                    <p>
+                        Aprenda, previna-se e cuide melhor da sua saúde
+                        com conteúdos simples e confiáveis.
+                    </p>
+
+                </header>
+
+                <!-- PESQUISA -->
+                <form
+                    class="education-search-form"
+                    id="educationSearchForm"
+                    role="search"
+                >
+
+                    <label
+                        class="sr-only"
+                        for="educationSearchInput"
+                    >
+                        Buscar tema de saúde
+                    </label>
+
+                    <svg
+                        class="education-search-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="11"
+                            cy="11"
+                            r="7"
+                        ></circle>
+
+                        <path d="M16.5 16.5L21 21"></path>
+
+                    </svg>
+
+                    <input
+                        type="search"
+                        id="educationSearchInput"
+                        name="busca"
+                        placeholder="Buscar tema de saúde"
+                        autocomplete="off"
+                    >
+
+                </form>
+
+                <!-- FILTROS POR CATEGORIA -->
+                <div
+                    class="category-filters"
+                    role="group"
+                    aria-label="Filtrar conteúdos por categoria"
+                >
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="alimentacao"
+                        aria-pressed="false"
+                    >
+
+                        <img
+                            src="../imagens/alimentacao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span>
+                            Alimentação
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="atividade-fisica"
+                        aria-pressed="false"
+                    >
+
+                        <img
+                            src="../imagens/atividade_fisica.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span>
+                            Atividade Física
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="saude-mental"
+                        aria-pressed="false"
+                    >
+
+                        <img
+                            src="../imagens/educacao_em_saude.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span>
+                            Saúde Mental
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="prevencao"
+                        aria-pressed="false"
+                    >
+
+                        <img
+                            src="../imagens/prevencao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span>
+                            Prevenção
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- IMAGEM PRINCIPAL -->
+            <div class="education-hero-image-area">
+
+                <img
+                    src="../imagens/educacao_em_saude.png"
+                    alt="Livro aberto representando educação e cuidados com a saúde"
+                    class="education-hero-image"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- CONTEÚDOS EM DESTAQUE -->
+        <section
+            class="featured-section"
+            aria-labelledby="featuredTitle"
+        >
+
+            <div class="section-title-row">
+
+                <h2 id="featuredTitle">
+                    Conteúdos em destaque
+                </h2>
+
+                <button
+                    type="button"
+                    class="clear-filters-button"
+                    id="clearEducationFiltersButton"
+                    hidden
+                >
+                    Limpar filtros
+                </button>
+
+            </div>
+
+            <div
+                class="featured-grid"
+                id="featuredContentGrid"
+                aria-live="polite"
+            >
+
+                <!-- ALIMENTAÇÃO -->
+                <article
+                    class="featured-card"
+                    data-category="alimentacao"
+                    data-search="alimentação equilibrada alimentos refeições hábitos saudáveis"
+                >
+
+                    <div class="featured-card-image-area">
+
+                        <img
+                            src="../imagens/alimentacao.png"
+                            alt="Ícone de alimentação saudável"
+                        >
+
+                    </div>
+
+                    <div class="featured-card-content">
+
+                        <h3>
+                            Como manter uma alimentação equilibrada
+                        </h3>
+
+                        <p>
+                            Dicas práticas para o dia a dia e escolhas mais saudáveis.
+                        </p>
+
+                        <a
+                            href="../tela_artigo_alimentacao/artigo_alimentacao.html"
+                            class="read-more-link"
+                        >
+                            Ler mais
+                            <span aria-hidden="true">›</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- UBS OU UPA -->
+                <article
+                    class="featured-card"
+                    data-category="prevencao"
+                    data-search="ubs upa urgência emergência atendimento unidade saúde"
+                >
+
+                    <div class="featured-card-image-area">
+
+                        <img
+                            src="../imagens/ubs.png"
+                            alt="Ilustração de uma UBS"
+                        >
+
+                    </div>
+
+                    <div class="featured-card-content">
+
+                        <h3>
+                            Quando procurar a UBS ou a UPA?
+                        </h3>
+
+                        <p>
+                            Entenda onde buscar atendimento em cada situação.
+                        </p>
+
+                        <a
+                            href="../tela_ubs_upa/ubs_upa.html"
+                            class="read-more-link"
+                        >
+                            Ler mais
+                            <span aria-hidden="true">›</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- HÁBITOS PREVENTIVOS -->
+                <article
+                    class="featured-card"
+                    data-category="atividade-fisica prevencao saude-mental"
+                    data-search="hábitos prevenção sono hidratação exercícios acompanhamento regular atividade física saúde mental"
+                >
+
+                    <div class="featured-card-image-area">
+
+                        <img
+                            src="../imagens/prevencao.png"
+                            alt="Ícone de prevenção em saúde"
+                        >
+
+                    </div>
+
+                    <div class="featured-card-content">
+
+                        <h3>
+                            Hábitos que ajudam na prevenção
+                        </h3>
+
+                        <p>
+                            Sono, hidratação, exercícios e acompanhamento regular.
+                        </p>
+
+                        <a
+                            href="../tela_prevencao/prevencao.html"
+                            class="read-more-link"
+                        >
+                            Ler mais
+                            <span aria-hidden="true">›</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- ESTADO SEM RESULTADOS -->
+            <div
+                class="education-empty-state"
+                id="educationEmptyState"
+                hidden
+            >
+
+                <img
+                    src="../imagens/educacao_em_saude.png"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <div>
+
+                    <strong>
+                        Nenhum conteúdo encontrado
+                    </strong>
+
+                    <p>
+                        Tente pesquisar outro termo ou limpar os filtros.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TEMAS POPULARES -->
+        <section
+            class="popular-section"
+            aria-labelledby="popularTopicsTitle"
+        >
+
+            <h2 id="popularTopicsTitle">
+                Temas populares
+            </h2>
+
+            <div class="popular-topics-grid">
+
+                <button
+                    type="button"
+                    class="popular-topic-card"
+                    data-search-term="vacinação"
+                >
+
+                    <span class="popular-topic-icon">
+
+                        <img
+                            src="../imagens/prevencao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                    </span>
+
+                    <span>
+                        Vacinação
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="popular-topic-card"
+                    data-search-term="diabetes hipertensão"
+                >
+
+                    <span class="popular-topic-icon">
+
+                        <img
+                            src="../imagens/alimentacao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                    </span>
+
+                    <span>
+                        Diabetes e hipertensão
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="popular-topic-card"
+                    data-search-term="saúde da família"
+                >
+
+                    <span class="popular-topic-icon">
+
+                        <img
+                            src="../imagens/historico_familiar_icone.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                    </span>
+
+                    <span>
+                        Saúde da família
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="popular-topic-card"
+                    data-search-term="bem-estar saúde mental"
+                >
+
+                    <span class="popular-topic-icon">
+
+                        <img
+                            src="../imagens/educacao_em_saude.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                    </span>
+
+                    <span>
+                        Bem-estar emocional
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- AVISO GLOBAL -->
+        <div id="global-disclaimer"></div>
+
+    </main>
+
+    <!-- AUTENTICAÇÃO -->
+    <script src="../componentes/auth.js"></script>
+
+    <!-- HEADER GLOBAL -->
+    <script src="../componentes/header.js"></script>
+
+    <!-- AVISO GLOBAL -->
+    <script src="../componentes/disclaimer.js"></script>
+
+    <!-- JAVASCRIPT DA TELA -->
+    <script src="educacao.js"></script>
+
+</body>
+
+</html>
