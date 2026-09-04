@@ -4,55 +4,116 @@
 
 
 // ==========================================
+// CONFIGURAÇÕES
+// ==========================================
+
+const LOGIN_DESTINATION_KEY =
+    "gensaude_destino_apos_login";
+
+const LOGGED_HOME_PAGE =
+    "../tela_inicio_logado/inicio_logado.html";
+
+
+// ==========================================
+// DESTINOS PERMITIDOS APÓS O LOGIN
+// ==========================================
+
+const ALLOWED_LOGIN_DESTINATIONS = [
+
+    "../tela_prevencao/prevencao.html",
+
+    "../tela_historico_familiar/historico.html",
+
+    "../tela_estilo_vida/estilo_vida.html",
+
+    "../tela_sintomas_condicoes/sintomas_condicoes.html",
+
+    "../tela_resumo/resumo.html",
+
+    "../tela_resultado_avaliacao/resultado_avaliacao.html"
+
+];
+
+
+// ==========================================
 // ELEMENTOS
 // ==========================================
 
 const loginForm =
-    document.getElementById("loginForm");
+    document.getElementById(
+        "loginForm"
+    );
 
 const emailInput =
-    document.getElementById("email");
+    document.getElementById(
+        "email"
+    );
 
 const passwordInput =
-    document.getElementById("password");
+    document.getElementById(
+        "password"
+    );
 
 const passwordToggle =
-    document.getElementById("passwordToggle");
+    document.getElementById(
+        "passwordToggle"
+    );
 
 const rememberCheckbox =
-    document.getElementById("remember");
+    document.getElementById(
+        "remember"
+    );
 
 const createAccountButton =
-    document.getElementById("createAccount");
+    document.getElementById(
+        "createAccount"
+    );
 
 const forgotPassword =
-    document.querySelector(".forgot-password");
+    document.querySelector(
+        ".forgot-password"
+    );
 
 
 // ==========================================
 // MOSTRAR / ESCONDER SENHA
 // ==========================================
 
-if (passwordToggle && passwordInput) {
+if (
+    passwordToggle &&
+    passwordInput
+) {
 
     passwordToggle.addEventListener(
         "click",
         () => {
 
-            if (
+            const senhaEstaVisivel =
                 passwordInput.type ===
-                "password"
-            ) {
+                "text";
 
-                passwordInput.type =
-                    "text";
 
-            } else {
+            passwordInput.type =
+                senhaEstaVisivel
+                    ? "password"
+                    : "text";
 
-                passwordInput.type =
-                    "password";
 
-            }
+            passwordToggle.setAttribute(
+                "aria-label",
+
+                senhaEstaVisivel
+                    ? "Mostrar senha"
+                    : "Ocultar senha"
+            );
+
+
+            passwordToggle.setAttribute(
+                "aria-pressed",
+                String(
+                    !senhaEstaVisivel
+                )
+            );
 
         }
     );
@@ -74,7 +135,10 @@ if (loginForm) {
 
 
             const usuario =
-                emailInput.value.trim();
+                emailInput
+                    .value
+                    .trim();
+
 
             const senha =
                 passwordInput.value;
@@ -84,7 +148,7 @@ if (loginForm) {
 
 
             // ==================================
-            // EMAIL / CPF VAZIO
+            // E-MAIL OU CPF VAZIO
             // ==================================
 
             if (usuario === "") {
@@ -94,9 +158,11 @@ if (loginForm) {
                     "error"
                 );
 
+
                 emailInput.focus();
 
                 return;
+
             }
 
 
@@ -104,16 +170,20 @@ if (loginForm) {
             // SENHA VAZIA
             // ==================================
 
-            if (senha.trim() === "") {
+            if (
+                senha.trim() === ""
+            ) {
 
                 mostrarMensagem(
                     "Digite sua senha.",
                     "error"
                 );
 
+
                 passwordInput.focus();
 
                 return;
+
             }
 
 
@@ -121,16 +191,20 @@ if (loginForm) {
             // SENHA CURTA
             // ==================================
 
-            if (senha.length < 6) {
+            if (
+                senha.length < 6
+            ) {
 
                 mostrarMensagem(
                     "A senha deve possuir pelo menos 6 caracteres.",
                     "error"
                 );
 
+
                 passwordInput.focus();
 
                 return;
+
             }
 
 
@@ -147,24 +221,34 @@ if (loginForm) {
                     "auth.js não foi carregado corretamente."
                 );
 
+
                 mostrarMensagem(
                     "Erro interno no sistema de login.",
                     "error"
                 );
 
+
                 return;
+
             }
 
 
             // ==================================
-            // REALIZAR LOGIN LOCAL
+            // REALIZAR LOGIN
             // ==================================
+
+            const lembrar =
+                Boolean(
+                    rememberCheckbox
+                        ?.checked
+                );
+
 
             const resultado =
                 fazerLogin(
                     usuario,
                     senha,
-                    rememberCheckbox.checked
+                    lembrar
                 );
 
 
@@ -172,14 +256,18 @@ if (loginForm) {
             // LOGIN INVÁLIDO
             // ==================================
 
-            if (!resultado.sucesso) {
+            if (
+                !resultado.sucesso
+            ) {
 
                 mostrarMensagem(
                     resultado.mensagem,
                     "error"
                 );
 
+
                 return;
+
             }
 
 
@@ -193,15 +281,17 @@ if (loginForm) {
             );
 
 
+            bloquearFormulario();
+
+
             // ==================================
             // REDIRECIONAR
             // ==================================
 
-            setTimeout(
+            window.setTimeout(
                 () => {
 
-                    window.location.href =
-                        "../tela_inicio_logado/inicio_logado.html";
+                    redirecionarDepoisDoLogin();
 
                 },
                 600
@@ -221,23 +311,20 @@ window.addEventListener(
     "DOMContentLoaded",
     () => {
 
-
         // ======================================
-        // USUÁRIO JÁ LOGADO
+        // USUÁRIO JÁ ESTÁ LOGADO
         // ======================================
 
         if (
             typeof estaLogado ===
-            "function"
+                "function" &&
+
+            estaLogado()
         ) {
 
-            if (estaLogado()) {
+            redirecionarDepoisDoLogin();
 
-                window.location.href =
-                    "../tela_inicio_logado/inicio_logado.html";
-
-                return;
-            }
+            return;
 
         }
 
@@ -261,6 +348,7 @@ window.addEventListener(
             emailInput.value =
                 usuarioSalvo;
 
+
             rememberCheckbox.checked =
                 true;
 
@@ -268,6 +356,128 @@ window.addEventListener(
 
     }
 );
+
+
+// ==========================================
+// REDIRECIONAR DEPOIS DO LOGIN
+// ==========================================
+
+function redirecionarDepoisDoLogin() {
+
+    const destino =
+        obterDestinoDepoisDoLogin();
+
+
+    window.location.href =
+        destino;
+
+}
+
+
+// ==========================================
+// OBTER DESTINO SALVO
+// ==========================================
+
+function obterDestinoDepoisDoLogin() {
+
+    const destinoSalvo =
+        localStorage.getItem(
+            LOGIN_DESTINATION_KEY
+        );
+
+
+    /*
+        O destino é removido após ser lido para
+        não interferir nos próximos logins.
+    */
+
+    localStorage.removeItem(
+        LOGIN_DESTINATION_KEY
+    );
+
+
+    if (!destinoSalvo) {
+
+        return LOGGED_HOME_PAGE;
+
+    }
+
+
+    const destinoPermitido =
+        ALLOWED_LOGIN_DESTINATIONS.includes(
+            destinoSalvo
+        );
+
+
+    if (!destinoPermitido) {
+
+        console.warn(
+            "Destino após login não permitido:",
+            destinoSalvo
+        );
+
+
+        return LOGGED_HOME_PAGE;
+
+    }
+
+
+    return destinoSalvo;
+
+}
+
+
+// ==========================================
+// BLOQUEAR FORMULÁRIO
+// ==========================================
+
+function bloquearFormulario() {
+
+    if (!loginForm) {
+
+        return;
+
+    }
+
+
+    const botaoEntrar =
+        loginForm.querySelector(
+            'button[type="submit"]'
+        );
+
+
+    if (botaoEntrar) {
+
+        botaoEntrar.disabled =
+            true;
+
+    }
+
+
+    if (emailInput) {
+
+        emailInput.disabled =
+            true;
+
+    }
+
+
+    if (passwordInput) {
+
+        passwordInput.disabled =
+            true;
+
+    }
+
+
+    if (rememberCheckbox) {
+
+        rememberCheckbox.disabled =
+            true;
+
+    }
+
+}
 
 
 // ==========================================
@@ -324,8 +534,17 @@ function mostrarMensagem(
     removerMensagem();
 
 
+    if (!loginForm) {
+
+        return;
+
+    }
+
+
     const mensagem =
-        document.createElement("p");
+        document.createElement(
+            "p"
+        );
 
 
     mensagem.classList.add(
@@ -336,6 +555,14 @@ function mostrarMensagem(
 
     mensagem.textContent =
         texto;
+
+
+    mensagem.setAttribute(
+        "role",
+        tipo === "error"
+            ? "alert"
+            : "status"
+    );
 
 
     loginForm.appendChild(
