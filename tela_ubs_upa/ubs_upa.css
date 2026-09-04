@@ -1,0 +1,803 @@
+/* =========================================
+   TELA UBS OU UPA - GENSAÚDE SUS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f9fc;
+    color: #06195d;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.ubs-upa-main {
+    width: calc(100% - 48px);
+    max-width: 1500px;
+    min-height: calc(100vh - 78px);
+    margin: 0 auto;
+    padding: 25px 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
+
+.hero-section {
+    width: 100%;
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(430px, 1.1fr);
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero-content h1 {
+    margin-bottom: 10px;
+    color: #071b64;
+    font-size: clamp(38px, 3.4vw, 52px);
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+.hero-content > p {
+    max-width: 650px;
+    margin-bottom: 22px;
+    color: #173c8a;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+/* =========================================
+   BOTÕES DE LOCALIZAÇÃO
+========================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.location-button {
+    min-width: 170px;
+    min-height: 50px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid #0752d5;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.location-button img {
+    width: 21px;
+    height: 21px;
+    display: block;
+    object-fit: contain;
+}
+
+.location-button-primary {
+    background-color: #0752d5;
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(7, 82, 213, 0.2);
+}
+
+.location-button-primary img {
+    filter: brightness(0) invert(1);
+}
+
+.location-button-primary:hover {
+    background-color: #063fa8;
+    border-color: #063fa8;
+    transform: translateY(-2px);
+}
+
+.location-button-secondary {
+    background-color: #ffffff;
+    color: #0752d5;
+}
+
+.location-button-secondary:hover {
+    background-color: #edf4ff;
+    transform: translateY(-2px);
+}
+
+.location-button:active {
+    transform: scale(0.98);
+}
+
+.location-button:focus-visible {
+    outline: 3px solid rgba(7, 82, 213, 0.24);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   IMAGEM PRINCIPAL
+========================================= */
+
+.hero-image-area {
+    min-width: 0;
+    min-height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image-area::before {
+    content: "";
+    position: absolute;
+    width: 78%;
+    height: 60%;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    background-color: #e7f2ff;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.8;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 390px);
+    max-height: 245px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 14px rgba(10, 58, 139, 0.11));
+}
+
+/* =========================================
+   CARDS UBS E UPA
+========================================= */
+
+.comparison-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    min-width: 0;
+    min-height: 235px;
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #dce3ec;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(19, 44, 91, 0.12);
+}
+
+.service-card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.service-icon-area {
+    width: 82px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.ubs-icon-area {
+    background-color: #e0faf5;
+}
+
+.ubs-icon-area img {
+    width: 72px;
+    height: 72px;
+    display: block;
+    object-fit: contain;
+}
+
+.upa-icon-area {
+    background-color: #e8f1ff;
+}
+
+.upa-icon-area span {
+    color: #0752d5;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.service-title-area {
+    min-width: 0;
+}
+
+.service-title-area h2 {
+    margin-bottom: 3px;
+    color: #0752d5;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ubs-card .service-title-area h2 {
+    color: #009b8b;
+}
+
+.service-title-area p {
+    color: #0e347f;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.service-list {
+    margin: 0 0 12px 106px;
+    padding-left: 18px;
+    color: #102f75;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.service-list li::marker {
+    color: #0752d5;
+}
+
+.ubs-card .service-list li::marker {
+    color: #00a891;
+}
+
+.service-help-text {
+    margin: auto 0 0 106px;
+    color: #5570a6;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   ORIENTAÇÃO RÁPIDA
+========================================= */
+
+.quick-guidance {
+    width: 100%;
+    min-height: 82px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dce3ec;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(19, 44, 91, 0.1);
+    overflow: hidden;
+}
+
+.guidance-item {
+    min-width: 0;
+    min-height: 58px;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.guidance-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 52px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #d9dee7;
+}
+
+.guidance-icon,
+.guidance-symbol {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.guidance-icon {
+    background-color: #e7faf6;
+}
+
+.guidance-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    object-fit: contain;
+}
+
+.guidance-lightning {
+    background-color: #e5efff;
+    color: #0752d5;
+    font-size: 28px;
+}
+
+.guidance-phone {
+    background-color: #ffe9ea;
+    color: #ef3038;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.guidance-content {
+    min-width: 0;
+}
+
+.guidance-content p {
+    margin-bottom: 3px;
+    color: #244683;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.guidance-content strong {
+    display: block;
+    color: #0752d5;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.guidance-ubs .guidance-content strong {
+    color: #00a58f;
+}
+
+.guidance-emergency .guidance-content strong {
+    color: #ef3038;
+}
+
+.ubs-upa-main #global-disclaimer {
+    margin-top: auto;
+}
+
+/* =========================================
+   TELAS COM ALTURA MENOR
+========================================= */
+
+@media (min-width: 901px) and (max-height: 760px) {
+    .ubs-upa-main {
+        padding: 14px 0 12px;
+        gap: 10px;
+    }
+
+    .hero-section {
+        min-height: 180px;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 6px;
+        font-size: 36px;
+    }
+
+    .hero-content > p {
+        margin-bottom: 14px;
+        font-size: 15px;
+    }
+
+    .location-button {
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    .hero-image-area {
+        min-height: 170px;
+    }
+
+    .hero-image {
+        max-height: 178px;
+    }
+
+    .service-card {
+        min-height: 185px;
+        padding: 14px 20px;
+    }
+
+    .service-card-header {
+        margin-bottom: 7px;
+    }
+
+    .service-icon-area {
+        width: 64px;
+        height: 64px;
+    }
+
+    .ubs-icon-area img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .upa-icon-area span {
+        font-size: 50px;
+    }
+
+    .service-title-area h2 {
+        font-size: 29px;
+    }
+
+    .service-title-area p,
+    .service-list {
+        font-size: 14px;
+    }
+
+    .service-list {
+        margin-left: 82px;
+        margin-bottom: 4px;
+        line-height: 1.4;
+    }
+
+    .service-help-text {
+        display: none;
+    }
+
+    .quick-guidance {
+        min-height: 66px;
+    }
+
+    .guidance-item {
+        min-height: 54px;
+        padding: 6px 18px;
+    }
+
+    .guidance-icon,
+    .guidance-symbol {
+        width: 46px;
+        height: 46px;
+    }
+
+    .guidance-icon img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .guidance-content strong {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   NOTEBOOK
+========================================= */
+
+@media (max-width: 1100px) {
+    .hero-section {
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+        gap: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content > p {
+        font-size: 16px;
+    }
+
+    .service-card {
+        padding: 20px 22px;
+    }
+
+    .service-list,
+    .service-help-text {
+        margin-left: 92px;
+    }
+
+    .guidance-item {
+        padding: 8px 16px;
+        gap: 12px;
+    }
+
+    .guidance-content strong {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    .ubs-upa-main {
+        width: calc(100% - 36px);
+        padding: 24px 0;
+        gap: 18px;
+    }
+
+    .hero-section {
+        min-height: auto;
+        grid-template-columns: minmax(0, 1fr) minmax(290px, 0.8fr);
+        gap: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-image-area {
+        min-height: 200px;
+    }
+
+    .hero-image {
+        max-height: 210px;
+    }
+
+    .comparison-section {
+        gap: 16px;
+    }
+
+    .service-card {
+        min-height: 250px;
+        padding: 19px 18px;
+    }
+
+    .service-card-header {
+        gap: 13px;
+    }
+
+    .service-icon-area {
+        width: 68px;
+        height: 68px;
+    }
+
+    .ubs-icon-area img {
+        width: 61px;
+        height: 61px;
+    }
+
+    .upa-icon-area span {
+        font-size: 52px;
+    }
+
+    .service-title-area h2 {
+        font-size: 30px;
+    }
+
+    .service-title-area p {
+        font-size: 14px;
+    }
+
+    .service-list,
+    .service-help-text {
+        margin-left: 0;
+    }
+
+    .service-list {
+        font-size: 15px;
+    }
+
+    .quick-guidance {
+        grid-template-columns: 1fr;
+        overflow: visible;
+    }
+
+    .guidance-item {
+        padding: 12px 22px;
+    }
+
+    .guidance-item:not(:last-child)::after {
+        width: calc(100% - 44px);
+        height: 1px;
+        top: auto;
+        right: 22px;
+        bottom: 0;
+        transform: none;
+    }
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 650px) {
+    .ubs-upa-main {
+        width: calc(100% - 28px);
+        padding: 20px 0;
+        gap: 16px;
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 10px;
+        font-size: clamp(31px, 9vw, 39px);
+        line-height: 1.14;
+    }
+
+    .hero-content > p {
+        max-width: 520px;
+        margin: 0 auto 18px;
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .location-button {
+        min-width: 0;
+        flex: 1 1 145px;
+        min-height: 48px;
+        padding: 0 13px;
+        font-size: 14px;
+    }
+
+    .hero-image-area {
+        min-height: 185px;
+    }
+
+    .hero-image {
+        width: min(100%, 285px);
+        max-height: 190px;
+    }
+
+    .comparison-section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 18px 18px 20px;
+    }
+
+    .service-card-header {
+        margin-bottom: 12px;
+    }
+
+    .service-icon-area {
+        width: 66px;
+        height: 66px;
+    }
+
+    .ubs-icon-area img {
+        width: 59px;
+        height: 59px;
+    }
+
+    .upa-icon-area span {
+        font-size: 50px;
+    }
+
+    .service-title-area h2 {
+        font-size: 29px;
+    }
+
+    .service-list {
+        margin: 0 0 12px 22px;
+        padding-left: 17px;
+    }
+
+    .service-help-text {
+        margin: 0;
+    }
+
+    .guidance-item {
+        min-height: 72px;
+        padding: 10px 16px;
+    }
+
+    .guidance-item:not(:last-child)::after {
+        width: calc(100% - 32px);
+        right: 16px;
+    }
+
+    .guidance-icon,
+    .guidance-symbol {
+        width: 50px;
+        height: 50px;
+    }
+
+    .guidance-icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .guidance-content p {
+        font-size: 13px;
+    }
+
+    .guidance-content strong {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   CELULAR PEQUENO
+========================================= */
+
+@media (max-width: 390px) {
+    .ubs-upa-main {
+        width: calc(100% - 22px);
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .location-button {
+        width: 100%;
+        flex: none;
+    }
+
+    .service-card-header {
+        align-items: flex-start;
+    }
+
+    .service-icon-area {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ubs-icon-area img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .upa-icon-area span {
+        font-size: 45px;
+    }
+
+    .service-title-area h2 {
+        font-size: 27px;
+    }
+}

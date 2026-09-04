@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UBS ou UPA? | GenSaúde SUS</title>
+
+
+    <!-- CSS DA TELA -->
+
+    <link
+        rel="stylesheet"
+        href="ubs_upa.css"
+    >
+
+
+    <!-- COMPONENTES GLOBAIS -->
+
+    <link
+        rel="stylesheet"
+        href="../componentes/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../componentes/disclaimer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER GLOBAL -->
+
+    <div
+        id="global-header"
+        data-active="ubs-upa"
+    ></div>
+
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="ubs-upa-main">
+
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="hero-section">
+
+
+            <div class="hero-content">
+
+                <h1>
+                    Saiba onde buscar
+                    <br>
+                    atendimento.
+                </h1>
+
+
+                <p>
+                    Entender a diferença entre UBS e UPA ajuda você
+                    a procurar o serviço certo no momento certo,
+                    garantindo um atendimento mais rápido e adequado.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        type="button"
+                        class="location-button location-button-primary"
+                        id="findUbsButton"
+                    >
+
+                        <img
+                            src="../imagens/localizacao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span>
+                            Encontrar UBS
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="location-button location-button-secondary"
+                        id="findUpaButton"
+                    >
+
+                        <img
+                            src="../imagens/localizacao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span>
+                            Encontrar UPA
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-image-area">
+
+                <img
+                    src="../imagens/ubsouupa.png"
+                    alt="Ilustração de uma unidade de saúde"
+                    class="hero-image"
+                >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- COMPARAÇÃO UBS E UPA -->
+
+        <section
+            class="comparison-section"
+            aria-label="Diferenças entre UBS e UPA"
+        >
+
+
+            <!-- UBS -->
+
+            <article class="service-card ubs-card">
+
+
+                <div class="service-card-header">
+
+                    <div class="service-icon-area ubs-icon-area">
+
+                        <img
+                            src="../imagens/ubs.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                    </div>
+
+
+                    <div class="service-title-area">
+
+                        <h2>
+                            UBS
+                        </h2>
+
+                        <p>
+                            Atenção básica e preventiva.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="service-list">
+
+                    <li>
+                        Consultas de rotina
+                    </li>
+
+                    <li>
+                        Vacinação
+                    </li>
+
+                    <li>
+                        Acompanhamento de doenças crônicas
+                    </li>
+
+                </ul>
+
+
+                <p class="service-help-text">
+                    Procure uma UBS para cuidados do dia a dia,
+                    prevenção e acompanhamento da sua saúde.
+                </p>
+
+
+            </article>
+
+
+
+            <!-- UPA -->
+
+            <article class="service-card upa-card">
+
+
+                <div class="service-card-header">
+
+                    <div class="service-icon-area upa-icon-area">
+
+                        <span aria-hidden="true">
+                            +
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-title-area">
+
+                        <h2>
+                            UPA
+                        </h2>
+
+                        <p>
+                            Urgência e atendimento imediato.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="service-list">
+
+                    <li>
+                        Febre alta ou persistente
+                    </li>
+
+                    <li>
+                        Dor intensa
+                    </li>
+
+                    <li>
+                        Falta de ar
+                    </li>
+
+                </ul>
+
+
+                <p class="service-help-text">
+                    Procure uma UPA quando houver sintomas urgentes
+                    que precisam de avaliação rápida.
+                </p>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- ORIENTAÇÃO RÁPIDA -->
+
+        <section
+            class="quick-guidance"
+            aria-label="Orientação rápida"
+        >
+
+
+            <article class="guidance-item guidance-ubs">
+
+                <div class="guidance-icon">
+
+                    <img
+                        src="../imagens/calendario2.png"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                </div>
+
+
+                <div class="guidance-content">
+
+                    <p>
+                        Problema do dia a dia?
+                    </p>
+
+                    <strong>
+                        Procure a UBS.
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="guidance-item guidance-upa">
+
+                <div
+                    class="guidance-symbol guidance-lightning"
+                    aria-hidden="true"
+                >
+                    ⚡
+                </div>
+
+
+                <div class="guidance-content">
+
+                    <p>
+                        Situação urgente?
+                    </p>
+
+                    <strong>
+                        Procure a UPA.
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="guidance-item guidance-emergency">
+
+                <div
+                    class="guidance-symbol guidance-phone"
+                    aria-hidden="true"
+                >
+                    ☎
+                </div>
+
+
+                <div class="guidance-content">
+
+                    <p>
+                        Emergência grave?
+                    </p>
+
+                    <strong>
+                        Ligue 192.
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- AVISO GLOBAL -->
+
+        <div id="global-disclaimer"></div>
+
+
+    </main>
+
+
+
+    <!-- AUTENTICAÇÃO -->
+
+    <script src="../componentes/auth.js"></script>
+
+
+    <!-- HEADER GLOBAL -->
+
+    <script src="../componentes/header.js"></script>
+
+
+    <!-- AVISO GLOBAL -->
+
+    <script src="../componentes/disclaimer.js"></script>
+
+
+    <!-- JAVASCRIPT DA TELA -->
+
+    <script src="ubs_upa.js"></script>
+
+
+</body>
+
+</html>
