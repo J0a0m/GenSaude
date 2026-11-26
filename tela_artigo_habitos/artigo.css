@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8fafc;
+    color: #071b64;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.article-main {
+    width: calc(100% - 48px);
+    max-width: 1500px;
+    min-height: calc(100vh - 78px);
+    margin: 0 auto;
+    padding: 28px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.article-content {
+    width: 100%;
+    max-width: 1180px;
+}
+
+.article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.article-breadcrumb a {
+    color: #078f82;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.article-breadcrumb a:hover {
+    color: #056f66;
+    text-decoration: underline;
+}
+
+.article-breadcrumb a:focus-visible {
+    outline: 3px solid rgba(7, 143, 130, 0.18);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.breadcrumb-separator {
+    color: #8a97ad;
+    font-weight: 400;
+}
+
+.breadcrumb-current {
+    color: #5f708d;
+    font-weight: 500;
+}
+
+.article-header {
+    margin-bottom: 24px;
+}
+
+.article-header h1 {
+    max-width: 980px;
+    margin-bottom: 14px;
+    color: #071b64;
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+}
+
+.article-lead {
+    max-width: 980px;
+    color: #274a8b;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.article-hero {
+    width: 100%;
+    margin: 0 0 28px;
+}
+
+.article-hero-image {
+    width: 100%;
+    height: clamp(220px, 28vw, 360px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+    background-color: #e8f3ff;
+    box-shadow: 0 8px 24px rgba(7, 27, 100, 0.08);
+}
+
+.article-section {
+    margin-bottom: 28px;
+}
+
+.article-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.article-section h2 {
+    margin-bottom: 12px;
+    color: #071b64;
+    font-size: clamp(24px, 2.2vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.article-section p {
+    max-width: 1120px;
+    color: #274a8b;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+#global-disclaimer {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .article-main {
+        width: calc(100% - 32px);
+        padding: 24px 0 20px;
+    }
+
+    .article-content {
+        max-width: 100%;
+    }
+
+    .article-header h1,
+    .article-lead,
+    .article-section p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-main {
+        width: calc(100% - 24px);
+        padding: 20px 0 18px;
+        gap: 20px;
+    }
+
+    .article-breadcrumb {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .article-header {
+        margin-bottom: 20px;
+    }
+
+    .article-header h1 {
+        margin-bottom: 12px;
+    }
+
+    .article-lead {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .article-hero {
+        margin-bottom: 24px;
+    }
+
+    .article-hero-image {
+        height: clamp(190px, 52vw, 280px);
+        border-radius: 12px;
+    }
+
+    .article-section {
+        margin-bottom: 24px;
+    }
+
+    .article-section h2 {
+        margin-bottom: 10px;
+    }
+
+    .article-section p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-main {
+        width: calc(100% - 20px);
+        padding: 16px 0 16px;
+    }
+
+    .article-breadcrumb {
+        gap: 6px;
+        font-size: 12px;
+    }
+
+    .article-header h1 {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .article-hero-image {
+        height: 190px;
+        border-radius: 10px;
+    }
+
+    .article-section h2 {
+        font-size: 24px;
+    }
+}
